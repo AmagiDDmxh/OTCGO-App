@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82a3667f-8f3d-4b40-b387-025f8305013f" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="sea-app" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Non-Project Files (Material Default)" color="415967" />
+    <fileColor scope="Non-Project Files (Material Darker)" color="474747" />
+    <fileColor scope="Non-Project Files (Material Lighter)" color="D2D4D5" />
+    <fileColor scope="Non-Project Files (Material Palenight)" color="4E5579" />
+    <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
+    <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
+    <fileColor scope="Non-Project Files (Material Lighter)" color="eae8e8" />
+    <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Request" />
+        <option value="Blank HTML" />
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>icon</find>
+      <find>cw</find>
+      <find>transfer</find>
+      <find>create</find>
+      <find>addacc</find>
+      <find>encrypted</find>
+      <find>dispat</find>
+      <find>add_acc</find>
+      <find>pass</find>
+      <find>passphra</find>
+      <find>acc</find>
+      <find>isaddr</find>
+      <find>getWIFFrom</find>
+      <find>account\.wif</find>
+      <find>wif</find>
+      <find>laod</find>
+      <find>mockdata</find>
+      <find>main</find>
+      <find>wale</find>
+      <find>sett</find>
+      <find>getE</find>
+      <find>router</find>
+      <find>\/\/</find>
+      <find>&gt;</find>
+      <find>angular</find>
+      <find>manage_wa</find>
+      <find>add_W</find>
+      <find>save</find>
+      <find>profile</find>
+      <find>is</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="rollback" />
+      </map>
+    </option>
+    <push-targets>
+      <push-target-info target-remote="origin" target-branch="dev" repo="$PROJECT_DIR$" source="r" />
+      <push-target-info target-remote="origin" target-branch="rollback" repo="$PROJECT_DIR$" source="rollback" />
+    </push-targets>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/store/effects/balances.effect.ts" />
+        <option value="$PROJECT_DIR$/src/containers/create-wallet/create-wallet.html" />
+        <option value="$PROJECT_DIR$/src/containers/possessions/possessions.scss" />
+        <option value="$PROJECT_DIR$/src/containers/markets/markets.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/histories/history-detail/history-detail.ts" />
+        <option value="$PROJECT_DIR$/src/containers/markets/market-detail/market-detail.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/contacts/edit-contact/edit-contact.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/histories/history-detail/history-detail.html" />
+        <option value="$PROJECT_DIR$/src/components/modals/send-modal/send-modal.html" />
+        <option value="$PROJECT_DIR$/src/components/modals/send-modal/send-modal.ts" />
+        <option value="$PROJECT_DIR$/src/components/modals/send-modal/send-modal.provider.ts" />
+        <option value="$PROJECT_DIR$/src/providers/api/api.provider.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/claims/claims.provider.ts" />
+        <option value="$PROJECT_DIR$/src/store/reducers/transaction-history.reducer.ts" />
+        <option value="$PROJECT_DIR$/src/store/reducers/markets.reducer.ts" />
+        <option value="$PROJECT_DIR$/src/store/effects/transaction-history.effect.ts" />
+        <option value="$PROJECT_DIR$/src/components/profile/histories/histories-cards.html" />
+        <option value="$PROJECT_DIR$/src/components/profile/histories/histories-cards.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/claims/claims.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/histories/histories.module.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/histories/histories.ts" />
+        <option value="$PROJECT_DIR$/src/containers/create-wallet/backup-wallet/backup-wallet.ts" />
+        <option value="$PROJECT_DIR$/src/providers/router/router.ts" />
+        <option value="$PROJECT_DIR$/src/providers/router/index.ts" />
+        <option value="$PROJECT_DIR$/src/providers/index.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/core.module.ts" />
+        <option value="$PROJECT_DIR$/src/providers/router/router.provider.ts" />
+        <option value="$PROJECT_DIR$/src/containers/create-wallet/create-wallet.ts" />
+        <option value="$PROJECT_DIR$/src/components/profile/manage-wallet/manage-wallet-card.ts" />
+        <option value="$PROJECT_DIR$/src/store/effects/auth.effect.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/providers/api/price.provider.ts" />
+        <option value="$PROJECT_DIR$/src/containers/profile/manage-wallet/add-wallet/import-file/import-wallet.html" />
+        <option value="$PROJECT_DIR$/src/containers/profile/manage-wallet/add-wallet/import-file/import-wallet.ts" />
+        <option value="$PROJECT_DIR$/src/containers/login/login.ts" />
+        <option value="$PROJECT_DIR$/src/store/actions/wallet.action.ts" />
+        <option value="$PROJECT_DIR$/src/store/reducers/wallet.reducer.ts" />
+        <option value="$PROJECT_DIR$/src/store/effects/contacts.effect.ts" />
+        <option value="$PROJECT_DIR$/src/store/effects/wallet.effect.ts" />
+        <option value="$PROJECT_DIR$/src/providers/loading.provider.ts" />
+        <option value="$PROJECT_DIR$/src/containers/tabs/tabs.ts" />
+        <option value="$PROJECT_DIR$/src/assets/i18n/en.json" />
+        <option value="$PROJECT_DIR$/src/assets/i18n/zh.json" />
+        <option value="$PROJECT_DIR$/src/components/profile/profile-nav.ts" />
+        <option value="$PROJECT_DIR$/src/components/profile/profile-feature-list.ts" />
+        <option value="$PROJECT_DIR$/src/components/profile/profile-feature-list.html" />
+        <option value="$PROJECT_DIR$/src/index.html" />
+        <option value="$PROJECT_DIR$/src/service-worker.js" />
+        <option value="$PROJECT_DIR$/src/containers/possessions/payment-qrcode/payment-qrcode.ts" />
+        <option value="$PROJECT_DIR$/src/manifest.json" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="C:/Program Files/nodejs/node_modules/bower" />
+    <bower.json value="" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+      <selected-paths>
+        <path>
+          <id value="$PROJECT_DIR$/package.json" />
+          <id value="serve" />
+        </path>
+      </selected-paths>
+    </layout>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Assignment issuesJavaScript</id>
+          </State>
+          <State>
+            <id>BashSupport</id>
+          </State>
+          <State>
+            <id>Bitwise operation issuesJavaScript</id>
+          </State>
+          <State>
+            <id>CSS</id>
+          </State>
+          <State>
+            <id>Control flow issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Dart</id>
+          </State>
+          <State>
+            <id>ECMAScript 6 migration aidsJavaScript</id>
+          </State>
+          <State>
+            <id>Elixir</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Ignore</id>
+          </State>
+          <State>
+            <id>Invalid elementsCSS</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>JavaScript validity issuesJavaScript</id>
+          </State>
+          <State>
+            <id>Less</id>
+          </State>
+          <State>
+            <id>Naming conventionsJavaScript</id>
+          </State>
+          <State>
+            <id>Potentially confusing code constructsJavaScript</id>
+          </State>
+          <State>
+            <id>Probable bugsJavaScript</id>
+          </State>
+          <State>
+            <id>RegExp</id>
+          </State>
+          <State>
+            <id>Sass/SCSS</id>
+          </State>
+          <State>
+            <id>TypeScript</id>
+          </State>
+          <State>
+            <id>Unit testingJavaScript</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>XPath</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="sea-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sea-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sea-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sea-app" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="NBKnowledgePane" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sea-browser" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="C:/Program Files/nodejs/node" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="SearchEverywhereHistoryKey" value="DEFAULT_SE&#9;null&#9;null&#10;.card&#9;null&#9;null&#10;.spacer&#9;null&#9;null&#10;rambda&#9;null&#9;null&#10;finddefa&#9;null&#9;null" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\wayDownWeGo\sea-app\src\assets\imgs" />
+      <recent name="D:\wayDownWeGo\sea-app\src\libs\neon" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wayDownWeGo\sea-app\src\components\profile\contacts" />
+      <recent name="D:\wayDownWeGo\sea-app\src\providers\account" />
+      <recent name="D:\wayDownWeGo\sea-app\src\components\modals\remove-account-modal" />
+      <recent name="D:\wayDownWeGo\sea-app\src\components\modals" />
+      <recent name="D:\wayDownWeGo\sea-app\src\components\sea-card" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.ionic:serve">
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="ionic:serve" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="ionic:serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="serve" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="npm.ionic:serve" />
+      <item index="1" class="java.lang.String" itemvalue="npm.serve" />
+      <item index="2" class="java.lang.String" itemvalue="npm.build" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="npm.serve" />
+        <item index="1" class="java.lang.String" itemvalue="npm.build" />
+        <item index="2" class="java.lang.String" itemvalue="npm.ionic:serve" />
+        <item index="3" class="java.lang.String" itemvalue="npm.serve" />
+        <item index="4" class="java.lang.String" itemvalue="npm.ionic:serve" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82a3667f-8f3d-4b40-b387-025f8305013f" name="Default" comment="" />
+      <created>1521217099716</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521217099716</updated>
+      <workItem from="1521217101149" duration="1365000" />
+      <workItem from="1521245846782" duration="6659000" />
+      <workItem from="1521336488208" duration="14437000" />
+      <workItem from="1521427241476" duration="16513000" />
+      <workItem from="1521512121676" duration="18015000" />
+      <workItem from="1521602586715" duration="1438000" />
+      <workItem from="1521609735090" duration="19341000" />
+      <workItem from="1521693897950" duration="24557000" />
+      <workItem from="1521774150864" duration="22899000" />
+      <workItem from="1521806987628" duration="734000" />
+      <workItem from="1521807815664" duration="448000" />
+      <workItem from="1521812736984" duration="6353000" />
+      <workItem from="1521866688154" duration="673000" />
+      <workItem from="1521892642139" duration="5207000" />
+      <workItem from="1521957231095" duration="1818000" />
+      <workItem from="1522129044532" duration="9981000" />
+      <workItem from="1522213736560" duration="14824000" />
+      <workItem from="1522253488180" duration="1906000" />
+      <workItem from="1522322944842" duration="11461000" />
+      <workItem from="1522334742727" duration="1011000" />
+      <workItem from="1522371261945" duration="111000" />
+      <workItem from="1522375749817" duration="30406000" />
+      <workItem from="1522470320476" duration="18427000" />
+      <workItem from="1522560946368" duration="10818000" />
+      <workItem from="1522645561027" duration="21262000" />
+      <workItem from="1522728890999" duration="101000" />
+      <workItem from="1522742264078" duration="3544000" />
+      <workItem from="1522825395717" duration="22205000" />
+      <workItem from="1522889395632" duration="11048000" />
+      <workItem from="1522922703383" duration="12229000" />
+      <workItem from="1522945354826" duration="450000" />
+      <workItem from="1522966268135" duration="1348000" />
+      <workItem from="1522990215287" duration="1445000" />
+      <workItem from="1523013765371" duration="629000" />
+      <workItem from="1523075162934" duration="2097000" />
+      <workItem from="1523089525011" duration="13601000" />
+      <workItem from="1523109322246" duration="1843000" />
+      <workItem from="1523111985062" duration="13000" />
+      <workItem from="1523162627375" duration="1917000" />
+      <workItem from="1523164634187" duration="446000" />
+      <workItem from="1523251182508" duration="1780000" />
+      <workItem from="1523253887596" duration="1790000" />
+      <workItem from="1523256194569" duration="764000" />
+      <workItem from="1523337561726" duration="1775000" />
+      <workItem from="1523339394735" duration="1791000" />
+      <workItem from="1523341219165" duration="1130000" />
+      <workItem from="1523342530346" duration="1862000" />
+      <workItem from="1523344435617" duration="1787000" />
+      <workItem from="1523346332492" duration="1747000" />
+      <workItem from="1523348109170" duration="1384000" />
+      <workItem from="1523360503122" duration="960000" />
+      <workItem from="1523376286433" duration="988000" />
+      <workItem from="1523432399120" duration="10018000" />
+      <workItem from="1523510053037" duration="7175000" />
+      <workItem from="1523598790340" duration="1944000" />
+      <workItem from="1523949484909" duration="9326000" />
+      <workItem from="1524020546964" duration="1989000" />
+      <workItem from="1524040323474" duration="3419000" />
+      <workItem from="1524118546644" duration="13762000" />
+      <workItem from="1524153983312" duration="4026000" />
+      <workItem from="1524199936387" duration="2421000" />
+      <workItem from="1524212632732" duration="10553000" />
+      <workItem from="1524233174731" duration="38000" />
+      <workItem from="1524289546081" duration="2672000" />
+      <workItem from="1524303051939" duration="1648000" />
+      <workItem from="1524543706056" duration="1479000" />
+      <workItem from="1524563659331" duration="8553000" />
+      <workItem from="1524634315275" duration="4719000" />
+    </task>
+    <task id="LOCAL-00001" summary="Bug: A bug occur at the last week, and the code base grown up about 4k line. it Crash without any Warning and Error, is hard to debug. This commit is for rollback reason.">
+      <created>1521360323670</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521360323671</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Feat: Added BalancesEffects MarketsEffects WalletEffects AuthEffects and applied to view">
+      <created>1521427645209</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1521427645209</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Feat(AuthEffect): Update loginOldWallet effect">
+      <created>1521434646755</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1521434646755</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Feat: Update AuthEffects BalancesEffects">
+      <created>1521447639075</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1521447639075</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fix(PossessionsPage): Fix the subscriber problem">
+      <created>1521449772676</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1521449772676</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fix(Login): Fix the loginOldWallet problem">
+      <created>1521520203483</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1521520203484</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Feat(Settings): Update SettingsEffects">
+      <created>1521527223278</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1521527223278</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Feat(Settings): Update SettingsEffects">
+      <created>1521528933202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1521528933202</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update: Update Effects and WalletCard component">
+      <created>1521894863691</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1521894863691</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'remotes/origin/dev' into r&#10;&#10;# Conflicts:&#10;#&#9;package.json&#10;#&#9;src/app/app.component.ts&#10;#&#9;src/app/app.module.ts&#10;#&#9;src/assets/i18n/en.json&#10;#&#9;src/assets/i18n/zh.json&#10;#&#9;src/components/modals/send-modal/send-modal.ts&#10;#&#9;src/components/modals/send-modal/send-modal.validators.ts&#10;#&#9;src/components/possessions/possessions-info.ts&#10;#&#9;src/components/possessions/possessions-list.ts&#10;#&#9;src/containers/create-wallet/create-wallet.ts&#10;#&#9;src/containers/login/login.html&#10;#&#9;src/containers/login/login.ts&#10;#&#9;src/containers/login/login.validator.ts&#10;#&#9;src/containers/markets/market-detail/market-detail.ts&#10;#&#9;src/containers/possessions/payment-qrcode/payment-qrcode.ts&#10;#&#9;src/containers/possessions/possession-detail/possession-detail.html&#10;#&#9;src/containers/possessions/possession-detail/possession-detail.scss&#10;#&#9;src/containers/possessions/possession-detail/possession-detail.ts&#10;#&#9;src/containers/possessions/possessions.html&#10;#&#9;src/containers/possessions/possessions.ts&#10;#&#9;src/containers/profile/claims/claims.provider.ts&#10;#&#9;src/containers/profile/claims/claims.ts&#10;#&#9;src/containers/profile/manage-wallet/add-wallet/import-file/import-file.ts&#10;#&#9;src/containers/profile/manage-wallet/manage-wallet.ts&#10;#&#9;src/libs/neon/src/api/core.js&#10;#&#9;src/libs/neon/src/api/neonDB.js&#10;#&#9;src/libs/neon/src/api/neoscan.js&#10;#&#9;src/libs/neon/src/api/nep5.js&#10;#&#9;src/libs/neon/src/consts.js&#10;#&#9;src/libs/neon/src/index.js&#10;#&#9;src/libs/neon/src/rpc/client.js&#10;#&#9;src/libs/neon/src/rpc/index.js&#10;#&#9;src/libs/neon/src/rpc/parse.js&#10;#&#9;src/libs/neon/src/sc/ScriptBuilder.js&#10;#&#9;src/libs/neon/src/sc/core.js&#10;#&#9;src/libs/neon/src/transactions/components.js&#10;#&#9;src/libs/neon/src/transactions/core.js&#10;#&#9;src/libs/neon/src/transactions/exclusive.js&#10;#&#9;src/libs/neon/src/transactions/transaction.js&#10;#&#9;src/libs/neon/src/utils.js&#10;#&#9;src/libs/neon/src/wallet/Account.js&#10;#&#9;src/libs/neon/src/wallet/Balance.js&#10;#&#9;src/libs/neon/src/wallet/Claims.js&#10;#&#9;src/libs/neon/src/wallet/Wallet.js&#10;#&#9;src/libs/neon/src/wallet/index.d.ts&#10;#&#9;src/libs/neon/src/wallet/index.js&#10;#&#9;src/libs/neon/src/wallet/nep2.js&#10;#&#9;src/providers/account/account.provider.ts&#10;#&#9;src/providers/api/index.ts&#10;#&#9;src/providers/index.ts&#10;#&#9;src/providers/loading.provider.ts&#10;#&#9;src/providers/notification.provider.ts&#10;#&#9;src/providers/wallet/wallet.provider.ts&#10;#&#9;src/shared/constants.ts&#10;#&#9;src/shared/utils/index.ts&#10;#&#9;src/store/actions/auth.action.ts&#10;#&#9;src/store/actions/balances.action.ts&#10;#&#9;src/store/actions/index.ts&#10;#&#9;src/store/actions/transaction-history.action.ts&#10;#&#9;src/store/actions/wallet.action.ts&#10;#&#9;src/store/effects/auth.effect.ts&#10;#&#9;src/store/effects/balances.effect.ts&#10;#&#9;src/store/effects/index.ts&#10;#&#9;src/store/effects/loading.effect.ts&#10;#&#9;src/store/effects/markets.effect.ts&#10;#&#9;src/store/effects/transaction-history.effect.ts&#10;#&#9;src/store/effects/wallet.effect.ts&#10;#&#9;src/store/reducers/auth.reducer.ts&#10;#&#9;src/store/reducers/balances.reducer.ts&#10;#&#9;src/store/reducers/index.ts&#10;#&#9;src/store/reducers/transaction-history.reducer.ts&#10;#&#9;src/store/reducers/transactions.reducer.ts&#10;#&#9;src/store/reducers/wallet.reducer.ts&#10;#&#9;src/store/selectors/balances.selector.ts&#10;#&#9;src/store/selectors/index.ts&#10;#&#9;src/store/selectors/prices.selector.ts&#10;#&#9;src/store/selectors/wallet.selector.ts&#10;#&#9;src/theme/otcgo/main.scss&#10;#&#9;src/theme/otcgo/variables.scss&#10;#&#9;webpack.config.js">
+      <created>1521896629871</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1521896629871</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Fix: rollback merged issue">
+      <created>1521898410317</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1521898410317</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Feat: Add README.">
+      <created>1521898601201</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1521898601201</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Feat: Moving Card component to manageWallet page.">
+      <created>1522215768639</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1522215768639</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Feat: Moving Card component to manageWallet page complete.">
+      <created>1522223860494</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1522223860494</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Feat(Possessions &amp; PricesAction): Add base currency amounts on possessions page, Update price.selector for select amounts">
+      <created>1522330550906</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1522330550906</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update(Markets &amp; ManageWalletPage): Change amounts and prices from selectors instead of call in class">
+      <created>1522330650836</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1522330650836</updated>
+    </task>
+    <task id="LOCAL-00017" summary="temp: Card component init">
+      <created>1522371330829</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1522371330829</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat(MarketDetail): Add MarketDetail chart, with un completed version but enough">
+      <created>1522476855640</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1522476855640</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Upadte(AppComponent): Add a exit actions to prevent default exit.">
+      <created>1522926935558</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1522926935558</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Upadte(Markets): Moving styles to correspond components">
+      <created>1522927065609</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927065609</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Upadte(SendModal): Add I18n language translations">
+      <created>1522927107995</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927107995</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Feat(Contacts): Add Contacts basic functionality and UI">
+      <created>1522927277741</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927277741</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Feat(Histories): Unfinished Basic Histories UI">
+      <created>1522927423721</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927423721</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Chrod(): Change PossessionDetail histories to selectedEntities and Cleanup ManageWalletCards">
+      <created>1522927591474</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927591474</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Fix(Contacts): Add Contacts icon">
+      <created>1522927641390</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927641390</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Fix(Login &amp; CreateWallet): Fix CreateWallet enter Possessions Bug and CleanUp Login">
+      <created>1522927730293</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927730293</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Feat(Profile): Add Helpcentre, Notification and Update Settings Page">
+      <created>1522927794660</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1522927794660</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Update(Histories): Add HistoryDetail Page, Update TransactionHistoryEffects">
+      <created>1522945405668</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1522945405668</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Chord(): Fix and Cleanup existing module">
+      <created>1523360671703</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1523360671703</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Chord(): Improve UI and fix some bug.">
+      <created>1524226563460</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1524226563460</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Chord(): Update for PWA support">
+      <created>1524638326350</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1524638326350</updated>
+    </task>
+    <task id="LOCAL-00032" summary="gh-pages(): update gh-pages.">
+      <created>1524639552887</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1524639552887</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="435080000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32293987" sideWeight="0.50214136" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.83964366" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5106383" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3158482" sideWeight="0.49785867" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Quokka" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.77257526" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.4893617" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Pomodoro" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946466" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25053534" sideWeight="0.5044543" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="D:/awesomeAngular/ngrx-platform/node_modules/karma/config.tpl.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <MESSAGE value="Feat(Settings): Update SettingsEffects" />
+    <MESSAGE value="Update: Update Effects and WalletCard component" />
+    <MESSAGE value="Merge remote-tracking branch 'remotes/origin/dev' into r&#10;&#10;# Conflicts:&#10;#&#9;package.json&#10;#&#9;src/app/app.component.ts&#10;#&#9;src/app/app.module.ts&#10;#&#9;src/assets/i18n/en.json&#10;#&#9;src/assets/i18n/zh.json&#10;#&#9;src/components/modals/send-modal/send-modal.ts&#10;#&#9;src/components/modals/send-modal/send-modal.validators.ts&#10;#&#9;src/components/possessions/possessions-info.ts&#10;#&#9;src/components/possessions/possessions-list.ts&#10;#&#9;src/containers/create-wallet/create-wallet.ts&#10;#&#9;src/containers/login/login.html&#10;#&#9;src/containers/login/login.ts&#10;#&#9;src/containers/login/login.validator.ts&#10;#&#9;src/containers/markets/market-detail/market-detail.ts&#10;#&#9;src/containers/possessions/payment-qrcode/payment-qrcode.ts&#10;#&#9;src/containers/possessions/possession-detail/possession-detail.html&#10;#&#9;src/containers/possessions/possession-detail/possession-detail.scss&#10;#&#9;src/containers/possessions/possession-detail/possession-detail.ts&#10;#&#9;src/containers/possessions/possessions.html&#10;#&#9;src/containers/possessions/possessions.ts&#10;#&#9;src/containers/profile/claims/claims.provider.ts&#10;#&#9;src/containers/profile/claims/claims.ts&#10;#&#9;src/containers/profile/manage-wallet/add-wallet/import-file/import-file.ts&#10;#&#9;src/containers/profile/manage-wallet/manage-wallet.ts&#10;#&#9;src/libs/neon/src/api/core.js&#10;#&#9;src/libs/neon/src/api/neonDB.js&#10;#&#9;src/libs/neon/src/api/neoscan.js&#10;#&#9;src/libs/neon/src/api/nep5.js&#10;#&#9;src/libs/neon/src/consts.js&#10;#&#9;src/libs/neon/src/index.js&#10;#&#9;src/libs/neon/src/rpc/client.js&#10;#&#9;src/libs/neon/src/rpc/index.js&#10;#&#9;src/libs/neon/src/rpc/parse.js&#10;#&#9;src/libs/neon/src/sc/ScriptBuilder.js&#10;#&#9;src/libs/neon/src/sc/core.js&#10;#&#9;src/libs/neon/src/transactions/components.js&#10;#&#9;src/libs/neon/src/transactions/core.js&#10;#&#9;src/libs/neon/src/transactions/exclusive.js&#10;#&#9;src/libs/neon/src/transactions/transaction.js&#10;#&#9;src/libs/neon/src/utils.js&#10;#&#9;src/libs/neon/src/wallet/Account.js&#10;#&#9;src/libs/neon/src/wallet/Balance.js&#10;#&#9;src/libs/neon/src/wallet/Claims.js&#10;#&#9;src/libs/neon/src/wallet/Wallet.js&#10;#&#9;src/libs/neon/src/wallet/index.d.ts&#10;#&#9;src/libs/neon/src/wallet/index.js&#10;#&#9;src/libs/neon/src/wallet/nep2.js&#10;#&#9;src/providers/account/account.provider.ts&#10;#&#9;src/providers/api/index.ts&#10;#&#9;src/providers/index.ts&#10;#&#9;src/providers/loading.provider.ts&#10;#&#9;src/providers/notification.provider.ts&#10;#&#9;src/providers/wallet/wallet.provider.ts&#10;#&#9;src/shared/constants.ts&#10;#&#9;src/shared/utils/index.ts&#10;#&#9;src/store/actions/auth.action.ts&#10;#&#9;src/store/actions/balances.action.ts&#10;#&#9;src/store/actions/index.ts&#10;#&#9;src/store/actions/transaction-history.action.ts&#10;#&#9;src/store/actions/wallet.action.ts&#10;#&#9;src/store/effects/auth.effect.ts&#10;#&#9;src/store/effects/balances.effect.ts&#10;#&#9;src/store/effects/index.ts&#10;#&#9;src/store/effects/loading.effect.ts&#10;#&#9;src/store/effects/markets.effect.ts&#10;#&#9;src/store/effects/transaction-history.effect.ts&#10;#&#9;src/store/effects/wallet.effect.ts&#10;#&#9;src/store/reducers/auth.reducer.ts&#10;#&#9;src/store/reducers/balances.reducer.ts&#10;#&#9;src/store/reducers/index.ts&#10;#&#9;src/store/reducers/transaction-history.reducer.ts&#10;#&#9;src/store/reducers/transactions.reducer.ts&#10;#&#9;src/store/reducers/wallet.reducer.ts&#10;#&#9;src/store/selectors/balances.selector.ts&#10;#&#9;src/store/selectors/index.ts&#10;#&#9;src/store/selectors/prices.selector.ts&#10;#&#9;src/store/selectors/wallet.selector.ts&#10;#&#9;src/theme/otcgo/main.scss&#10;#&#9;src/theme/otcgo/variables.scss&#10;#&#9;webpack.config.js" />
+    <MESSAGE value="Fix: rollback merged issue" />
+    <MESSAGE value="Feat: Add README." />
+    <MESSAGE value="Feat: Moving Card component to manageWallet page." />
+    <MESSAGE value="Feat: Moving Card component to manageWallet page complete." />
+    <MESSAGE value="Feat(Possessions &amp; PricesAction): Add base currency amounts on possessions page, Update price.selector for select amounts" />
+    <MESSAGE value="update(Markets &amp; ManageWalletPage): Change amounts and prices from selectors instead of call in class" />
+    <MESSAGE value="temp: Card component init" />
+    <MESSAGE value="feat(MarketDetail): Add MarketDetail chart, with un completed version but enough" />
+    <MESSAGE value="Upadte(AppComponent): Add a exit actions to prevent default exit." />
+    <MESSAGE value="Upadte(Markets): Moving styles to correspond components" />
+    <MESSAGE value="Upadte(SendModal): Add I18n language translations" />
+    <MESSAGE value="Feat(Contacts): Add Contacts basic functionality and UI" />
+    <MESSAGE value="Feat(Histories): Unfinished Basic Histories UI" />
+    <MESSAGE value="Chrod(): Change PossessionDetail histories to selectedEntities and Cleanup ManageWalletCards" />
+    <MESSAGE value="Fix(Contacts): Add Contacts icon" />
+    <MESSAGE value="Fix(Login &amp; CreateWallet): Fix CreateWallet enter Possessions Bug and CleanUp Login" />
+    <MESSAGE value="Feat(Profile): Add Helpcentre, Notification and Update Settings Page" />
+    <MESSAGE value="Update(Histories): Add HistoryDetail Page, Update TransactionHistoryEffects" />
+    <MESSAGE value="Chord(): Fix and Cleanup existing module" />
+    <MESSAGE value="Chord(): Improve UI and fix some bug." />
+    <MESSAGE value="Chord(): Update for PWA support" />
+    <MESSAGE value="gh-pages(): update gh-pages." />
+    <option name="LAST_COMMIT_MESSAGE" value="gh-pages(): update gh-pages." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/auth.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="61" lean-forward="false" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@ionic-native/status-bar/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232">
+          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2310">
+          <caret line="105" column="24" lean-forward="false" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/providers/api/price.provider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="32" column="3" lean-forward="false" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/balances.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@ngrx/store/src/store.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="15" column="21" lean-forward="false" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/contacts.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="62" column="8" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/profile/contacts/edit-contact/edit-contact.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="22" lean-forward="true" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/profile/contacts/contacts.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="38" column="33" lean-forward="true" selection-start-line="38" selection-start-column="33" selection-end-line="38" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/profile/manage-wallet/add-wallet/import-file/import-wallet.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/profile/manage-wallet/add-wallet/import-file/import-wallet.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/profile/manage-wallet/add-wallet/import-file/import-wallet.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/login/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="39" column="27" lean-forward="false" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/login/login.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="66" column="35" lean-forward="false" selection-start-line="66" selection-start-column="35" selection-end-line="66" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/typings.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="52" column="44" lean-forward="false" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/contacts.action.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="11" column="40" lean-forward="false" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@ngrx/store/src/state.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/userWallet.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="62" column="27" lean-forward="false" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/wallet.reducer.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="129" column="15" lean-forward="false" selection-start-line="129" selection-start-column="15" selection-end-line="129" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/wallet.action.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/observable/EmptyObservable.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="57" column="59" lean-forward="true" selection-start-line="57" selection-start-column="59" selection-end-line="57" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/observable/empty.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="57" lean-forward="true" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/effects/contacts.effect.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="45" column="3" lean-forward="false" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/effects/wallet.effect.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ionic-angular/components/loading/loading-controller.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="122" column="32" lean-forward="true" selection-start-line="122" selection-start-column="32" selection-end-line="122" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ionic-angular/components/loading/loading-options.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/profile/profile-nav.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/i18n/zh.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="79" column="21" lean-forward="false" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/i18n/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="70" column="19" lean-forward="false" selection-start-line="70" selection-start-column="19" selection-end-line="70" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/profile/profile-feature-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/profile/profile-feature-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/tabs/tabs.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="27" column="88" lean-forward="false" selection-start-line="27" selection-start-column="88" selection-end-line="27" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/providers/loading.provider.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/build/vendor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/build/1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-792">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/build/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="50" lean-forward="false" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/possessions/possessions-list.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ionic-angular/platform/platform.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="431">
+          <caret line="121" column="9" lean-forward="false" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/possessions/possessions-info.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/possessions/possessions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="5" lean-forward="false" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/possessions/possessions.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/possessions/payment-qrcode/payment-qrcode.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service-worker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-541">
+          <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/assets/imgs/whitebg.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/assets/imgs/logo--white.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/assets/imgs/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
