@@ -1,1 +1,266 @@
-webpackJsonp([12],{1e3:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),e.d(n,"SendModalModule",function(){return l});var o=e(100),r=e(1077),i=e(0),a=e(55),s=this&&this.__decorate||function(t,n,e,o){var r,i=arguments.length,a=i<3?n:null===o?o=Object.getOwnPropertyDescriptor(n,e):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,n,e,o);else for(var s=t.length-1;s>=0;s--)(r=t[s])&&(a=(i<3?r(a):i>3?r(n,e,a):r(n,e))||a);return i>3&&a&&Object.defineProperty(n,e,a),a},c=[r.a],l=function(){function t(){}return t=s([Object(i.I)({declarations:c,imports:[o.b.forChild(),a.f.forChild(r.a)],exports:c})],t)}()},1077:function(t,n,e){"use strict";e.d(n,"a",function(){return g});var o=e(0),r=e(55),i=e(570),a=e(15),s=e(36),c=e(1097),l=e(102),u=e(571),d=e(42),f=e(141),h=e(101),p=this&&this.__decorate||function(t,n,e,o){var r,i=arguments.length,a=i<3?n:null===o?o=Object.getOwnPropertyDescriptor(n,e):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,n,e,o);else for(var s=t.length-1;s>=0;s--)(r=t[s])&&(a=(i<3?r(a):i>3?r(n,e,a):r(n,e))||a);return i>3&&a&&Object.defineProperty(n,e,a),a},m=this&&this.__metadata||function(t,n){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,n)},b=this&&this.__awaiter||function(t,n,e,o){return new(e||(e=Promise))(function(r,i){function a(t){try{c(o.next(t))}catch(t){i(t)}}function s(t){try{c(o.throw(t))}catch(t){i(t)}}function c(t){t.done?r(t.value):new e(function(n){n(t.value)}).then(a,s)}c((o=o.apply(t,n||[])).next())})},v=this&&this.__generator||function(t,n){function e(e){return function(a){return function(e){if(o)throw new TypeError("Generator is already executing.");for(;s;)try{if(o=1,r&&(i=r[2&e[0]?"return":e[0]?"throw":"next"])&&!(i=i.call(r,e[1])).done)return i;switch(r=0,i&&(e=[0,i.value]),e[0]){case 0:case 1:i=e;break;case 4:return s.label++,{value:e[1],done:!1};case 5:s.label++,r=e[1],e=[0];continue;case 7:e=s.ops.pop(),s.trys.pop();continue;default:if(i=s.trys,!(i=i.length>0&&i[i.length-1])&&(6===e[0]||2===e[0])){s=0;continue}if(3===e[0]&&(!i||e[1]>i[0]&&e[1]<i[3])){s.label=e[1];break}if(6===e[0]&&s.label<i[1]){s.label=i[1],i=e;break}if(i&&s.label<i[2]){s.label=i[2],s.ops.push(e);break}i[2]&&s.ops.pop(),s.trys.pop();continue}e=n.call(t,s)}catch(t){e=[6,t],r=0}finally{o=i=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,a])}}var o,r,i,a,s={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return a={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(a[Symbol.iterator]=function(){return this}),a},g=function(){function t(t,n,e,o,r,i,a,l,u){var d=this;this.viewCtrl=t,this.navCtrl=n,this.barcodeScanner=e,this.notificationProvider=o,this.alertCtrl=r,this.loadingCtrl=i,this.sendModalProvider=a,this.store=l,this.fb=u,this.translationPrefix="POSSESSIONS.SEND_MODAL.",this.store.select(h.b.getSelectedBalance).subscribe(function(t){return d.selectedBalance=t}),this.formGroup=this.fb.group({address:["",[s.f.required,c.a]],passphrase:["",this.w?[]:s.f.required],amount:["",[s.f.required,Object(c.b)(this.selectedBalance.amount)]],label:[""]})}return Object.defineProperty(t.prototype,"toAddress",{get:function(){return this.formGroup.get("address")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passphrase",{get:function(){return this.formGroup.get("passphrase")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this.formGroup.get("amount")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"label",{get:function(){return this.formGroup.get("label")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"w",{get:function(){try{return this.sendModalProvider.account&&this.sendModalProvider.account.WIF}catch(t){return""}},enumerable:!0,configurable:!0}),t.prototype.ngOnInit=function(){},t.prototype.ionViewWillEnter=function(){var t=this;this.store.select(h.i.getSelectedAddress).take(1).subscribe(function(n){return t.toAddress.setValue(n)})},t.prototype.ionViewDidLeave=function(){this.store.dispatch(new f.h.CleanSelectedContact)},t.prototype.handleClose=function(){this.viewCtrl.dismiss(),this.formGroup.reset()},t.prototype.transfer=function(){return b(this,void 0,void 0,function(){var t,n=this;return v(this,function(e){switch(e.label){case 0:return this.toAddress.markAsTouched(),this.passphrase.markAsTouched(),this.amount.markAsTouched(),this.formGroup.valid&&this.toAddress.valid&&this.amount.valid&&this.passphrase.valid?(t=this.loadingCtrl.create(),[4,t.present()]):[2];case 1:return e.sent(),this.sendModalProvider.decrypt(this.passphrase.value).then(function(t){return b(n,void 0,void 0,function(){return v(this,function(n){switch(n.label){case 0:return[4,this.sendModalProvider.doSendAsset({dests:this.toAddress.value,amounts:this.amount.value,assetId:this.selectedBalance.hash},t)];case 1:return n.sent()?[4,this.handleClose()]:[3,3];case 2:n.sent(),this.notificationProvider.emit({message:"转账成功"}),n.label=3;case 3:return[2]}})})}).catch(function(t){if(t.message)return n.showPrompt({message:t.message,title:"错误"});n.showPrompt({message:t,title:"错误"})}).then(function(e){n.store.dispatch(new f.b.Load),n.store.dispatch(new f.h.CleanSelectedContact),t.dismissAll()}),[2]}})})},t.prototype.showPrompt=function(t){this.alertCtrl.create(t).present()},t.prototype.handleScanClick=function(){var t=this;this.barcodeScanner.scan().then(function(n){return Object(l.e)(n.text)&&t.toAddress.setValue(n.text)}).catch(function(n){return t.notificationProvider.emit({message:n})})},t.prototype.handleContactClick=function(){this.navCtrl.push("Contacts",{fromProfile:!1})},t=p([Object(o.m)({selector:"send-modal",template:'<ion-content padding class="send-modal__content" fixed>\n\n\t<div class="content-header">\n\n\t\t<button ion-button icon-only clear (click)="handleClose()" float-end>\n\n\t\t\t<ion-icon name=\'close\'></ion-icon>\n\n\t\t</button>\n\n\t</div>\n\n\n\n\t<form class="container" [formGroup]="formGroup" #sendDir="ngForm" (submit)="transfer()">\n\n\t\t<h5>{{ translationPrefix + \'title\' | translate }}</h5>\n\n\n\n\t\t<ion-item class="round">\n\n\t\t\t<ion-input placeholder="{{ translationPrefix + \'address\' | translate }}" formControlName="address" required></ion-input>\n\n\t\t\t<ion-icon item-end *ngIf="toAddress.valid" name="checkmark" style="color: #3094d6;"></ion-icon>\n\n\t\t\t<ion-icon item-end *ngIf="toAddress.invalid && (toAddress.dirty || toAddress.touched) && toAddress.errors.invalidAddress" name="close" style="color: red;"></ion-icon>\n\n\t\t</ion-item>\n\n\n\n\t\t<div class="tooltips">\n\n\t\t\t<div class="icon" (click)="handleScanClick()">\n\n\t\t\t\t<img src="assets/imgs/icon-send-modal_scan.svg">\n\n\t\t\t</div>\n\n\t\t\t<div class="icon" (click)="handleContactClick()">\n\n\t\t\t\t<img src="assets/imgs/icon-send-modal_contact.svg">\n\n\t\t\t</div>\n\n\t\t</div>\n\n\n\n\t\t<ion-item class="round" *ngIf="!w">\n\n\t\t\t<ion-input placeholder="{{ translationPrefix + \'password\' | translate }}" type="password" formControlName="passphrase" required></ion-input>\n\n\t\t\t<ion-icon item-end *ngIf="passphrase.valid" name="checkmark" style="color: #3094d6;"></ion-icon>\n\n\t\t\t<ion-icon item-end *ngIf="passphrase.invalid && (passphrase.dirty || passphrase.touched)" name="close" style="color: red;"></ion-icon>\n\n\t\t</ion-item>\n\n\n\n\t\t\x3c!--<ion-item class="checkbox">\n\n\t\t\t<ion-label>记住密码</ion-label>\n\n\t\t\t<ion-checkbox formControlName="rememberPassphrase" type="password"></ion-checkbox>\n\n\t\t</ion-item>--\x3e\n\n\n\n\t\t<ion-item class="round">\n\n\t\t\t<ion-input\n\n\t\t\t\ttype="number" placeholder="{{ translationPrefix + \'amount\' | translate }}" formControlName="amount"\n\n\t\t\t\t[value]="amount.value"\n\n\t\t\t\t[max]="selectedBalance.amount"\n\n\t\t\t\trequired></ion-input>\n\n\t\t\t<ion-icon item-end *ngIf="amount.valid" name="checkmark" style="color: #3094d6;"></ion-icon>\n\n\t\t\t<ion-icon item-end *ngIf="amount.invalid && (amount.dirty || amount.touched) && amount.errors.invalidAmount" name="close" style="color: red;"></ion-icon>\n\n\t\t</ion-item>\n\n\n\n\t\t<ion-list class="amount-range">\n\n\t\t\t<ion-range step="1" min="0" [max]="selectedBalance.amount"\n\n\t\t\t           formControlName="amount">\n\n\t\t\t\t<ion-label range-left>0</ion-label>\n\n\t\t\t\t<ion-label range-right>{{ selectedBalance.amount }}</ion-label>\n\n\t\t\t</ion-range>\n\n\t\t</ion-list>\n\n\n\n\t\t\x3c!--<ion-item class="round">\n\n\t\t\t<ion-input placeholder="{{ translationPrefix + \'label\' | translate }}" formControlName="label"></ion-input>\n\n\t\t</ion-item>--\x3e\n\n\n\n\t\t<div class="spacer"></div>\n\n\n\n\t\t<button ion-button round full class="otcgo-button--colour" type="submit">{{ translationPrefix + \'transfer\' | translate }}</button>\n\n\t</form>\n\n</ion-content>'}),m("design:paramtypes",[r.o,r.i,i.a,d.f,r.a,r.g,u.a,a.h,s.a])],t)}()},1097:function(t,n,e){"use strict";n.a=function(t){var n=t.value;return n&&Object(o.e)(n)?null:{invalidAddress:!0}},n.b=function(t){return function(n){var e=n.value;return!e||e<=0||e>t?{invalidAmount:!0}:null}};var o=e(102)}});
+webpackJsonp([12],{
+
+/***/ 1012:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnboardingPageModule", function() { return OnboardingPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__onboarding__ = __webpack_require__(1593);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var OnboardingPageModule = /** @class */ (function () {
+    function OnboardingPageModule() {
+    }
+    OnboardingPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__onboarding__["a" /* OnboardingPage */]],
+            imports: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__onboarding__["a" /* OnboardingPage */])],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__onboarding__["a" /* OnboardingPage */]]
+        })
+    ], OnboardingPageModule);
+    return OnboardingPageModule;
+}());
+
+//# sourceMappingURL=onboarding.module.js.map
+
+/***/ }),
+
+/***/ 1145:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PossessionsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_take__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_take__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_actions__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_selectors__ = __webpack_require__(101);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var PossessionsPage = /** @class */ (function () {
+    function PossessionsPage(navCtrl, notificationProvider, lp, store) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.notificationProvider = notificationProvider;
+        this.lp = lp;
+        this.store = store;
+        this.account = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["j" /* WalletSelectors */].getAccount);
+        this.amount = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["f" /* PricesSelectors */].getDefaultAccountAmount);
+        this.baseCurrency = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["g" /* SettingsSelectors */].getCurrency);
+        this._displayZero = true;
+        this.ionViewCanEnter = function () { return _this.exits; };
+    }
+    Object.defineProperty(PossessionsPage.prototype, "displayZero", {
+        get: function () { return this._displayZero; },
+        set: function (val) {
+            this.updateBalances(val);
+            this._displayZero = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PossessionsPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.updateBalances();
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["e" /* MarketsActions */].Load());
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["b" /* BalancesActions */].Load());
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getLoading).subscribe(function (loading) { return _this.lp.emit(loading); });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getError).subscribe(function (error) { return error && _this.notificationProvider.emit({ message: error }); });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["j" /* WalletSelectors */].getExits).subscribe(function (exits) { return _this.exits = exits; });
+    };
+    PossessionsPage.prototype.updateBalances = function (displayZero) {
+        if (displayZero === void 0) { displayZero = true; }
+        this.balances = displayZero
+            ? this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getDefaultEntities)
+            : this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getDefaultNonZeroEntities);
+    };
+    PossessionsPage.prototype.doRefresh = function (refresher) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["b" /* BalancesActions */].Load());
+        this.store
+            .select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getLoading)
+            .subscribe(function (loading) { return !loading && refresher.complete(); });
+    };
+    PossessionsPage.prototype.handleBalanceSelect = function (symbol) {
+        var _this = this;
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["b" /* BalancesActions */].Select(symbol));
+        this.selectedBalanceSubscriber = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getSelectedBalance)
+            .take(1)
+            .subscribe(function (selectedBalance) {
+            selectedBalance && _this.navCtrl.push('PossessionDetail');
+        });
+    };
+    PossessionsPage.prototype.handleDisplayZeroClick = function (bool) {
+        this.displayZero = bool;
+    };
+    PossessionsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-possessions',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\possessions\possessions.html"*/'<ion-content class="possessions-content">\n\n\n\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n\n		<ion-refresher-content></ion-refresher-content>\n\n	</ion-refresher>\n\n\n\n	<possessions-info [account]="account | async"></possessions-info>\n\n\n\n	<possessions-list [balances]="balances | async"\n\n	                  [amount]="amount | async"\n\n	                  [baseCurrency]="baseCurrency | async"\n\n	                  [displayZero]="displayZero"\n\n	                  (select)="handleBalanceSelect($event)"\n\n	                  (displayZeroClick)="handleDisplayZeroClick($event)">\n\n	</possessions-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\possessions\possessions.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["f" /* NotificationProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["e" /* LoadingProvider */],
+            __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+    ], PossessionsPage);
+    return PossessionsPage;
+}());
+
+//# sourceMappingURL=possessions.js.map
+
+/***/ }),
+
+/***/ 1593:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OnboardingPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations__ = __webpack_require__(237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__possessions_possessions__ = __webpack_require__(1145);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+var OnboardingPage = /** @class */ (function () {
+    function OnboardingPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.skipMsg = 'Skip';
+        this.state = 'x';
+    }
+    OnboardingPage.prototype.slideMoved = function () {
+        this.state =
+            this.slides.getActiveIndex() >= this.slides.getPreviousIndex()
+                ? 'rightSwipe'
+                : 'leftSwipe';
+    };
+    OnboardingPage.prototype.animationDone = function () {
+        this.state = 'x';
+    };
+    OnboardingPage.prototype.skip = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__possessions_possessions__["a" /* PossessionsPage */])];
+                    case 1:
+                        _a.sent();
+                        return [4 /*yield*/, this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__possessions_possessions__["a" /* PossessionsPage */])];
+                    case 2:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    OnboardingPage.prototype.slideChanged = function () {
+        if (this.slides.isEnd()) {
+            this.skipMsg = 'Alright! I got it';
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Slides */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* Slides */])
+    ], OnboardingPage.prototype, "slides", void 0);
+    OnboardingPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-onboarding',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\onboarding\onboarding.html"*/'<ion-content>\n\n  <ion-slides pager (ionSlideDidChange)="slideChanged()" (ionSlideDrag)="slideMoved()">\n\n    <ion-slide>\n\n      <div class="diag" style="background: url(\'assets/imgs/whitebg.svg\') no-repeat;">\n\n        <ion-icon name="analytics"></ion-icon>\n\n      </div>\n\n      <div [@bounce]="state">\n\n        <h2>track your routine</h2>\n\n        <p>whether it\'s sets, reps, weight used, you can track it all with our intuitive interface.</p>\n\n      </div>\n\n    </ion-slide>\n\n\n\n    <ion-slide>\n\n      <div class="diag" style="background: url(\'assets/imgs/whitebg.svg\') no-repeat">\n\n        <ion-icon ios="ios-trophy" md="md-trophy" color="primary"></ion-icon>\n\n      </div>\n\n      <div [@bounce]="state">\n\n        <h2>set personal goals</h2>\n\n        <p>we\'re all in the gym for a reason: goals. set goals for diet and fitness.</p>\n\n      </div>\n\n    </ion-slide>\n\n\n\n    <ion-slide>\n\n      <div class="diag" style="background: url(\'assets/imgs/whitebg.svg\') no-repeat">\n\n        <ion-icon ios="ios-chatboxes" md="md-chatboxes" color="primary"></ion-icon>\n\n      </div>\n\n      <div [@bounce]="state">\n\n        <h2>chat with others</h2>\n\n        <p>inspire and help each other reach fitness and diet goals.</p>\n\n      </div>\n\n    </ion-slide>\n\n  </ion-slides>\n\n\n\n  <button id="skip" (click)="skip()">{{ skipMsg }}</button>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\onboarding\onboarding.html"*/,
+            animations: [
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* trigger */])('bounce', [
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* state */])('*', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({
+                        transform: 'translateX(0)'
+                    })),
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* transition */])('* => rightSwipe', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])('700ms ease-out', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["f" /* keyframes */])([
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ transform: 'translateX(0)', offset: 0 }),
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ transform: 'translateX(-65px)', offset: 0.3 }),
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ transform: 'translateX(0)', offset: 1 })
+                    ]))),
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* transition */])('* => leftSwipe', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])('700ms ease-out', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["f" /* keyframes */])([
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ transform: 'translateX(0)', offset: 0 }),
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ transform: 'translateX(65px)', offset: 0.3 }),
+                        Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ transform: 'translateX(0)', offset: 1 })
+                    ])))
+                ])
+            ]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], OnboardingPage);
+    return OnboardingPage;
+}());
+
+//# sourceMappingURL=onboarding.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=12.js.map

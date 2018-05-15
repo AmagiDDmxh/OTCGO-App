@@ -1,1 +1,75 @@
-webpackJsonp([16],{1022:function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),t.d(n,"ObservationModePageModule",function(){return a});var o=t(0),r=t(1647),c=t(55),i=this&&this.__decorate||function(e,n,t,o){var r,c=arguments.length,i=c<3?n:null===o?o=Object.getOwnPropertyDescriptor(n,t):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(e,n,t,o);else for(var a=e.length-1;a>=0;a--)(r=e[a])&&(i=(c<3?r(i):c>3?r(n,t,i):r(n,t))||i);return c>3&&i&&Object.defineProperty(n,t,i),i},a=function(){function e(){}return e=i([Object(o.I)({declarations:[r.a],imports:[c.f.forChild(r.a)],exports:[r.a]})],e)}()},1647:function(e,n,t){"use strict";t.d(n,"a",function(){return c});var o=t(0),r=this&&this.__decorate||function(e,n,t,o){var r,c=arguments.length,i=c<3?n:null===o?o=Object.getOwnPropertyDescriptor(n,t):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)i=Reflect.decorate(e,n,t,o);else for(var a=e.length-1;a>=0;a--)(r=e[a])&&(i=(c<3?r(i):c>3?r(n,t,i):r(n,t))||i);return c>3&&i&&Object.defineProperty(n,t,i),i},c=function(){function e(){}return e=r([Object(o.m)({selector:"page-observation",template:'<ion-header class="otcgo-header otcgo-header--bl">\n\n\n\n    <ion-navbar>\n\n        <ion-title>观察模式</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content class="login">\n\n\n\n</ion-content>\n\n'})],e)}()}});
+webpackJsonp([16],{
+
+/***/ 1027:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotificationModule", function() { return NotificationModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__notification__ = __webpack_require__(1656);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var NotificationModule = /** @class */ (function () {
+    function NotificationModule() {
+    }
+    NotificationModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__notification__["a" /* Notification */])
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__notification__["a" /* Notification */]
+            ]
+        })
+    ], NotificationModule);
+    return NotificationModule;
+}());
+
+//# sourceMappingURL=notification.module.js.map
+
+/***/ }),
+
+/***/ 1656:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Notification; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var Notification = /** @class */ (function () {
+    function Notification() {
+    }
+    Notification.prototype.ngOnInit = function () { };
+    Notification = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-notification',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\profile\notification\notification.html"*/'<ion-header>\n\n	<ion-navbar></ion-navbar>\n\n</ion-header>\n\n\n\n\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\profile\notification\notification.html"*/
+        }),
+        __metadata("design:paramtypes", [])
+    ], Notification);
+    return Notification;
+}());
+
+//# sourceMappingURL=notification.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=16.js.map

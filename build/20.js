@@ -1,1 +1,149 @@
-webpackJsonp([20],{1017:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),n.d(e,"HistoryDetailModule",function(){return l});var o=n(0),i=n(100),r=n(55),a=n(1642),s=this&&this.__decorate||function(t,e,n,o){var i,r=arguments.length,a=r<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,n,o);else for(var s=t.length-1;s>=0;s--)(i=t[s])&&(a=(r<3?i(a):r>3?i(e,n,a):i(e,n))||a);return r>3&&a&&Object.defineProperty(e,n,a),a},l=function(){function t(){}return t=s([Object(o.I)({imports:[i.b.forChild(),r.f.forChild(a.a)],declarations:[a.a]})],t)}()},1642:function(t,e,n){"use strict";n.d(e,"a",function(){return f});var o=n(0),i=n(15),r=n(42),a=n(141),s=n(101),l=n(64),c=this&&this.__decorate||function(t,e,n,o){var i,r=arguments.length,a=r<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,n,o);else for(var s=t.length-1;s>=0;s--)(i=t[s])&&(a=(r<3?i(a):r>3?i(e,n,a):i(e,n))||a);return r>3&&a&&Object.defineProperty(e,n,a),a},u=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},f=function(){function t(t,e){this.store=t,this.lp=e,this.translationPrefix="PROFILE.HISTORIES.DETAIL.",this.browserLink="http://state.otcgo.cn/traninfo.html?id="}return Object.defineProperty(t.prototype,"details",{get:function(){var t=Object(l.t)(["blocktime","vout"],this.historyDetail||{});return Object(l.o)(t,this.selectedHistory)},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"blockHeight",{get:function(){return this.details.blocktime},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"operation",{get:function(){return this.details.operation},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"txid",{get:function(){return this.details.txid},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"amount",{get:function(){return this.details.value},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"symbol",{get:function(){return this.details.symbol},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"time",{get:function(){return this.details.time},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"address",{get:function(){return this.details.vout&&this.details.vout[0].address},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"status",{get:function(){return this.details.blocktime?"success":"pending"},enumerable:!0,configurable:!0}),t.prototype.ngOnInit=function(){var t=this;this.store.dispatch(new a.g.LoadDetail),this.store.select(s.h.getSelectedEntities).subscribe(function(e){return t.selectedHistory=e}),this.store.select(s.h.getDetail).subscribe(function(e){return t.historyDetail=e}),this.store.select(s.h.getLoading).subscribe(function(e){return t.lp.emit(e)})},t.prototype.handleOpenBrowserClick=function(){},t=c([Object(o.m)({selector:"page-history-detail",template:'<ion-header class="otcgo-header">\n\n\t<ion-navbar></ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\t<div class="history-detail__avatar">\n\n\t\t<img src="{{ \'assets/icon/\' + symbol +\'.png\' }}"\n\n\t\t     onerror="this.src=\'assets/icon/申一币.png\'" />\n\n\t</div>\n\n\t<div class="history-detail__symbol">\n\n\t\t{{ symbol }}\n\n\t</div>\n\n\t<div class="history-detail__date-op">\n\n\t\t{{ time }} {{ translationPrefix + \'status_\' + status | translate }}\n\n\t</div>\n\n\t<ion-grid>\n\n\t\t<ion-row>\n\n\t\t\t<ion-col>{{ translationPrefix + \'operation\' | translate }}</ion-col>\n\n\t\t\t<ion-col text-right class="highlight">{{ translationPrefix + \'operation_\' + operation | translate }}</ion-col>\n\n\t\t</ion-row>\n\n\n\n\t\t<ion-row>\n\n\t\t\t<ion-col>{{ translationPrefix + \'amount\' | translate }}</ion-col>\n\n\t\t\t<ion-col text-right><span class="highlight">{{ amount }}</span>{{ \' \' + symbol }}</ion-col>\n\n\t\t</ion-row>\n\n\n\n\t\t<ion-row>\n\n\t\t\t<ion-col>{{ translationPrefix + \'address\' | translate }}</ion-col>\n\n\t\t\t<ion-col text-right class="extract-text">{{ address }}</ion-col>\n\n\t\t</ion-row>\n\n\t\t<div class="bar"></div>\n\n\t\t<ion-row>\n\n\t\t\t<ion-col col-2>{{ translationPrefix + \'txid\' | translate }}</ion-col>\n\n\t\t\t<ion-col text-right class="extract-text" col-10>{{ txid }}</ion-col>\n\n\t\t</ion-row>\n\n\n\n\t\t<ion-row>\n\n\t\t\t<ion-col>{{ translationPrefix + \'block_height\' | translate }}</ion-col>\n\n\t\t\t<ion-col text-right class="highlight">{{ blockHeight }}</ion-col>\n\n\t\t</ion-row>\n\n\t</ion-grid>\n\n\n\n\t<a\n\n\t\tion-button round full class="otcgo-button--colour history-detail__open-in-browser"\n\n\t\ttarget="_blank"\n\n\t\t[href]="browserLink + txid">{{ translationPrefix + \'open_in_browser\' | translate }}</a>\n\n</ion-content>\n\n'}),u("design:paramtypes",[i.h,r.e])],t)}()}});
+webpackJsonp([20],{
+
+/***/ 1028:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoryDetailModule", function() { return HistoryDetailModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__history_detail__ = __webpack_require__(1657);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var HistoryDetailModule = /** @class */ (function () {
+    function HistoryDetailModule() {
+    }
+    HistoryDetailModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild(),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__history_detail__["a" /* HistoryDetail */]),
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__history_detail__["a" /* HistoryDetail */],
+            ]
+        })
+    ], HistoryDetailModule);
+    return HistoryDetailModule;
+}());
+
+//# sourceMappingURL=history-detail.module.js.map
+
+/***/ }),
+
+/***/ 1657:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryDetail; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__store_actions__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_selectors__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ramda__ = __webpack_require__(57);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HistoryDetail = /** @class */ (function () {
+    function HistoryDetail(store, lp) {
+        this.store = store;
+        this.lp = lp;
+        this.translationPrefix = 'PROFILE.HISTORIES.DETAIL.';
+        this.browserLink = 'http://state.otcgo.cn/traninfo.html?id=';
+    }
+    Object.defineProperty(HistoryDetail.prototype, "details", {
+        get: function () {
+            var partialDetail = Object(__WEBPACK_IMPORTED_MODULE_5_ramda__["v" /* pick */])(['blocktime', 'vout'], this.historyDetail || {});
+            return Object(__WEBPACK_IMPORTED_MODULE_5_ramda__["q" /* merge */])(partialDetail, this.selectedHistory);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "blockHeight", {
+        get: function () { return this.details.blocktime; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "operation", {
+        get: function () { return this.details.operation; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "txid", {
+        get: function () { return this.details.txid; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "amount", {
+        get: function () { return this.details.value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "symbol", {
+        get: function () { return this.details.symbol; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "time", {
+        get: function () { return this.details.time; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "address", {
+        get: function () { return this.details.vout && this.details.vout[0].address; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(HistoryDetail.prototype, "status", {
+        get: function () { return this.details.blocktime ? 'success' : 'pending'; },
+        enumerable: true,
+        configurable: true
+    });
+    HistoryDetail.prototype.ngOnInit = function () {
+        var _this = this;
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_3__store_actions__["g" /* TransactionHistoryActions */].LoadDetail());
+        this.store.select(__WEBPACK_IMPORTED_MODULE_4__store_selectors__["h" /* TransactionHistorySelectors */].getSelectedEntities).subscribe(function (selectedHistory) { return _this.selectedHistory = selectedHistory; });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_4__store_selectors__["h" /* TransactionHistorySelectors */].getDetail).subscribe(function (historyDetail) { return _this.historyDetail = historyDetail; });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_4__store_selectors__["h" /* TransactionHistorySelectors */].getLoading).subscribe(function (bool) { return _this.lp.emit(bool); });
+    };
+    HistoryDetail.prototype.handleOpenBrowserClick = function () {
+    };
+    HistoryDetail = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-history-detail',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\profile\histories\history-detail\history-detail.html"*/'<ion-header class="otcgo-header">\n\n	<ion-navbar></ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n	<div class="history-detail__avatar">\n\n		<img src="{{ \'assets/icon/\' + symbol +\'.png\' }}"\n\n		     onerror="this.src=\'assets/icon/申一币.png\'" />\n\n	</div>\n\n	<div class="history-detail__symbol">\n\n		{{ symbol }}\n\n	</div>\n\n	<div class="history-detail__date-op">\n\n		{{ time }} {{ translationPrefix + \'status_\' + status | translate }}\n\n	</div>\n\n	<ion-grid>\n\n		<ion-row>\n\n			<ion-col>{{ translationPrefix + \'operation\' | translate }}</ion-col>\n\n			<ion-col text-right class="highlight">{{ translationPrefix + \'operation_\' + operation | translate }}</ion-col>\n\n		</ion-row>\n\n\n\n		<ion-row>\n\n			<ion-col>{{ translationPrefix + \'amount\' | translate }}</ion-col>\n\n			<ion-col text-right><span class="highlight">{{ amount }}</span>{{ \' \' + symbol }}</ion-col>\n\n		</ion-row>\n\n\n\n		<ion-row>\n\n			<ion-col>{{ translationPrefix + \'address\' | translate }}</ion-col>\n\n			<ion-col text-right class="extract-text">{{ address }}</ion-col>\n\n		</ion-row>\n\n		<div class="bar"></div>\n\n		<ion-row>\n\n			<ion-col col-2>{{ translationPrefix + \'txid\' | translate }}</ion-col>\n\n			<ion-col text-right class="extract-text" col-10>{{ txid }}</ion-col>\n\n		</ion-row>\n\n\n\n		<ion-row>\n\n			<ion-col>{{ translationPrefix + \'block_height\' | translate }}</ion-col>\n\n			<ion-col text-right class="highlight">{{ blockHeight }}</ion-col>\n\n		</ion-row>\n\n	</ion-grid>\n\n\n\n	<a\n\n		ion-button round full class="otcgo-button--colour history-detail__open-in-browser"\n\n		target="_blank"\n\n		[href]="browserLink + txid">{{ translationPrefix + \'open_in_browser\' | translate }}</a>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\profile\histories\history-detail\history-detail.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_store__["h" /* Store */],
+            __WEBPACK_IMPORTED_MODULE_2__providers__["e" /* LoadingProvider */]])
+    ], HistoryDetail);
+    return HistoryDetail;
+}());
+
+//# sourceMappingURL=history-detail.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=20.js.map

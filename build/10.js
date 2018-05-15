@@ -1,1 +1,168 @@
-webpackJsonp([10],{1013:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),n.d(e,"ContactsPageModule",function(){return l});var o=n(0),i=n(1634),c=n(1636),r=n(55),a=n(100),s=this&&this.__decorate||function(t,e,n,o){var i,c=arguments.length,r=c<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var a=t.length-1;a>=0;a--)(i=t[a])&&(r=(c<3?i(r):c>3?i(e,n,r):i(e,n))||r);return c>3&&r&&Object.defineProperty(e,n,r),r},l=function(){function t(){}return t=s([Object(o.I)({declarations:[c.a,i.a],imports:[a.b.forChild(),r.f.forChild(c.a)]})],t)}()},1634:function(t,e,n){"use strict";var o=n(1635);n.d(e,"a",function(){return o.a})},1635:function(t,e,n){"use strict";n.d(e,"a",function(){return r});var o=n(0),i=this&&this.__decorate||function(t,e,n,o){var i,c=arguments.length,r=c<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var a=t.length-1;a>=0;a--)(i=t[a])&&(r=(c<3?i(r):c>3?i(e,n,r):i(e,n))||r);return c>3&&r&&Object.defineProperty(e,n,r),r},c=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},r=function(){function t(){this.edit=new o.v,this.remove=new o.v,this.select=new o.v}return i([Object(o.D)(),c("design:type",Array)],t.prototype,"contacts",void 0),i([Object(o.D)(),c("design:type",Boolean)],t.prototype,"isFromProfile",void 0),i([Object(o.O)(),c("design:type",Object)],t.prototype,"edit",void 0),i([Object(o.O)(),c("design:type",Object)],t.prototype,"remove",void 0),i([Object(o.O)(),c("design:type",Object)],t.prototype,"select",void 0),t=i([Object(o.m)({selector:"contacts-cards",template:'<ion-card *ngFor="let contact of contacts" (click)="isFromProfile || select.emit(contact.address)">\n\n\t<ion-list>\n\n\t\t<ion-item-sliding>\n\n\t\t\t<ion-item>\n\n\t\t\t\t<span class="description">{{ contact.name }} {{ contact.description && \'• \' + contact.description}}</span>\n\n\t\t\t\t<p class="address">{{ contact.address }}</p>\n\n\t\t\t</ion-item>\n\n\t\t\t<ion-item-options side="right">\n\n\t\t\t\t<button ion-button (click)="edit.emit(contact.address)">\n\n\t\t\t\t\t<img src="assets/imgs/icon-contacts_edit.svg">\n\n\t\t\t\t</button>\n\n\t\t\t\t<button ion-button (click)="remove.emit(contact)">\n\n\t\t\t\t\t<img src="assets/imgs/icon-contacts_remove.svg">\n\n\t\t\t\t</button>\n\n\t\t\t</ion-item-options>\n\n\t\t</ion-item-sliding>\n\n\t</ion-list>\n\n</ion-card>\n\n'})],t)}()},1636:function(t,e,n){"use strict";n.d(e,"a",function(){return u});var o=n(0),i=n(15),c=n(100),r=n(55),a=n(64),s=n(141),l=n(101),d=this&&this.__decorate||function(t,e,n,o){var i,c=arguments.length,r=c<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var a=t.length-1;a>=0;a--)(i=t[a])&&(r=(c<3?i(r):c>3?i(e,n,r):i(e,n))||r);return c>3&&r&&Object.defineProperty(e,n,r),r},f=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},u=function(){function t(t,e,n,o,i,c){this.navCtrl=t,this.navParams=e,this.alertCtrl=n,this.ts=o,this.viewCtrl=i,this.store=c,this.contacts=this.store.select(l.d.getAll)}return Object.defineProperty(t.prototype,"isFromProfile",{get:function(){return void 0===this.navParams.get("fromProfile")},enumerable:!0,configurable:!0}),t.prototype.ngOnInit=function(){},t.prototype.handleContactRemove=function(t){var e=this,n=["remove_title","remove_agree","remove_disagree"],o=Object(a.m)(Object(a.c)("PROFILE.CONTACTS."),n),i=Object(a.a)(a.m);this.ts.get(o).subscribe(function(c){var r=Object(a.b)(a.p,i(function(t,e){return o={},o[n[e]]=c[t],o;var o}))(o);e.createPrompt(r,function(){return e.store.dispatch(new s.d.Remove(t))})})},t.prototype.handleContactEdit=function(t){this.store.dispatch(new s.d.Select(t)),this.navCtrl.push("EditContact")},t.prototype.handleContactSelect=function(t){this.store.dispatch(new s.h.SelectContact(t)),this.viewCtrl.dismiss()},t.prototype.createPrompt=function(t,e){this.alertCtrl.create({title:t.remove_title,buttons:[{text:t.remove_disagree},{text:t.remove_agree,handler:e}]}).present()},t=d([Object(o.m)({selector:"page-contacts",template:'<ion-header class="otcgo-header">\n\n\t<ion-navbar>\n\n\t\t<ion-title>{{ \'PROFILE.CONTACTS.title\' | translate }}</ion-title>\n\n\t\t<ion-buttons end>\n\n\t\t\t<button ion-button icon-only clear navPush="EditContact" [navParams]="{ addition: true }">\n\n\t\t\t\t<ion-icon name="add"></ion-icon>\n\n\t\t\t</button>\n\n\t\t</ion-buttons>\n\n\t</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\t<contacts-cards\n\n\t\t[contacts]="contacts | async"\n\n\t\t[isFromProfile]="isFromProfile"\n\n\t\t(select)="handleContactSelect($event)"\n\n\t\t(remove)="handleContactRemove($event)"\n\n\t\t(edit)="handleContactEdit($event)"></contacts-cards>\n\n</ion-content>\n\n'}),f("design:paramtypes",[r.i,r.j,r.a,c.c,r.o,i.h])],t)}()}});
+webpackJsonp([10],{
+
+/***/ 1020:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HistoriesModule", function() { return HistoriesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__histories__ = __webpack_require__(1648);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_profile_histories__ = __webpack_require__(1649);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var HistoriesModule = /** @class */ (function () {
+    function HistoriesModule() {
+    }
+    HistoriesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild(),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__histories__["a" /* Histories */]),
+            ],
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__histories__["a" /* Histories */],
+                __WEBPACK_IMPORTED_MODULE_4__components_profile_histories__["a" /* HistoriesCards */]
+            ]
+        })
+    ], HistoriesModule);
+    return HistoriesModule;
+}());
+
+//# sourceMappingURL=histories.module.js.map
+
+/***/ }),
+
+/***/ 1648:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Histories; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_selectors__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_actions__ = __webpack_require__(142);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var Histories = /** @class */ (function () {
+    function Histories(store, lp, navCtrl) {
+        this.store = store;
+        this.lp = lp;
+        this.navCtrl = navCtrl;
+        this.histories = this.store.select(__WEBPACK_IMPORTED_MODULE_4__store_selectors__["h" /* TransactionHistorySelectors */].getEntities);
+    }
+    Histories.prototype.ngOnInit = function () {
+        var _this = this;
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["g" /* TransactionHistoryActions */].Load());
+        this.store.select(__WEBPACK_IMPORTED_MODULE_4__store_selectors__["h" /* TransactionHistorySelectors */].getLoading)
+            .subscribe(function (bool) { return _this.lp.emit(bool); });
+    };
+    Histories.prototype.handleHistorySelect = function (txid) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["g" /* TransactionHistoryActions */].Select(txid));
+        this.navCtrl.push('HistoryDetail');
+    };
+    Histories = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-histories',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\profile\histories\histories.html"*/'<ion-content parallax-header>\n\n	<ion-header class="otcgo-header">\n\n		<ion-navbar>\n\n			<ion-title>{{ \'PROFILE.HISTORIES.title\' | translate }}</ion-title>\n\n		</ion-navbar>\n\n	</ion-header>\n\n\n\n	<ion-list-header class="histories__header">\n\n		<ion-row>\n\n			<ion-col col-3 text-left>{{ \'PROFILE.HISTORIES.name\' | translate }}</ion-col>\n\n			<ion-col text-right>{{ \'PROFILE.HISTORIES.time_operation\' | translate }}</ion-col>\n\n			<ion-col col-4 text-right>{{ \'PROFILE.HISTORIES.amount\'| translate }}</ion-col>\n\n		</ion-row>\n\n	</ion-list-header>\n\n\n\n	<histories-cards\n\n		[histories]="histories | async"\n\n		(select)="handleHistorySelect($event)"\n\n	></histories-cards>\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\profile\histories\histories.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__ngrx_store__["h" /* Store */],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["e" /* LoadingProvider */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */]])
+    ], Histories);
+    return Histories;
+}());
+
+//# sourceMappingURL=histories.js.map
+
+/***/ }),
+
+/***/ 1649:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__histories_cards__ = __webpack_require__(1650);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__histories_cards__["a"]; });
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 1650:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoriesCards; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ramda__ = __webpack_require__(57);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var HistoriesCards = /** @class */ (function () {
+    function HistoriesCards() {
+        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.translationPrefix = 'POSSESSIONS.DETAILS.';
+        this.splitBySpace = Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["A" /* split */])(' ');
+        this.getDate = Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["b" /* compose */])(__WEBPACK_IMPORTED_MODULE_1_ramda__["k" /* head */], this.splitBySpace);
+        this.getTime = Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["b" /* compose */])(__WEBPACK_IMPORTED_MODULE_1_ramda__["m" /* last */], this.splitBySpace);
+    }
+    HistoriesCards.prototype.computeNumber = function (value) {
+        return Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["w" /* prop */])('length')(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["u" /* nth */])(1)(Object(__WEBPACK_IMPORTED_MODULE_1_ramda__["A" /* split */])('.', value))) > 4
+            ? Number(value).toFixed(4)
+            : value;
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Array)
+    ], HistoriesCards.prototype, "histories", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], HistoriesCards.prototype, "select", void 0);
+    HistoriesCards = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'histories-cards',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\components\profile\histories\histories-cards.html"*/'<ion-card *ngFor="let history of histories" (click)="select.emit(history.txid)">\n\n	<ion-list>\n\n		<button ion-item icon-right ion-row detail-none>\n\n			<ion-col item-start col-3>{{ history.symbol }}</ion-col>\n\n			<div text-right class="time-operation" ion-col>\n\n				<span>{{ getDate(history.time) }}</span>\n\n				<p>{{ getTime(history.time) }} {{ (translationPrefix + history.operation) | translate }}</p>\n\n			</div>\n\n			<ion-col item-end col-4 text-right>\n\n				{{ computeNumber(history.value) }}\n\n			</ion-col>\n\n		</button>\n\n	</ion-list>\n\n</ion-card>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\components\profile\histories\histories-cards.html"*/
+        })
+    ], HistoriesCards);
+    return HistoriesCards;
+}());
+
+//# sourceMappingURL=histories-cards.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=10.js.map

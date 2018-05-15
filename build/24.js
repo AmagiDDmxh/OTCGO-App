@@ -1,1 +1,162 @@
-webpackJsonp([24],{1007:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),e.d(n,"MarketsPageModule",function(){return l});var r=e(0),o=e(55),i=e(1583),c=e(100),s=this&&this.__decorate||function(t,n,e,r){var o,i=arguments.length,c=i<3?n:null===r?r=Object.getOwnPropertyDescriptor(n,e):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)c=Reflect.decorate(t,n,e,r);else for(var s=t.length-1;s>=0;s--)(o=t[s])&&(c=(i<3?o(c):i>3?o(n,e,c):o(n,e))||c);return i>3&&c&&Object.defineProperty(n,e,c),c},a=[i.a],l=function(){function t(){}return t=s([Object(r.I)({declarations:a,imports:[c.b.forChild(),o.f.forChild(i.a)],exports:a})],t)}()},1583:function(t,n,e){"use strict";e.d(n,"a",function(){return p});var r=e(0),o=e(15),i=e(55),c=e(42),s=e(141),a=e(101),l=this&&this.__decorate||function(t,n,e,r){var o,i=arguments.length,c=i<3?n:null===r?r=Object.getOwnPropertyDescriptor(n,e):r;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)c=Reflect.decorate(t,n,e,r);else for(var s=t.length-1;s>=0;s--)(o=t[s])&&(c=(i<3?o(c):i>3?o(n,e,c):o(n,e))||c);return i>3&&c&&Object.defineProperty(n,e,c),c},u=this&&this.__metadata||function(t,n){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,n)},h=this&&this.__awaiter||function(t,n,e,r){return new(e||(e=Promise))(function(o,i){function c(t){try{a(r.next(t))}catch(t){i(t)}}function s(t){try{a(r.throw(t))}catch(t){i(t)}}function a(t){t.done?o(t.value):new e(function(n){n(t.value)}).then(c,s)}a((r=r.apply(t,n||[])).next())})},f=this&&this.__generator||function(t,n){function e(e){return function(c){return function(e){if(r)throw new TypeError("Generator is already executing.");for(;s;)try{if(r=1,o&&(i=o[2&e[0]?"return":e[0]?"throw":"next"])&&!(i=i.call(o,e[1])).done)return i;switch(o=0,i&&(e=[0,i.value]),e[0]){case 0:case 1:i=e;break;case 4:return s.label++,{value:e[1],done:!1};case 5:s.label++,o=e[1],e=[0];continue;case 7:e=s.ops.pop(),s.trys.pop();continue;default:if(i=s.trys,!(i=i.length>0&&i[i.length-1])&&(6===e[0]||2===e[0])){s=0;continue}if(3===e[0]&&(!i||e[1]>i[0]&&e[1]<i[3])){s.label=e[1];break}if(6===e[0]&&s.label<i[1]){s.label=i[1],i=e;break}if(i&&s.label<i[2]){s.label=i[2],s.ops.push(e);break}i[2]&&s.ops.pop(),s.trys.pop();continue}e=n.call(t,s)}catch(t){e=[6,t],o=0}finally{r=i=0}if(5&e[0])throw e[1];return{value:e[0]?e[1]:void 0,done:!0}}([e,c])}}var r,o,i,c,s={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return c={next:e(0),throw:e(1),return:e(2)},"function"==typeof Symbol&&(c[Symbol.iterator]=function(){return this}),c},p=function(){function t(t,n,e,r,o,i){this.navCtrl=t,this.navParams=n,this.priceProvider=e,this.np=r,this.lp=o,this.store=i}return t.prototype.ngOnInit=function(){this.initData()},t.prototype.initData=function(){return h(this,void 0,void 0,function(){var t=this;return f(this,function(n){return this.store.select(a.e.getError).subscribe(function(n){return t.np.emit({message:n})}),this.store.select(a.e.getLoading).subscribe(function(n){return t.lp.emit(n)}),this.store.select(a.e.getEntities).subscribe(function(n){return t.coins=n}),this.store.select(a.g.getCurrency).subscribe(function(n){return t.oCurrency=n}),this.store.select(a.f.getEntities).subscribe(function(n){return t.GASPrice=n.GAS||1}),this.priceProvider.getExchangeRates().then(function(n){return t.exchangeRates=n.rates}),[2]})})},t.prototype.doRefresh=function(t){var n=this;this.store.dispatch(new s.e.Load),this.priceProvider.getExchangeRates().then(function(t){return n.exchangeRates=t.rates}).catch(function(t){return n.np.emit({message:t})}),this.store.select(a.e.getLoading).subscribe(function(n){return!n&&t.complete()})},t.prototype.handleCoinClick=function(t){this.store.dispatch(new s.e.Select(t.symbol)),this.navCtrl.push("MarketDetail",{coin:t,perGas:this.GASPrice/t.currentPrice})},t=l([Object(r.m)({selector:"page-markets",template:"<ion-header class=\"otcgo-header\">\n\n\t<ion-navbar>\n\n\t\t<ion-title>{{ 'MARKETS.title' | translate }}</ion-title>\n\n\n\n\t\t\x3c!--<ion-buttons end>\n\n\t\t\t<button ion-button round icon-only> <ion-icon name=\"add\"></ion-icon> </button>\n\n\t\t</ion-buttons>--\x3e\n\n\t</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n\t<ion-list-header class=\"markets__header\">\n\n\t\t<ion-row>\n\n\t\t\t<ion-col col-3 text-left>{{ 'MARKETS.name' | translate }}</ion-col>\n\n\t\t\t<ion-col text-right>{{ 'MARKETS.price' | translate }}</ion-col>\n\n\t\t\t<ion-col col-4 text-right>{{ 'MARKETS.change'| translate }}</ion-col>\n\n\t\t</ion-row>\n\n\t</ion-list-header>\n\n\n\n\t<ion-refresher (ionRefresh)=\"doRefresh($event)\">\n\n\t\t<ion-refresher-content></ion-refresher-content>\n\n\t</ion-refresher>\n\n\n\n\n\n\t<ion-card class=\"markets__card\" *ngFor=\"let coin of coins\" (click)=\"handleCoinClick(coin)\">\n\n\t\t<ion-list>\n\n\t\t\t<button ion-row ion-item detail-none>\n\n\t\t\t\t<ion-col col-3 item-start>\n\n\t\t\t\t\t<p class=\"markets__symbol\">{{ coin.symbol }}</p>\n\n\t\t\t\t</ion-col>\n\n\n\n\t\t\t\t<ion-label text-right>\n\n\t\t\t\t\t<p class=\"markets__current-price\">{{ coin.currentPrice | currency:oCurrency.toUpperCase():'symbol-narrow':'1.1-5'\n\n\t\t\t\t\t                                  }}</p>\n\n\t\t\t\t\t{{ (GASPrice / coin.currentPrice) | number:'1.1-4' }}<span class=\"markets__conversion-rate\">/GAS</span>\n\n\t\t\t\t</ion-label>\n\n\n\n\t\t\t\t<ion-col col-4 item-end text-right>\n\n\t\t\t\t\t<p [ngClass]=\"{\n\n\t\t\t          'markets__green': coin.percent_change_24h && !coin.percent_change_24h.includes('-'),\n\n\t\t\t          'markets__red': coin.percent_change_24h && coin.percent_change_24h.includes('-')\n\n\t\t\t        }\" class=\"markets__fall-or\">\n\n\t\t\t\t\t\t{{ coin.percent_change_24h || 'None' }}{{ coin.percent_change_24h ? '%' : '' }}\n\n\t\t\t\t\t</p>\n\n\t\t\t\t</ion-col>\n\n\t\t\t</button>\n\n\t\t</ion-list>\n\n\n\n\t</ion-card>\n\n\n\n</ion-content>\n\n"}),u("design:paramtypes",[i.i,i.j,c.g,c.f,c.e,o.h])],t)}()}});
+webpackJsonp([24],{
+
+/***/ 1011:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MarketsPageModule", function() { return MarketsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__markets__ = __webpack_require__(1592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(100);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var COMPONENTS = [
+    __WEBPACK_IMPORTED_MODULE_2__markets__["a" /* MarketsPage */]
+];
+var MarketsPageModule = /** @class */ (function () {
+    function MarketsPageModule() {
+    }
+    MarketsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: COMPONENTS,
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */].forChild(),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__markets__["a" /* MarketsPage */]),
+            ],
+            exports: COMPONENTS
+        })
+    ], MarketsPageModule);
+    return MarketsPageModule;
+}());
+
+//# sourceMappingURL=markets.module.js.map
+
+/***/ }),
+
+/***/ 1592:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MarketsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__store_actions__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_selectors__ = __webpack_require__(101);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+
+
+
+var MarketsPage = /** @class */ (function () {
+    function MarketsPage(navCtrl, navParams, priceProvider, np, lp, store) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.priceProvider = priceProvider;
+        this.np = np;
+        this.lp = lp;
+        this.store = store;
+    }
+    MarketsPage.prototype.ngOnInit = function () {
+        this.initData();
+    };
+    MarketsPage.prototype.initData = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                this.store.select(__WEBPACK_IMPORTED_MODULE_5__store_selectors__["e" /* MarketsSelectors */].getError).subscribe(function (error) { return _this.np.emit({ message: error }); });
+                this.store.select(__WEBPACK_IMPORTED_MODULE_5__store_selectors__["e" /* MarketsSelectors */].getLoading).subscribe(function (loading) { return _this.lp.emit(loading); });
+                this.store.select(__WEBPACK_IMPORTED_MODULE_5__store_selectors__["e" /* MarketsSelectors */].getEntities).subscribe(function (markets) { return _this.coins = markets; });
+                this.store.select(__WEBPACK_IMPORTED_MODULE_5__store_selectors__["g" /* SettingsSelectors */].getCurrency).subscribe(function (currency) { return _this.oCurrency = currency; });
+                this.store.select(__WEBPACK_IMPORTED_MODULE_5__store_selectors__["f" /* PricesSelectors */].getEntities).subscribe(function (prices) { return _this.GASPrice = prices['GAS'] || 1; });
+                return [2 /*return*/];
+            });
+        });
+    };
+    MarketsPage.prototype.doRefresh = function (refresher) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_4__store_actions__["e" /* MarketsActions */].Load());
+        /*this.priceProvider.getExchangeRates()
+                .then(res => this.exchangeRates = res['rates'])
+                .catch(error => this.np.emit({ message: error }))*/
+        this.store.select(__WEBPACK_IMPORTED_MODULE_5__store_selectors__["e" /* MarketsSelectors */].getLoading).subscribe(function (loading) { return !loading && refresher.complete(); });
+    };
+    MarketsPage.prototype.handleCoinClick = function (coin) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_4__store_actions__["e" /* MarketsActions */].Select(coin.symbol));
+        this.navCtrl.push('MarketDetail', { coin: coin, perGas: this.GASPrice / coin.currentPrice });
+    };
+    MarketsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-markets',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\markets\markets.html"*/'<ion-header class="otcgo-header">\n\n	<ion-navbar>\n\n		<ion-title>{{ \'MARKETS.title\' | translate }}</ion-title>\n\n\n\n		<!--<ion-buttons end>\n\n			<button ion-button round icon-only> <ion-icon name="add"></ion-icon> </button>\n\n		</ion-buttons>-->\n\n	</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content>\n\n	<ion-list-header class="markets__header">\n\n		<ion-row>\n\n			<ion-col col-3 text-left>{{ \'MARKETS.name\' | translate }}</ion-col>\n\n			<ion-col text-right>{{ \'MARKETS.price\' | translate }}</ion-col>\n\n			<ion-col col-4 text-right>{{ \'MARKETS.change\'| translate }}</ion-col>\n\n		</ion-row>\n\n	</ion-list-header>\n\n\n\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n\n		<ion-refresher-content></ion-refresher-content>\n\n	</ion-refresher>\n\n\n\n\n\n	<ion-card class="markets__card" *ngFor="let coin of coins" (click)="handleCoinClick(coin)">\n\n		<ion-list>\n\n			<button ion-row ion-item detail-none>\n\n				<ion-col col-3 item-start>\n\n					<p class="markets__symbol">{{ coin.symbol }}</p>\n\n				</ion-col>\n\n\n\n				<ion-label text-right>\n\n					<p class="markets__current-price">{{ coin.currentPrice | currency:oCurrency.toUpperCase():\'symbol-narrow\':\'1.1-5\'\n\n					                                  }}</p>\n\n					{{ (GASPrice / coin.currentPrice) | number:\'1.1-4\' }}<span class="markets__conversion-rate">/GAS</span>\n\n				</ion-label>\n\n\n\n				<ion-col col-4 item-end text-right>\n\n					<p [ngClass]="{\n\n			          \'markets__green\': coin.percent_change_24h && !coin.percent_change_24h.includes(\'-\'),\n\n			          \'markets__red\': coin.percent_change_24h && coin.percent_change_24h.includes(\'-\')\n\n			        }" class="markets__fall-or">\n\n						{{ coin.percent_change_24h || \'None\' }}{{ coin.percent_change_24h ? \'%\' : \'\' }}\n\n					</p>\n\n				</ion-col>\n\n			</button>\n\n		</ion-list>\n\n\n\n	</ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\markets\markets.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["g" /* PriceProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["f" /* NotificationProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["e" /* LoadingProvider */],
+            __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["h" /* Store */]])
+    ], MarketsPage);
+    return MarketsPage;
+}());
+
+//# sourceMappingURL=markets.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=24.js.map

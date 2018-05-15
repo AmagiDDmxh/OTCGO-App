@@ -1,1 +1,140 @@
-webpackJsonp([26],{1003:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),n.d(e,"CreateWalletPageModule",function(){return c});var s=n(0),i=n(55),a=n(1245),o=n(100),r=this&&this.__decorate||function(t,e,n,s){var i,a=arguments.length,o=a<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)o=Reflect.decorate(t,e,n,s);else for(var r=t.length-1;r>=0;r--)(i=t[r])&&(o=(a<3?i(o):a>3?i(e,n,o):i(e,n))||o);return a>3&&o&&Object.defineProperty(e,n,o),o},l=[a.a],c=function(){function t(){}return t=r([Object(s.I)({declarations:l,imports:[o.b.forChild(),i.f.forChild(a.a)],exports:l})],t)}()},1245:function(t,e,n){"use strict";n.d(e,"a",function(){return d});var s=n(0),i=n(15),a=n(55),o=n(100),r=n(43),l=(n.n(r),n(42)),c=n(141),p=n(101),h=n(569),u=(n.n(h),this&&this.__decorate||function(t,e,n,s){var i,a=arguments.length,o=a<3?e:null===s?s=Object.getOwnPropertyDescriptor(e,n):s;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)o=Reflect.decorate(t,e,n,s);else for(var r=t.length-1;r>=0;r--)(i=t[r])&&(o=(a<3?i(o):a>3?i(e,n,o):i(e,n))||o);return a>3&&o&&Object.defineProperty(e,n,o),o}),f=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},d=function(){function t(t,e,n,s,i){this.navCtrl=t,this.store=e,this.np=n,this.lp=s,this.translateService=i,this.protocolAgreement=!1}return t.prototype.ngOnInit=function(){var t=this;this.store.select(p.a.getLoading).subscribe(function(e){console.log("Auth loading state:",e),t.lp.emit(e)}),this.store.select(p.a.getError).subscribe(function(e){return t.np.emit({message:e})})},t.prototype.ngOnDestroy=function(){console.log("destroy call")},Object.defineProperty(t.prototype,"disabledButton",{get:function(){return this.wif?!(this.passphrase1&&this.passphrase2&&this.passphrase1===this.passphrase2&&this.name&&this.protocolAgreement&&this.wif):!(this.passphrase1&&this.passphrase2&&this.passphrase1===this.passphrase2&&this.name&&this.protocolAgreement)},enumerable:!0,configurable:!0}),t.prototype.createWallet=function(){if(this.passphrase1&&!this.validatePassphraseStrength(this.passphrase1))return this.np.emit({message:"Password too short"});if(this.passphrase1===this.passphrase2){if(this.wif&&!r.wallet.isWIF(this.wif))return this.np.emit({message:"WIF format wrong"});this.store.dispatch(new c.a.CreateWallet({wif:this.wif,label:this.name,passphrase:this.passphrase1}))}},t.prototype.validatePassphraseStrength=function(t){return t.length>=4},t=u([Object(s.m)({selector:"page-create-wallet",template:'<ion-content class="cw" padding>\n\n\n\n\t<div class="title">\n\n\t\t<ion-label>\n\n\t\t\t<h2>{{ \'CW.title\' | translate }}</h2>\n\n\t\t</ion-label>\n\n\t</div>\n\n\n\n\t\x3c!-- CW stand for create-wallet --\x3e\n\n\t<div class="cw__form-field">\n\n\t\t<ion-item class="cw-name">\n\n\t\t\t<ion-input placeholder="{{ \'CW.name\' | translate }}" required type="text" [(ngModel)]="name"></ion-input>\n\n\t\t</ion-item>\n\n\n\n\t\t<ion-item class="cw-wif">\n\n\t\t\t<ion-input placeholder="{{ \'CW.wif\' | translate }}" type="text" [(ngModel)]="wif"></ion-input>\n\n\t\t</ion-item>\n\n\n\n\t\t<ion-item class="cw-pwd">\n\n\t\t\t<ion-input placeholder="{{ \'CW.passphrase\' | translate }}" required type="password" [(ngModel)]="passphrase1"></ion-input>\n\n\t\t</ion-item>\n\n\n\n\t\t<ion-item class="cw-pwd">\n\n\t\t\t<ion-input placeholder="{{ \'CW.passphrase_confirm\' | translate }}" required type="password" [(ngModel)]="passphrase2"></ion-input>\n\n\t\t</ion-item>\n\n\n\n\t\t<ion-item class="cw-protocol">\n\n\t\t\t<ion-label>{{ \'CW.agreement_prefix\' | translate }} <span class="blue">{{ \'CW.agreement_text\' | translate }}</span></ion-label>\n\n\t\t\t<ion-checkbox color="blue" [(ngModel)]="protocolAgreement"></ion-checkbox>\n\n\t\t</ion-item>\n\n\t</div>\n\n\n\n\t<div class="cw__actions">\n\n\t\t<div class="cw-button">\n\n\t\t\t<button ion-button round full block [disabled]="disabledButton" (click)="createWallet()">\n\n\t\t\t\t{{ \'CW.create_wallet\' | translate }}\n\n\t\t\t</button>\n\n\t\t</div>\n\n\n\n\t\t<div class="cw-button-white">\n\n\t\t\t<button (click)="navCtrl.setRoot(\'Login\')" ion-button round full block clear>\n\n\t\t\t\t{{ \'CW.tip\' | translate }}\n\n\t\t\t</button>\n\n\t\t</div>\n\n\t</div>\n\n\n\n</ion-content>\n\n'}),f("design:paramtypes",[a.i,i.h,l.f,l.e,o.c])],t)}()}});
+webpackJsonp([26],{
+
+/***/ 1009:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateWalletPageModule", function() { return CreateWalletPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_wallet__ = __webpack_require__(1258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(100);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var COMPONENTS = [
+    __WEBPACK_IMPORTED_MODULE_2__create_wallet__["a" /* CreateWalletPage */]
+];
+var CreateWalletPageModule = /** @class */ (function () {
+    function CreateWalletPageModule() {
+    }
+    CreateWalletPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: COMPONENTS,
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */].forChild(),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__create_wallet__["a" /* CreateWalletPage */]),
+            ],
+            exports: COMPONENTS
+        })
+    ], CreateWalletPageModule);
+    return CreateWalletPageModule;
+}());
+
+//# sourceMappingURL=create-wallet.module.js.map
+
+/***/ }),
+
+/***/ 1258:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateWalletPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libs_neon__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__libs_neon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__libs_neon__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_actions__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_selectors__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_take__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_take__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var CreateWalletPage = /** @class */ (function () {
+    function CreateWalletPage(navCtrl, store, np, lp) {
+        this.navCtrl = navCtrl;
+        this.store = store;
+        this.np = np;
+        this.lp = lp;
+        this.protocolAgreement = false;
+    }
+    CreateWalletPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["a" /* AuthSelectors */].getLoading).subscribe(function (bool) { return _this.lp.emit(bool); });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["a" /* AuthSelectors */].getError).subscribe(function (err) { return _this.np.emit({ message: err }); });
+    };
+    Object.defineProperty(CreateWalletPage.prototype, "disabledButton", {
+        get: function () {
+            if (this.wif)
+                return !this.passphrase1 || !this.passphrase2 ||
+                    (this.passphrase1 !== this.passphrase2) ||
+                    !this.name ||
+                    !this.protocolAgreement || !this.wif;
+            return !this.passphrase1 || !this.passphrase2 ||
+                (this.passphrase1 !== this.passphrase2) ||
+                !this.name ||
+                !this.protocolAgreement;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    CreateWalletPage.prototype.createWallet = function () {
+        if (this.passphrase1 && !this.validatePassphraseStrength(this.passphrase1))
+            return this.np.emit({ message: 'Password too short' });
+        if (this.passphrase1 !== this.passphrase2)
+            return;
+        if (this.wif && !__WEBPACK_IMPORTED_MODULE_3__libs_neon__["wallet"].isWIF(this.wif))
+            return this.np.emit({ message: 'WIF format wrong' });
+        var dispatchOption = {
+            wif: this.wif,
+            label: this.name,
+            passphrase: this.passphrase1
+        };
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["a" /* AuthActions */].CreateWallet(dispatchOption));
+    };
+    CreateWalletPage.prototype.validatePassphraseStrength = function (passphrase) {
+        return passphrase.length >= 4;
+    };
+    CreateWalletPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-create-wallet',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\create-wallet\create-wallet.html"*/'<ion-content class="cw" padding>\n\n\n\n	<div class="title">\n\n		<ion-label>\n\n			<h2>{{ \'CW.title\' | translate }}</h2>\n\n		</ion-label>\n\n	</div>\n\n\n\n	<!-- CW stand for create-wallet -->\n\n	<div class="cw__form-field">\n\n		<ion-item class="cw-name">\n\n			<ion-input placeholder="{{ \'CW.name\' | translate }}" required type="text" [(ngModel)]="name"></ion-input>\n\n		</ion-item>\n\n\n\n		<ion-item class="cw-wif">\n\n			<ion-input placeholder="{{ \'CW.wif\' | translate }}" type="text" [(ngModel)]="wif"></ion-input>\n\n		</ion-item>\n\n\n\n		<ion-item class="cw-pwd">\n\n			<ion-input placeholder="{{ \'CW.passphrase\' | translate }}" required type="password" [(ngModel)]="passphrase1"></ion-input>\n\n		</ion-item>\n\n\n\n		<ion-item class="cw-pwd">\n\n			<ion-input placeholder="{{ \'CW.passphrase_confirm\' | translate }}" required type="password" [(ngModel)]="passphrase2"></ion-input>\n\n		</ion-item>\n\n\n\n		<ion-item class="cw-protocol">\n\n			<ion-label>{{ \'CW.agreement_prefix\' | translate }} <span class="blue">{{ \'CW.agreement_text\' | translate }}</span></ion-label>\n\n			<ion-checkbox color="blue" [(ngModel)]="protocolAgreement"></ion-checkbox>\n\n		</ion-item>\n\n	</div>\n\n\n\n	<div class="cw__actions">\n\n		<div class="cw-button">\n\n			<button ion-button round full block [disabled]="disabledButton" (click)="createWallet()">\n\n				{{ \'CW.create_wallet\' | translate }}\n\n			</button>\n\n		</div>\n\n\n\n		<div class="cw-button-white">\n\n			<button (click)="navCtrl.setRoot(\'Login\')" ion-button round full block clear>\n\n				{{ \'CW.tip\' | translate }}\n\n			</button>\n\n		</div>\n\n	</div>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\create-wallet\create-wallet.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1__ngrx_store__["h" /* Store */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["f" /* NotificationProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["e" /* LoadingProvider */]])
+    ], CreateWalletPage);
+    return CreateWalletPage;
+}());
+
+//# sourceMappingURL=create-wallet.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=26.js.map

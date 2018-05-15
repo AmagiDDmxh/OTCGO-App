@@ -10,6 +10,7 @@
     "title": "Login Wallet",
     "tip": "Create Wallet",
     "login_wallet": "Login",
+    "import_wallet": "Import",
     "wif_placeholder": "Using WIF Key",
     "password": "Enter password",
     "wif_error": "Invalid WIF format, please retry.",
@@ -84,6 +85,7 @@
       "export": "Export",
       "export_wif": "Export WIF",
       "export_key": "Export EncryptedKey",
+      "export_file": "Export File",
       "save": "Save",
       "save_success": "Save Wallet Success",
       "default": "Default",
@@ -98,10 +100,14 @@
       "ADD_WALLET": {
         "title": "Add Wallet",
         "import_wallet": "Import Wallet",
-        "create_wallet": "Create Wallet"
+        "create_wallet": "Create Wallet",
+        "watch_only": "Watch Only"
       },
       "IMPORT_WALLET": {
         "title": "Import Wallet"
+      },
+      "WATCH_ONLY": {
+        "title": "Watch Only"
       }
     },
     "CONTACTS": {

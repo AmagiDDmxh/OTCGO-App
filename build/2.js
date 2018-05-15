@@ -1,1 +1,3608 @@
-webpackJsonp([2],{1009:function(t,e,r){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),r.d(e,"PaymentQRCodeModule",function(){return c});var n=r(0),o=r(55),i=r(1585),a=r(1586),s=r(100),u=this&&this.__decorate||function(t,e,r,n){var o,i=arguments.length,a=i<3?e:null===n?n=Object.getOwnPropertyDescriptor(e,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,r,n);else for(var s=t.length-1;s>=0;s--)(o=t[s])&&(a=(i<3?o(a):i>3?o(e,r,a):o(e,r))||a);return i>3&&a&&Object.defineProperty(e,r,a),a},f=[i.a],c=function(){function t(){}return t=u([Object(n.I)({declarations:f,imports:[s.b,a.a,o.f.forChild(i.a)],exports:f})],t)}()},1049:function(t,e){var r,n=[0,26,44,70,100,134,172,196,242,292,346,404,466,532,581,655,733,815,901,991,1085,1156,1258,1364,1474,1588,1706,1828,1921,2051,2185,2323,2465,2611,2761,2876,3034,3196,3362,3532,3706];e.getSymbolSize=function(t){if(!t)throw new Error('"version" cannot be null or undefined');if(t<1||t>40)throw new Error('"version" should be in range from 1 to 40');return 4*t+17},e.getSymbolTotalCodewords=function(t){return n[t]},e.getBCHDigit=function(t){for(var e=0;0!==t;)e++,t>>>=1;return e},e.setToSJISFunction=function(t){if("function"!=typeof t)throw new Error('"toSJISFunc" is not a valid function.');r=t},e.isKanjiModeEnabled=function(){return void 0!==r},e.toSJIS=function(t){return r(t)}},1050:function(t,e,r){var n=r(1237),o=r(1238);e.NUMERIC={id:"Numeric",bit:1,ccBits:[10,12,14]},e.ALPHANUMERIC={id:"Alphanumeric",bit:2,ccBits:[9,11,13]},e.BYTE={id:"Byte",bit:4,ccBits:[8,16,16]},e.KANJI={id:"Kanji",bit:8,ccBits:[8,10,12]},e.MIXED={bit:-1},e.getCharCountIndicator=function(t,e){if(!t.ccBits)throw new Error("Invalid mode: "+t);if(!n.isValid(e))throw new Error("Invalid version: "+e);return e>=1&&e<10?t.ccBits[0]:e<27?t.ccBits[1]:t.ccBits[2]},e.getBestModeForData=function(t){return o.testNumeric(t)?e.NUMERIC:o.testAlphanumeric(t)?e.ALPHANUMERIC:o.testKanji(t)?e.KANJI:e.BYTE},e.toString=function(t){if(t&&t.id)return t.id;throw new Error("Invalid mode")},e.isValid=function(t){return t&&t.bit&&t.ccBits},e.from=function(t,r){if(e.isValid(t))return t;try{return function(t){if("string"!=typeof t)throw new Error("Param is not a string");switch(t.toLowerCase()){case"numeric":return e.NUMERIC;case"alphanumeric":return e.ALPHANUMERIC;case"kanji":return e.KANJI;case"byte":return e.BYTE;default:throw new Error("Unknown mode: "+t)}}(t)}catch(t){return r}}},1058:function(t,e,r){"use strict";function n(t,e,r){return"number"==typeof t?a(t):function(t,e,r){if("number"==typeof t)throw new TypeError('"value" argument must not be a number');if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer)return function(t,e,r){if(e<0||t.byteLength<e)throw new RangeError("'offset' is out of bounds");if(t.byteLength<e+(r||0))throw new RangeError("'length' is out of bounds");var o;o=void 0===e&&void 0===r?new Uint8Array(t):void 0===r?new Uint8Array(t,e):new Uint8Array(t,e,r);return o.__proto__=n.prototype,o}(t,e,r);if("string"==typeof t)return function(t){var e=0|f(t),r=i(e),n=r.write(t);n!==e&&(r=r.slice(0,n));return r}(t);return function(t){if(n.isBuffer(t)){var e=0|o(t.length),r=i(e);return 0===r.length?r:(t.copy(r,0,0,e),r)}if(t){if("undefined"!=typeof ArrayBuffer&&t.buffer instanceof ArrayBuffer||"length"in t)return"number"!=typeof t.length||function(t){return t!=t}(t.length)?i(0):s(t);if("Buffer"===t.type&&Array.isArray(t.data))return s(t.data)}throw new TypeError("First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.")}(t)}(t,e,r)}function o(t){if(t>=l)throw new RangeError("Attempt to allocate Buffer larger than maximum size: 0x"+l.toString(16)+" bytes");return 0|t}function i(t){var e=new Uint8Array(t);return e.__proto__=n.prototype,e}function a(t){return i(t<0?0:0|o(t))}function s(t){for(var e=t.length<0?0:0|o(t.length),r=i(e),n=0;n<e;n+=1)r[n]=255&t[n];return r}function u(t,e){e=e||1/0;for(var r,n=t.length,o=null,i=[],a=0;a<n;++a){if((r=t.charCodeAt(a))>55295&&r<57344){if(!o){if(r>56319){(e-=3)>-1&&i.push(239,191,189);continue}if(a+1===n){(e-=3)>-1&&i.push(239,191,189);continue}o=r;continue}if(r<56320){(e-=3)>-1&&i.push(239,191,189),o=r;continue}r=65536+(o-55296<<10|r-56320)}else o&&(e-=3)>-1&&i.push(239,191,189);if(o=null,r<128){if((e-=1)<0)break;i.push(r)}else if(r<2048){if((e-=2)<0)break;i.push(r>>6|192,63&r|128)}else if(r<65536){if((e-=3)<0)break;i.push(r>>12|224,r>>6&63|128,63&r|128)}else{if(!(r<1114112))throw new Error("Invalid code point");if((e-=4)<0)break;i.push(r>>18|240,r>>12&63|128,r>>6&63|128,63&r|128)}}return i}function f(t){if(n.isBuffer(t))return t.length;if("undefined"!=typeof ArrayBuffer&&"function"==typeof ArrayBuffer.isView&&(ArrayBuffer.isView(t)||t instanceof ArrayBuffer))return t.byteLength;"string"!=typeof t&&(t=""+t);return 0===t.length?0:u(t).length}var c=r(568),l=2147483647;n.prototype.__proto__=Uint8Array.prototype,n.__proto__=Uint8Array,"undefined"!=typeof Symbol&&Symbol.species&&n[Symbol.species]===n&&Object.defineProperty(n,Symbol.species,{value:null,configurable:!0,enumerable:!1,writable:!1}),n.prototype.write=function(t,e,r){void 0===e?(r=this.length,e=0):void 0===r&&"string"==typeof e?(r=this.length,e=0):isFinite(e)&&(e|=0,isFinite(r)?r|=0:r=void 0);var n=this.length-e;if((void 0===r||r>n)&&(r=n),t.length>0&&(r<0||e<0)||e>this.length)throw new RangeError("Attempt to write outside buffer bounds");return function(t,e,r,n){return function(t,e,r,n){for(var o=0;o<n&&!(o+r>=e.length||o>=t.length);++o)e[o+r]=t[o];return o}(u(e,t.length-r),t,r,n)}(this,t,e,r)},n.prototype.slice=function(t,e){var r=this.length;t=~~t,e=void 0===e?r:~~e,t<0?(t+=r)<0&&(t=0):t>r&&(t=r),e<0?(e+=r)<0&&(e=0):e>r&&(e=r),e<t&&(e=t);var o=this.subarray(t,e);return o.__proto__=n.prototype,o},n.prototype.copy=function(t,e,r,n){if(r||(r=0),n||0===n||(n=this.length),e>=t.length&&(e=t.length),e||(e=0),n>0&&n<r&&(n=r),n===r)return 0;if(0===t.length||0===this.length)return 0;if(e<0)throw new RangeError("targetStart out of bounds");if(r<0||r>=this.length)throw new RangeError("sourceStart out of bounds");if(n<0)throw new RangeError("sourceEnd out of bounds");n>this.length&&(n=this.length),t.length-e<n-r&&(n=t.length-e+r);var o,i=n-r;if(this===t&&r<e&&e<n)for(o=i-1;o>=0;--o)t[o+e]=this[o+r];else if(i<1e3)for(o=0;o<i;++o)t[o+e]=this[o+r];else Uint8Array.prototype.set.call(t,this.subarray(r,r+i),e);return i},n.prototype.fill=function(t,e,r){if("string"==typeof t){if("string"==typeof e?(e=0,r=this.length):"string"==typeof r&&(r=this.length),1===t.length){var o=t.charCodeAt(0);o<256&&(t=o)}}else"number"==typeof t&&(t&=255);if(e<0||this.length<e||this.length<r)throw new RangeError("Out of range index");if(r<=e)return this;e>>>=0,r=void 0===r?this.length:r>>>0,t||(t=0);var i;if("number"==typeof t)for(i=e;i<r;++i)this[i]=t;else{var a=n.isBuffer(t)?t:new n(t),s=a.length;for(i=0;i<r-e;++i)this[i+e]=a[i%s]}return this},n.concat=function(t,e){if(!c(t))throw new TypeError('"list" argument must be an Array of Buffers');if(0===t.length)return i(null);var r;if(void 0===e)for(e=0,r=0;r<t.length;++r)e+=t[r].length;var o=a(e),s=0;for(r=0;r<t.length;++r){var u=t[r];if(!n.isBuffer(u))throw new TypeError('"list" argument must be an Array of Buffers');u.copy(o,s),s+=u.length}return o},n.byteLength=f,n.prototype._isBuffer=!0,n.isBuffer=function(t){return!(null==t||!t._isBuffer)},t.exports=n},1138:function(t,e){e.L={bit:1},e.M={bit:0},e.Q={bit:3},e.H={bit:2},e.isValid=function(t){return t&&void 0!==t.bit&&t.bit>=0&&t.bit<4},e.from=function(t,r){if(e.isValid(t))return t;try{return function(t){if("string"!=typeof t)throw new Error("Param is not a string");switch(t.toLowerCase()){case"l":case"low":return e.L;case"m":case"medium":return e.M;case"q":case"quartile":return e.Q;case"h":case"high":return e.H;default:throw new Error("Unknown EC Level: "+t)}}(t)}catch(t){return r}}},1236:function(t,e,r){var n=r(1138),o=[1,1,1,1,1,1,1,1,1,1,2,2,1,2,2,4,1,2,4,4,2,4,4,4,2,4,6,5,2,4,6,6,2,5,8,8,4,5,8,8,4,5,8,11,4,8,10,11,4,9,12,16,4,9,16,16,6,10,12,18,6,10,17,16,6,11,16,19,6,13,18,21,7,14,21,25,8,16,20,25,8,17,23,25,9,17,23,34,9,18,25,30,10,20,27,32,12,21,29,35,12,23,34,37,12,25,34,40,13,26,35,42,14,28,38,45,15,29,40,48,16,31,43,51,17,33,45,54,18,35,48,57,19,37,51,60,19,38,53,63,20,40,56,66,21,43,59,70,22,45,62,74,24,47,65,77,25,49,68,81],i=[7,10,13,17,10,16,22,28,15,26,36,44,20,36,52,64,26,48,72,88,36,64,96,112,40,72,108,130,48,88,132,156,60,110,160,192,72,130,192,224,80,150,224,264,96,176,260,308,104,198,288,352,120,216,320,384,132,240,360,432,144,280,408,480,168,308,448,532,180,338,504,588,196,364,546,650,224,416,600,700,224,442,644,750,252,476,690,816,270,504,750,900,300,560,810,960,312,588,870,1050,336,644,952,1110,360,700,1020,1200,390,728,1050,1260,420,784,1140,1350,450,812,1200,1440,480,868,1290,1530,510,924,1350,1620,540,980,1440,1710,570,1036,1530,1800,570,1064,1590,1890,600,1120,1680,1980,630,1204,1770,2100,660,1260,1860,2220,720,1316,1950,2310,750,1372,2040,2430];e.getBlocksCount=function(t,e){switch(e){case n.L:return o[4*(t-1)+0];case n.M:return o[4*(t-1)+1];case n.Q:return o[4*(t-1)+2];case n.H:return o[4*(t-1)+3];default:return}},e.getTotalCodewordsCount=function(t,e){switch(e){case n.L:return i[4*(t-1)+0];case n.M:return i[4*(t-1)+1];case n.Q:return i[4*(t-1)+2];case n.H:return i[4*(t-1)+3];default:return}}},1237:function(t,e,r){function n(t,e){return u.getCharCountIndicator(t,e)+4}function o(t,e){var r=0;return t.forEach(function(t){var o=n(t.mode,e);r+=o+t.getBitsLength()}),r}var i=r(1049),a=r(1236),s=r(1138),u=r(1050),f=r(568),c=i.getBCHDigit(7973);e.isValid=function(t){return!isNaN(t)&&t>=1&&t<=40},e.from=function(t,r){return e.isValid(t)?parseInt(t,10):r},e.getCapacity=function(t,r,o){if(!e.isValid(t))throw new Error("Invalid QR Code version");void 0===o&&(o=u.BYTE);var s=8*(i.getSymbolTotalCodewords(t)-a.getTotalCodewordsCount(t,r));if(o===u.MIXED)return s;var f=s-n(o,t);switch(o){case u.NUMERIC:return Math.floor(f/10*3);case u.ALPHANUMERIC:return Math.floor(f/11*2);case u.KANJI:return Math.floor(f/13);case u.BYTE:default:return Math.floor(f/8)}},e.getBestVersionForData=function(t,r){var n,i=s.from(r,s.M);if(f(t)){if(t.length>1)return function(t,r){for(var n=1;n<=40;n++)if(o(t,n)<=e.getCapacity(n,r,u.MIXED))return n}(t,i);if(0===t.length)return 1;n=t[0]}else n=t;return function(t,r,n){for(var o=1;o<=40;o++)if(r<=e.getCapacity(o,n,t))return o}(n.mode,n.getLength(),i)},e.getEncodedBits=function(t){if(!e.isValid(t)||t<7)throw new Error("Invalid QR Code version");for(var r=t<<12;i.getBCHDigit(r)-c>=0;)r^=7973<<i.getBCHDigit(r)-c;return t<<12|r}},1238:function(t,e){var r="(?:[　-〿]|[぀-ゟ]|[゠-ヿ]|[＀-￯]|[一-龯]|[★-☆]|[←-↕]|※|[‐―‘’‥…“”∥≠]|[Α-ё]|[§¨±´×÷])+";e.KANJI=new RegExp(r,"g"),e.BYTE_KANJI=new RegExp("[^A-Z0-9 $%*+-./:]+","g"),e.BYTE=new RegExp("(?:(?![A-Z0-9 $%*+-./:]|(?:[　-〿]|[぀-ゟ]|[゠-ヿ]|[＀-￯]|[一-龯]|[★-☆]|[←-↕]|※|[‐―‘’‥…“”∥≠]|[Α-ё]|[§¨±´×÷])+).)+","g"),e.NUMERIC=new RegExp("[0-9]+","g"),e.ALPHANUMERIC=new RegExp("[A-Z $%*+-./:]+","g");var n=new RegExp("^"+r+"$"),o=new RegExp("^[0-9]+$"),i=new RegExp("^[A-Z0-9 $%*+-./:]+$");e.testKanji=function(t){return n.test(t)},e.testNumeric=function(t){return o.test(t)},e.testAlphanumeric=function(t){return i.test(t)}},1239:function(t,e){function r(t){if("string"!=typeof t)throw new Error("Color should be defined as hex string");var e=t.slice().replace("#","").split("");if(e.length<3||5===e.length||e.length>8)throw new Error("Invalid hex color: "+t);3!==e.length&&4!==e.length||(e=Array.prototype.concat.apply([],e.map(function(t){return[t,t]}))),6===e.length&&e.push("F","F");var r=parseInt(e.join(""),16);return{r:r>>24&255,g:r>>16&255,b:r>>8&255,a:255&r}}e.getOptions=function(t){t||(t={}),t.color||(t.color={});return{scale:t.scale||4,margin:void 0===t.margin||null===t.margin||t.margin<0?4:t.margin,color:{dark:r(t.color.dark||"#000000ff"),light:r(t.color.light||"#ffffffff")},type:t.type,rendererOpts:t.rendererOpts||{}}},e.qrToImageData=function(t,e,r,n,o){for(var i=e.modules.size,a=e.modules.data,s=r*n,u=i*n+2*s,f=[o.light,o.dark],c=0;c<u;c++)for(var l=0;l<u;l++){var h=4*(c*u+l),g=o.light;if(c>=s&&l>=s&&c<u-s&&l<u-s){g=f[a[Math.floor((c-s)/n)*i+Math.floor((l-s)/n)]]}t[h++]=g.r,t[h++]=g.g,t[h++]=g.b,t[h]=g.a}}},1585:function(t,e,r){"use strict";r.d(e,"a",function(){return c});var n=r(0),o=r(55),i=r(567),a=r(572),s=r(245),u=this&&this.__decorate||function(t,e,r,n){var o,i=arguments.length,a=i<3?e:null===n?n=Object.getOwnPropertyDescriptor(e,r):n;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)a=Reflect.decorate(t,e,r,n);else for(var s=t.length-1;s>=0;s--)(o=t[s])&&(a=(i<3?o(a):i>3?o(e,r,a):o(e,r))||a);return i>3&&a&&Object.defineProperty(e,r,a),a},f=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},c=function(){function t(t,e,r,n,o){this.clipboard=e,this.socialSharing=r,this.ns=n,this.platform=o,this.address=t.get("address")}return t.prototype.copy=function(){if(this.platform.is("mobileweb"))try{var t=document.execCommand("copy");return this.ns.emit({message:"copy "+(t?"successful":"fail")})}catch(t){console.log("unable to copy",t)}this.clipboard.copy(this.address),console.log("copy action"),this.ns.emit({message:"copy success"})},t.prototype.share=function(){this.socialSharing.share(this.address)},t=u([Object(n.m)({selector:"page-payment-qrcode",template:'\n\t  <ion-header class="otcgo-header">\n\t\t  <ion-navbar></ion-navbar>\n\t  </ion-header>\n\t  <ion-content>\n\t\t  <div class="qrcode__content">\n\t\t\t  <ngx-qrcode [qrc-value]="address"></ngx-qrcode>\n\n\t\t\t  <div class="title">{{ \'POSSESSIONS.QR_CODE.address\' | translate }}</div>\n\t\t\t  <div class="address">{{ address }}</div>\n\n\t\t\t  <button ion-button\n\t\t\t          class="otcgo-button--colour"\n\t\t\t          round\n\t\t\t          full\n\t\t\t          (click)="copy()">{{ \'POSSESSIONS.QR_CODE.copy\' | translate }}\n\t\t\t  </button>\n\t\t\t  <button ion-button\n\t\t\t          class="otcgo-button--edge"\n\t\t\t          round\n\t\t\t          clear\n\t\t\t          full\n\t\t\t          (click)="share()">{{ \'POSSESSIONS.QR_CODE.share\' | translate }}\n\t\t\t  </button>\n\t\t  </div>\n\t  </ion-content>\n\t'}),f("design:paramtypes",[o.j,i.a,a.a,s.a,o.k])],t)}()},1586:function(t,e,r){"use strict";r.d(e,"a",function(){return s});var n=r(0),o=r(83),i=r(1587),a=function(){function t(t){this.renderer=t,this.elementType="url",this.cssClass="qrcode",this.value="https://www.techiediaries.com",this.version="",this.errorCorrectionLevel="M"}return t.prototype.ngOnChanges=function(){this.createQRCode()},t.prototype.toDataURL=function(){var t=this;return new Promise(function(e,r){i.toDataURL(t.value,{version:t.version,errorCorrectionLevel:t.errorCorrectionLevel},function(t,n){t?(console.error(t),r(t)):e(n)})})},t.prototype.toCanvas=function(t){var e=this;return new Promise(function(r,n){i.toCanvas(t,e.value,{version:e.version,errorCorrectionLevel:e.errorCorrectionLevel},function(t){t?n(t):r("success")})})},t.prototype.renderElement=function(t){for(var e=0,r=this.qrcElement.nativeElement.childNodes;e<r.length;e++){this.renderer.removeChild(this.qrcElement.nativeElement,r[e])}this.renderer.appendChild(this.qrcElement.nativeElement,t)},t.prototype.createQRCode=function(){var t=this;if(this.value){var e;switch(this.elementType){case"canvas":e=this.renderer.createElement("canvas"),this.toCanvas(e).then(function(r){t.renderElement(e)}).catch(function(t){console.error(t)});break;case"url":case"img":default:e=this.renderer.createElement("img"),this.toDataURL().then(function(r){e.setAttribute("src",r),t.renderElement(e)}).catch(function(t){console.error(t)})}}},t}();a.decorators=[{type:n.m,args:[{selector:"ngx-qrcode",template:'<div #qrcElement [class]="cssClass"></div>',styles:[]}]}],a.ctorParameters=function(){return[{type:n.W}]},a.propDecorators={elementType:[{type:n.D,args:["qrc-element-type"]}],cssClass:[{type:n.D,args:["qrc-class"]}],value:[{type:n.D,args:["qrc-value"]}],version:[{type:n.D,args:["qrc-version"]}],errorCorrectionLevel:[{type:n.D,args:["qrc-errorCorrectionLevel"]}],qrcElement:[{type:n._8,args:["qrcElement"]}]};var s=function(){function t(){}return t.forRoot=function(){return{ngModule:t,providers:[]}},t}();s.decorators=[{type:n.I,args:[{imports:[o.b],declarations:[a],exports:[a]}]}],s.ctorParameters=function(){return[]}},1587:function(t,e,r){function n(t,e,r,n,i){var a=arguments.length-1;if(a<2)throw new Error("Too few arguments provided");if(2===a?(i=r,r=e,e=n=void 0):3===a&&(e.getContext&&void 0===i?(i=n,n=void 0):(i=n,n=r,r=e,e=void 0)),"function"!=typeof i)throw new Error("Callback required as last argument");try{i(null,t(o.create(r,n),e,n))}catch(t){i(t)}}var o=r(1588),i=r(1604),a=r(1605);e.create=o.create,e.toCanvas=n.bind(null,i.render),e.toDataURL=n.bind(null,i.renderToDataURL),e.toString=n.bind(null,function(t,e,r){return a.render(t,r)}),e.qrcodedraw=function(){return{draw:e.toCanvas}}},1588:function(t,e,r){function n(t,e,r){var n,o,i=t.size,a=y.getEncodedBits(e,r);for(n=0;n<15;n++)o=1==(a>>n&1),t.set(n<6?n:n<8?n+1:i-15+n,8,o,!0),t.set(8,n<8?i-n-1:n<9?15-n-1+1:15-n-1,o,!0);t.set(i-8,8,1,!0)}function o(t,e,r){var n=new f;r.forEach(function(e){n.put(e.mode.bit,4),n.put(e.getLength(),m.getCharCountIndicator(e.mode,t)),e.write(n)});var o=8*(s.getSymbolTotalCodewords(t)-d.getTotalCodewordsCount(t,e));for(n.getLengthInBits()+4<=o&&n.put(0,4);n.getLengthInBits()%8!=0;)n.putBit(0);for(var i=(o-n.getLengthInBits())/8,u=0;u<i;u++)n.put(u%2?17:236,8);return function(t,e,r){for(var n=s.getSymbolTotalCodewords(e),o=d.getTotalCodewordsCount(e,r),i=n-o,u=d.getBlocksCount(e,r),f=u-n%u,c=Math.floor(n/u),l=Math.floor(i/u),h=l+1,g=c-l,v=new p(g),y=0,m=new Array(u),w=new Array(u),E=0,b=new a(t.buffer),C=0;C<u;C++){var B=C<f?l:h;m[C]=b.slice(y,y+B),w[C]=v.encode(m[C]),y+=B,E=Math.max(E,B)}var A,R,P=new a(n),T=0;for(A=0;A<E;A++)for(R=0;R<u;R++)A<m[R].length&&(P[T++]=m[R][A]);for(A=0;A<g;A++)for(R=0;R<u;R++)P[T++]=w[R][A];return P}(n,t,e)}function i(t,e,r){var i;if(E(t))i=w.fromArray(t);else{if("string"!=typeof t)throw new Error("Invalid data");var a=e;if(!a){var u=w.rawSplit(t);a=v.getBestVersionForData(u,r)}i=w.fromString(t,a)}var f=v.getBestVersionForData(i,r);if(!f)throw new Error("The amount of data is too big to be stored in a QR Code");if(e){if(e<f)throw new Error("\nThe chosen QR Code version cannot contain this amount of data.\nMinimum version required to store current data is: "+f+".\n")}else e=f;var d=o(e,r,i),p=s.getSymbolSize(e),y=new c(p);!function(t,e){for(var r=t.size,n=h.getPositions(e),o=0;o<n.length;o++)for(var i=n[o][0],a=n[o][1],s=-1;s<=7;s++)if(!(i+s<=-1||r<=i+s))for(var u=-1;u<=7;u++)a+u<=-1||r<=a+u||t.set(i+s,a+u,s>=0&&s<=6&&(0===u||6===u)||u>=0&&u<=6&&(0===s||6===s)||s>=2&&s<=4&&u>=2&&u<=4,!0)}(y,e),function(t){for(var e=t.size,r=8;r<e-8;r++){var n=r%2==0;t.set(r,6,n,!0),t.set(6,r,n,!0)}}(y),function(t,e){for(var r=l.getPositions(e),n=0;n<r.length;n++)for(var o=r[n][0],i=r[n][1],a=-2;a<=2;a++)for(var s=-2;s<=2;s++)t.set(o+a,i+s,-2===a||2===a||-2===s||2===s||0===a&&0===s,!0)}(y,e),n(y,r,0),e>=7&&function(t,e){for(var r,n,o,i=t.size,a=v.getEncodedBits(e),s=0;s<18;s++)r=Math.floor(s/3),t.set(r,n=s%3+i-8-3,o=1==(a>>s&1),!0),t.set(n,r,o,!0)}(y,e),function(t,e){for(var r=t.size,n=-1,o=r-1,i=7,a=0,s=r-1;s>0;s-=2)for(6===s&&s--;;){for(var u=0;u<2;u++)if(!t.isReserved(o,s-u)){var f=!1;a<e.length&&(f=1==(e[a]>>>i&1)),t.set(o,s-u,f),-1==--i&&(a++,i=7)}if((o+=n)<0||r<=o){o-=n,n=-n;break}}}(y,d);var m=g.getBestMask(y,n.bind(null,y,r));return g.applyMask(m,y),n(y,r,m),{modules:y,version:e,errorCorrectionLevel:r,maskPattern:m,segments:i}}var a=r(1058),s=r(1049),u=r(1138),f=r(1589),c=r(1590),l=r(1591),h=r(1592),g=r(1593),d=r(1236),p=r(1594),v=r(1237),y=r(1597),m=r(1050),w=r(1598),E=r(568);e.create=function(t,e){if(void 0===t||""===t)throw new Error("No input text");var r,n=u.M;return void 0!==e&&(n=u.from(e.errorCorrectionLevel,u.M),r=v.from(e.version),e.toSJISFunc&&s.setToSJISFunction(e.toSJISFunc)),i(t,r,n)}},1589:function(t,e){function r(){this.buffer=[],this.length=0}r.prototype={get:function(t){var e=Math.floor(t/8);return 1==(this.buffer[e]>>>7-t%8&1)},put:function(t,e){for(var r=0;r<e;r++)this.putBit(1==(t>>>e-r-1&1))},getLengthInBits:function(){return this.length},putBit:function(t){var e=Math.floor(this.length/8);this.buffer.length<=e&&this.buffer.push(0),t&&(this.buffer[e]|=128>>>this.length%8),this.length++}},t.exports=r},1590:function(t,e,r){function n(t){if(!t||t<1)throw new Error("BitMatrix size must be defined and greater than 0");this.size=t,this.data=new o(t*t),this.data.fill(0),this.reservedBit=new o(t*t),this.reservedBit.fill(0)}var o=r(1058);n.prototype.set=function(t,e,r,n){var o=t*this.size+e;this.data[o]=r,n&&(this.reservedBit[o]=!0)},n.prototype.get=function(t,e){return this.data[t*this.size+e]},n.prototype.xor=function(t,e,r){this.data[t*this.size+e]^=r},n.prototype.isReserved=function(t,e){return this.reservedBit[t*this.size+e]},t.exports=n},1591:function(t,e,r){var n=r(1049).getSymbolSize;e.getRowColCoords=function(t){if(1===t)return[];for(var e=Math.floor(t/7)+2,r=n(t),o=145===r?26:2*Math.ceil((r-13)/(2*e-2)),i=[r-7],a=1;a<e-1;a++)i[a]=i[a-1]-o;return i.push(6),i.reverse()},e.getPositions=function(t){for(var r=[],n=e.getRowColCoords(t),o=n.length,i=0;i<o;i++)for(var a=0;a<o;a++)0===i&&0===a||0===i&&a===o-1||i===o-1&&0===a||r.push([n[i],n[a]]);return r}},1592:function(t,e,r){var n=r(1049).getSymbolSize;e.getPositions=function(t){var e=n(t);return[[0,0],[e-7,0],[0,e-7]]}},1593:function(t,e){function r(t,r,n){switch(t){case e.Patterns.PATTERN000:return(r+n)%2==0;case e.Patterns.PATTERN001:return r%2==0;case e.Patterns.PATTERN010:return n%3==0;case e.Patterns.PATTERN011:return(r+n)%3==0;case e.Patterns.PATTERN100:return(Math.floor(r/2)+Math.floor(n/3))%2==0;case e.Patterns.PATTERN101:return r*n%2+r*n%3==0;case e.Patterns.PATTERN110:return(r*n%2+r*n%3)%2==0;case e.Patterns.PATTERN111:return(r*n%3+(r+n)%2)%2==0;default:throw new Error("bad maskPattern:"+t)}}e.Patterns={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7};var n=3,o=3,i=40,a=10;e.getPenaltyN1=function(t){for(var e=t.size,r=0,o=0,i=0,a=null,s=null,u=0;u<e;u++){o=i=0,a=s=null;for(var f=0;f<e;f++){var c=t.get(u,f);c===a?o++:(o>=5&&(r+=n+(o-5)),a=c,o=1),(c=t.get(f,u))===s?i++:(i>=5&&(r+=n+(i-5)),s=c,i=1)}o>=5&&(r+=n+(o-5)),i>=5&&(r+=n+(i-5))}return r},e.getPenaltyN2=function(t){for(var e=t.size,r=0,n=0;n<e-1;n++)for(var i=0;i<e-1;i++){var a=t.get(n,i)+t.get(n,i+1)+t.get(n+1,i)+t.get(n+1,i+1);4!==a&&0!==a||r++}return r*o},e.getPenaltyN3=function(t){for(var e=t.size,r=0,n=0,o=0,a=0;a<e;a++){n=o=0;for(var s=0;s<e;s++)n=n<<1&2047|t.get(a,s),s>=10&&(1488===n||93===n)&&r++,o=o<<1&2047|t.get(s,a),s>=10&&(1488===o||93===o)&&r++}return r*i},e.getPenaltyN4=function(t){for(var e=0,r=t.data.length,n=0;n<r;n++)e+=t.data[n];return Math.abs(Math.ceil(100*e/r/5)-10)*a},e.applyMask=function(t,e){for(var n=e.size,o=0;o<n;o++)for(var i=0;i<n;i++)e.isReserved(i,o)||e.xor(i,o,r(t,i,o))},e.getBestMask=function(t,r){for(var n=Object.keys(e.Patterns).length,o=0,i=1/0,a=0;a<n;a++){r(a),e.applyMask(a,t);var s=e.getPenaltyN1(t)+e.getPenaltyN2(t)+e.getPenaltyN3(t)+e.getPenaltyN4(t);e.applyMask(a,t),s<i&&(i=s,o=a)}return o}},1594:function(t,e,r){function n(t){this.genPoly=void 0,this.degree=t,this.degree&&this.initialize(this.degree)}var o=r(1058),i=r(1595);n.prototype.initialize=function(t){this.degree=t,this.genPoly=i.generateECPolynomial(this.degree)},n.prototype.encode=function(t){if(!this.genPoly)throw new Error("Encoder not initialized");var e=new o(this.degree);e.fill(0);var r=o.concat([t,e],t.length+this.degree),n=i.mod(r,this.genPoly),a=this.degree-n.length;if(a>0){var s=new o(this.degree);return s.fill(0),n.copy(s,a),s}return n},t.exports=n},1595:function(t,e,r){var n=r(1058),o=r(1596);e.mul=function(t,e){var r=new n(t.length+e.length-1);r.fill(0);for(var i=0;i<t.length;i++)for(var a=0;a<e.length;a++)r[i+a]^=o.mul(t[i],e[a]);return r},e.mod=function(t,e){for(var r=new n(t);r.length-e.length>=0;){for(var i=r[0],a=0;a<e.length;a++)r[a]^=o.mul(e[a],i);for(var s=0;s<r.length&&0===r[s];)s++;r=r.slice(s)}return r},e.generateECPolynomial=function(t){for(var r=new n([1]),i=0;i<t;i++)r=e.mul(r,[1,o.exp(i)]);return r}},1596:function(t,e,r){var n=r(1058),o=new n(512),i=new n(256);!function(){for(var t=1,e=0;e<255;e++)o[e]=t,i[t]=e,256&(t<<=1)&&(t^=285);for(e=255;e<512;e++)o[e]=o[e-255]}(),e.log=function(t){if(t<1)throw new Error("log("+t+")");return i[t]},e.exp=function(t){return o[t]},e.mul=function(t,e){return 0===t||0===e?0:o[i[t]+i[e]]}},1597:function(t,e,r){var n=r(1049),o=n.getBCHDigit(1335);e.getEncodedBits=function(t,e){for(var r=t.bit<<3|e,i=r<<10;n.getBCHDigit(i)-o>=0;)i^=1335<<n.getBCHDigit(i)-o;return 21522^(r<<10|i)}},1598:function(t,e,r){function n(t){return unescape(encodeURIComponent(t)).length}function o(t,e,r){for(var n,o=[];null!==(n=t.exec(r));)o.push({data:n[0],index:n.index,mode:e,length:n[0].length});return o}function i(t){var e,r,n=o(g.NUMERIC,u.NUMERIC,t),i=o(g.ALPHANUMERIC,u.ALPHANUMERIC,t);d.isKanjiModeEnabled()?(e=o(g.BYTE,u.BYTE,t),r=o(g.KANJI,u.KANJI,t)):(e=o(g.BYTE_KANJI,u.BYTE,t),r=[]);return n.concat(i,e,r).sort(function(t,e){return t.index-e.index}).map(function(t){return{data:t.data,mode:t.mode,length:t.length}})}function a(t,e){switch(e){case u.NUMERIC:return f.getBitsLength(t);case u.ALPHANUMERIC:return c.getBitsLength(t);case u.KANJI:return h.getBitsLength(t);case u.BYTE:return l.getBitsLength(t)}}function s(t,e){var r,n=u.getBestModeForData(t);if((r=u.from(e,n))!==u.BYTE&&r.bit<n.bit)throw new Error('"'+t+'" cannot be encoded with mode '+u.toString(r)+".\n Suggested mode is: "+u.toString(n));switch(r!==u.KANJI||d.isKanjiModeEnabled()||(r=u.BYTE),r){case u.NUMERIC:return new f(t);case u.ALPHANUMERIC:return new c(t);case u.KANJI:return new h(t);case u.BYTE:return new l(t)}}var u=r(1050),f=r(1599),c=r(1600),l=r(1601),h=r(1602),g=r(1238),d=r(1049),p=r(1603);e.fromArray=function(t){return t.reduce(function(t,e){return"string"==typeof e?t.push(s(e,null)):e.data&&t.push(s(e.data,e.mode)),t},[])},e.fromString=function(t,r){for(var o=function(t,e){for(var r={},n={start:{}},o=["start"],i=0;i<t.length;i++){for(var s=t[i],f=[],c=0;c<s.length;c++){var l=s[c],h=""+i+c;f.push(h),r[h]={node:l,lastCount:0},n[h]={};for(var g=0;g<o.length;g++){var d=o[g];r[d]&&r[d].node.mode===l.mode?(n[d][h]=a(r[d].lastCount+l.length,l.mode)-a(r[d].lastCount,l.mode),r[d].lastCount+=l.length):(r[d]&&(r[d].lastCount=l.length),n[d][h]=a(l.length,l.mode)+4+u.getCharCountIndicator(l.mode,e))}}o=f}for(g=0;g<o.length;g++)n[o[g]].end=0;return{map:n,table:r}}(function(t){for(var e=[],r=0;r<t.length;r++){var o=t[r];switch(o.mode){case u.NUMERIC:e.push([o,{data:o.data,mode:u.ALPHANUMERIC,length:o.length},{data:o.data,mode:u.BYTE,length:o.length}]);break;case u.ALPHANUMERIC:e.push([o,{data:o.data,mode:u.BYTE,length:o.length}]);break;case u.KANJI:e.push([o,{data:o.data,mode:u.BYTE,length:n(o.data)}]);break;case u.BYTE:e.push([{data:o.data,mode:u.BYTE,length:n(o.data)}])}}return e}(i(t,d.isKanjiModeEnabled())),r),s=p.find_path(o.map,"start","end"),f=[],c=1;c<s.length-1;c++)f.push(o.table[s[c]].node);return e.fromArray(function(t){return t.reduce(function(t,e){var r=t.length-1>=0?t[t.length-1]:null;return r&&r.mode===e.mode?(t[t.length-1].data+=e.data,t):(t.push(e),t)},[])}(f))},e.rawSplit=function(t){return e.fromArray(i(t,d.isKanjiModeEnabled()))}},1599:function(t,e,r){function n(t){this.mode=o.NUMERIC,this.data=t.toString()}var o=r(1050);n.getBitsLength=function(t){return 10*Math.floor(t/3)+(t%3?t%3*3+1:0)},n.prototype.getLength=function(){return this.data.length},n.prototype.getBitsLength=function(){return n.getBitsLength(this.data.length)},n.prototype.write=function(t){var e,r,n;for(e=0;e+3<=this.data.length;e+=3)r=this.data.substr(e,3),n=parseInt(r,10),t.put(n,10);var o=this.data.length-e;o>0&&(r=this.data.substr(e),n=parseInt(r,10),t.put(n,3*o+1))},t.exports=n},1600:function(t,e,r){function n(t){this.mode=o.ALPHANUMERIC,this.data=t}var o=r(1050),i=["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"," ","$","%","*","+","-",".","/",":"];n.getBitsLength=function(t){return 11*Math.floor(t/2)+t%2*6},n.prototype.getLength=function(){return this.data.length},n.prototype.getBitsLength=function(){return n.getBitsLength(this.data.length)},n.prototype.write=function(t){var e;for(e=0;e+2<=this.data.length;e+=2){var r=45*i.indexOf(this.data[e]);r+=i.indexOf(this.data[e+1]),t.put(r,11)}this.data.length%2&&t.put(i.indexOf(this.data[e]),6)},t.exports=n},1601:function(t,e,r){function n(t){this.mode=i.BYTE,this.data=new o(t)}var o=r(1058),i=r(1050);n.getBitsLength=function(t){return 8*t},n.prototype.getLength=function(){return this.data.length},n.prototype.getBitsLength=function(){return n.getBitsLength(this.data.length)},n.prototype.write=function(t){for(var e=0,r=this.data.length;e<r;e++)t.put(this.data[e],8)},t.exports=n},1602:function(t,e,r){function n(t){this.mode=o.KANJI,this.data=t}var o=r(1050),i=r(1049);n.getBitsLength=function(t){return 13*t},n.prototype.getLength=function(){return this.data.length},n.prototype.getBitsLength=function(){return n.getBitsLength(this.data.length)},n.prototype.write=function(t){var e;for(e=0;e<this.data.length;e++){var r=i.toSJIS(this.data[e]);if(r>=33088&&r<=40956)r-=33088;else{if(!(r>=57408&&r<=60351))throw new Error("Invalid SJIS character: "+this.data[e]+"\nMake sure your charset is UTF-8");r-=49472}t.put(r=192*(r>>>8&255)+(255&r),13)}},t.exports=n},1603:function(t,e,r){"use strict";var n={single_source_shortest_paths:function(t,e,r){var o={},i={};i[e]=0;var a=n.PriorityQueue.make();a.push(e,0);for(var s,u,f,c,l,h,g;!a.empty();){c=(s=a.pop()).cost,l=t[u=s.value]||{};for(f in l)l.hasOwnProperty(f)&&(h=c+l[f],g=i[f],(void 0===i[f]||g>h)&&(i[f]=h,a.push(f,h),o[f]=u))}if(void 0!==r&&void 0===i[r]){var d=["Could not find a path from ",e," to ",r,"."].join("");throw new Error(d)}return o},extract_shortest_path_from_predecessor_list:function(t,e){for(var r=[],n=e;n;)r.push(n),t[n],n=t[n];return r.reverse(),r},find_path:function(t,e,r){var o=n.single_source_shortest_paths(t,e,r);return n.extract_shortest_path_from_predecessor_list(o,r)},PriorityQueue:{make:function(t){var e,r=n.PriorityQueue,o={};t=t||{};for(e in r)r.hasOwnProperty(e)&&(o[e]=r[e]);return o.queue=[],o.sorter=t.sorter||r.default_sorter,o},default_sorter:function(t,e){return t.cost-e.cost},push:function(t,e){this.queue.push({value:t,cost:e}),this.queue.sort(this.sorter)},pop:function(){return this.queue.shift()},empty:function(){return 0===this.queue.length}}};t.exports=n},1604:function(t,e,r){var n=r(1239);e.render=function(t,e,r){var o=r,i=e;void 0!==o||e&&e.getContext||(o=e,e=void 0),e||(i=function(){try{return document.createElement("canvas")}catch(t){throw new Error("You need to specify a canvas element")}}()),o=n.getOptions(o);var a=(t.modules.size+2*o.margin)*o.scale,s=i.getContext("2d"),u=s.createImageData(a,a);return n.qrToImageData(u.data,t,o.margin,o.scale,o.color),function(t,e,r){t.clearRect(0,0,e.width,e.height),e.style||(e.style={}),e.height=r,e.width=r,e.style.height=r+"px",e.style.width=r+"px"}(s,i,a),s.putImageData(u,0,0),i},e.renderToDataURL=function(t,r,n){var o=n;void 0!==o||r&&r.getContext||(o=r,r=void 0),o||(o={});return e.render(t,r,o).toDataURL(o.type||"image/png",(o.rendererOpts||{}).quality)}},1605:function(t,e,r){function n(t){return'fill="rgb('+[t.r,t.g,t.b].join(",")+')" fill-opacity="'+(t.a/255).toFixed(2)+'"'}var o=r(1239);e.render=function(t,e){var r=o.getOptions(e),i=t.modules.size,a=t.modules.data,s=(i+2*r.margin)*r.scale,u='<?xml version="1.0" encoding="utf-8"?>\n';u+='<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n',u+='<svg version="1.1" baseProfile="full"',u+=' width="'+s+'" height="'+s+'"',u+=' viewBox="0 0 '+s+" "+s+'"',u+=' xmlns="http://www.w3.org/2000/svg"',u+=' xmlns:xlink="http://www.w3.org/1999/xlink"',u+=' xmlns:ev="http://www.w3.org/2001/xml-events">\n',u+='<rect x="0" y="0" width="'+s+'" height="'+s+'" '+n(r.color.light)+" />\n",u+='<defs><rect id="p" width="'+r.scale+'" height="'+r.scale+'" /></defs>\n',u+="<g "+n(r.color.dark)+">\n";for(var f=0;f<i;f++)for(var c=0;c<i;c++)if(a[f*i+c]){u+='<use x="'+(r.margin+c)*r.scale+'" y="'+(r.margin+f)*r.scale+'" xlink:href="#p" />\n'}return u+="</g>\n",u+="</svg>"}}});
+webpackJsonp([2],{
+
+/***/ 1013:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentQRCodeModule", function() { return PaymentQRCodeModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__payment_qrcode__ = __webpack_require__(1594);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ngx_qrcode2__ = __webpack_require__(1595);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(100);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var COMPONENT = [__WEBPACK_IMPORTED_MODULE_2__payment_qrcode__["a" /* PaymentQRCodePage */]];
+var PaymentQRCodeModule = /** @class */ (function () {
+    function PaymentQRCodeModule() {
+    }
+    PaymentQRCodeModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: COMPONENT,
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */],
+                __WEBPACK_IMPORTED_MODULE_3_ngx_qrcode2__["a" /* NgxQRCodeModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__payment_qrcode__["a" /* PaymentQRCodePage */])
+            ],
+            exports: COMPONENT
+        })
+    ], PaymentQRCodeModule);
+    return PaymentQRCodeModule;
+}());
+
+//# sourceMappingURL=payment-qrcode.module.js.map
+
+/***/ }),
+
+/***/ 1053:
+/***/ (function(module, exports) {
+
+var toSJISFunction
+var CODEWORDS_COUNT = [
+  0, // Not used
+  26, 44, 70, 100, 134, 172, 196, 242, 292, 346,
+  404, 466, 532, 581, 655, 733, 815, 901, 991, 1085,
+  1156, 1258, 1364, 1474, 1588, 1706, 1828, 1921, 2051, 2185,
+  2323, 2465, 2611, 2761, 2876, 3034, 3196, 3362, 3532, 3706
+]
+
+/**
+ * Returns the QR Code size for the specified version
+ *
+ * @param  {Number} version QR Code version
+ * @return {Number}         size of QR code
+ */
+exports.getSymbolSize = function getSymbolSize (version) {
+  if (!version) throw new Error('"version" cannot be null or undefined')
+  if (version < 1 || version > 40) throw new Error('"version" should be in range from 1 to 40')
+  return version * 4 + 17
+}
+
+/**
+ * Returns the total number of codewords used to store data and EC information.
+ *
+ * @param  {Number} version QR Code version
+ * @return {Number}         Data length in bits
+ */
+exports.getSymbolTotalCodewords = function getSymbolTotalCodewords (version) {
+  return CODEWORDS_COUNT[version]
+}
+
+/**
+ * Encode data with Bose-Chaudhuri-Hocquenghem
+ *
+ * @param  {Number} data Value to encode
+ * @return {Number}      Encoded value
+ */
+exports.getBCHDigit = function (data) {
+  var digit = 0
+
+  while (data !== 0) {
+    digit++
+    data >>>= 1
+  }
+
+  return digit
+}
+
+exports.setToSJISFunction = function setToSJISFunction (f) {
+  if (typeof f !== 'function') {
+    throw new Error('"toSJISFunc" is not a valid function.')
+  }
+
+  toSJISFunction = f
+}
+
+exports.isKanjiModeEnabled = function () {
+  return typeof toSJISFunction !== 'undefined'
+}
+
+exports.toSJIS = function toSJIS (kanji) {
+  return toSJISFunction(kanji)
+}
+
+
+/***/ }),
+
+/***/ 1054:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Version = __webpack_require__(1247)
+var Regex = __webpack_require__(1248)
+
+/**
+ * Numeric mode encodes data from the decimal digit set (0 - 9)
+ * (byte values 30HEX to 39HEX).
+ * Normally, 3 data characters are represented by 10 bits.
+ *
+ * @type {Object}
+ */
+exports.NUMERIC = {
+  id: 'Numeric',
+  bit: 1 << 0,
+  ccBits: [10, 12, 14]
+}
+
+/**
+ * Alphanumeric mode encodes data from a set of 45 characters,
+ * i.e. 10 numeric digits (0 - 9),
+ *      26 alphabetic characters (A - Z),
+ *   and 9 symbols (SP, $, %, *, +, -, ., /, :).
+ * Normally, two input characters are represented by 11 bits.
+ *
+ * @type {Object}
+ */
+exports.ALPHANUMERIC = {
+  id: 'Alphanumeric',
+  bit: 1 << 1,
+  ccBits: [9, 11, 13]
+}
+
+/**
+ * In byte mode, data is encoded at 8 bits per character.
+ *
+ * @type {Object}
+ */
+exports.BYTE = {
+  id: 'Byte',
+  bit: 1 << 2,
+  ccBits: [8, 16, 16]
+}
+
+/**
+ * The Kanji mode efficiently encodes Kanji characters in accordance with
+ * the Shift JIS system based on JIS X 0208.
+ * The Shift JIS values are shifted from the JIS X 0208 values.
+ * JIS X 0208 gives details of the shift coded representation.
+ * Each two-byte character value is compacted to a 13-bit binary codeword.
+ *
+ * @type {Object}
+ */
+exports.KANJI = {
+  id: 'Kanji',
+  bit: 1 << 3,
+  ccBits: [8, 10, 12]
+}
+
+/**
+ * Mixed mode will contain a sequences of data in a combination of any of
+ * the modes described above
+ *
+ * @type {Object}
+ */
+exports.MIXED = {
+  bit: -1
+}
+
+/**
+ * Returns the number of bits needed to store the data length
+ * according to QR Code specifications.
+ *
+ * @param  {Mode}   mode    Data mode
+ * @param  {Number} version QR Code version
+ * @return {Number}         Number of bits
+ */
+exports.getCharCountIndicator = function getCharCountIndicator (mode, version) {
+  if (!mode.ccBits) throw new Error('Invalid mode: ' + mode)
+
+  if (!Version.isValid(version)) {
+    throw new Error('Invalid version: ' + version)
+  }
+
+  if (version >= 1 && version < 10) return mode.ccBits[0]
+  else if (version < 27) return mode.ccBits[1]
+  return mode.ccBits[2]
+}
+
+/**
+ * Returns the most efficient mode to store the specified data
+ *
+ * @param  {String} dataStr Input data string
+ * @return {Mode}           Best mode
+ */
+exports.getBestModeForData = function getBestModeForData (dataStr) {
+  if (Regex.testNumeric(dataStr)) return exports.NUMERIC
+  else if (Regex.testAlphanumeric(dataStr)) return exports.ALPHANUMERIC
+  else if (Regex.testKanji(dataStr)) return exports.KANJI
+  else return exports.BYTE
+}
+
+/**
+ * Return mode name as string
+ *
+ * @param {Mode} mode Mode object
+ * @returns {String}  Mode name
+ */
+exports.toString = function toString (mode) {
+  if (mode && mode.id) return mode.id
+  throw new Error('Invalid mode')
+}
+
+/**
+ * Check if input param is a valid mode object
+ *
+ * @param   {Mode}    mode Mode object
+ * @returns {Boolean} True if valid mode, false otherwise
+ */
+exports.isValid = function isValid (mode) {
+  return mode && mode.bit && mode.ccBits
+}
+
+/**
+ * Get mode object from its name
+ *
+ * @param   {String} string Mode name
+ * @returns {Mode}          Mode object
+ */
+function fromString (string) {
+  if (typeof string !== 'string') {
+    throw new Error('Param is not a string')
+  }
+
+  var lcStr = string.toLowerCase()
+
+  switch (lcStr) {
+    case 'numeric':
+      return exports.NUMERIC
+    case 'alphanumeric':
+      return exports.ALPHANUMERIC
+    case 'kanji':
+      return exports.KANJI
+    case 'byte':
+      return exports.BYTE
+    default:
+      throw new Error('Unknown mode: ' + string)
+  }
+}
+
+/**
+ * Returns mode from a value.
+ * If value is not a valid mode, returns defaultValue
+ *
+ * @param  {Mode|String} value        Encoding mode
+ * @param  {Mode}        defaultValue Fallback value
+ * @return {Mode}                     Encoding mode
+ */
+exports.from = function from (value, defaultValue) {
+  if (exports.isValid(value)) {
+    return value
+  }
+
+  try {
+    return fromString(value)
+  } catch (e) {
+    return defaultValue
+  }
+}
+
+
+/***/ }),
+
+/***/ 1062:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * Implementation of a subset of node.js Buffer methods for the browser.
+ * Based on https://github.com/feross/buffer
+ */
+
+/* eslint-disable no-proto */
+
+
+
+var isArray = __webpack_require__(570)
+
+var K_MAX_LENGTH = 0x7fffffff
+
+function Buffer (arg, offset, length) {
+  if (typeof arg === 'number') {
+    return allocUnsafe(arg)
+  }
+
+  return from(arg, offset, length)
+}
+
+Buffer.prototype.__proto__ = Uint8Array.prototype
+Buffer.__proto__ = Uint8Array
+
+// Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
+if (typeof Symbol !== 'undefined' && Symbol.species &&
+    Buffer[Symbol.species] === Buffer) {
+  Object.defineProperty(Buffer, Symbol.species, {
+    value: null,
+    configurable: true,
+    enumerable: false,
+    writable: false
+  })
+}
+
+function checked (length) {
+  // Note: cannot use `length < K_MAX_LENGTH` here because that fails when
+  // length is NaN (which is otherwise coerced to zero.)
+  if (length >= K_MAX_LENGTH) {
+    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
+                         'size: 0x' + K_MAX_LENGTH.toString(16) + ' bytes')
+  }
+  return length | 0
+}
+
+function isnan (val) {
+  return val !== val // eslint-disable-line no-self-compare
+}
+
+function createBuffer (length) {
+  var buf = new Uint8Array(length)
+  buf.__proto__ = Buffer.prototype
+  return buf
+}
+
+function allocUnsafe (size) {
+  return createBuffer(size < 0 ? 0 : checked(size) | 0)
+}
+
+function fromString (string) {
+  var length = byteLength(string) | 0
+  var buf = createBuffer(length)
+
+  var actual = buf.write(string)
+
+  if (actual !== length) {
+    // Writing a hex string, for example, that contains invalid characters will
+    // cause everything after the first invalid character to be ignored. (e.g.
+    // 'abxxcd' will be treated as 'ab')
+    buf = buf.slice(0, actual)
+  }
+
+  return buf
+}
+
+function fromArrayLike (array) {
+  var length = array.length < 0 ? 0 : checked(array.length) | 0
+  var buf = createBuffer(length)
+  for (var i = 0; i < length; i += 1) {
+    buf[i] = array[i] & 255
+  }
+  return buf
+}
+
+function fromArrayBuffer (array, byteOffset, length) {
+  if (byteOffset < 0 || array.byteLength < byteOffset) {
+    throw new RangeError('\'offset\' is out of bounds')
+  }
+
+  if (array.byteLength < byteOffset + (length || 0)) {
+    throw new RangeError('\'length\' is out of bounds')
+  }
+
+  var buf
+  if (byteOffset === undefined && length === undefined) {
+    buf = new Uint8Array(array)
+  } else if (length === undefined) {
+    buf = new Uint8Array(array, byteOffset)
+  } else {
+    buf = new Uint8Array(array, byteOffset, length)
+  }
+
+  // Return an augmented `Uint8Array` instance
+  buf.__proto__ = Buffer.prototype
+  return buf
+}
+
+function fromObject (obj) {
+  if (Buffer.isBuffer(obj)) {
+    var len = checked(obj.length) | 0
+    var buf = createBuffer(len)
+
+    if (buf.length === 0) {
+      return buf
+    }
+
+    obj.copy(buf, 0, 0, len)
+    return buf
+  }
+
+  if (obj) {
+    if ((typeof ArrayBuffer !== 'undefined' &&
+        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
+      if (typeof obj.length !== 'number' || isnan(obj.length)) {
+        return createBuffer(0)
+      }
+      return fromArrayLike(obj)
+    }
+
+    if (obj.type === 'Buffer' && Array.isArray(obj.data)) {
+      return fromArrayLike(obj.data)
+    }
+  }
+
+  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
+}
+
+function utf8ToBytes (string, units) {
+  units = units || Infinity
+  var codePoint
+  var length = string.length
+  var leadSurrogate = null
+  var bytes = []
+
+  for (var i = 0; i < length; ++i) {
+    codePoint = string.charCodeAt(i)
+
+    // is surrogate component
+    if (codePoint > 0xD7FF && codePoint < 0xE000) {
+      // last char was a lead
+      if (!leadSurrogate) {
+        // no lead yet
+        if (codePoint > 0xDBFF) {
+          // unexpected trail
+          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+          continue
+        } else if (i + 1 === length) {
+          // unpaired lead
+          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+          continue
+        }
+
+        // valid lead
+        leadSurrogate = codePoint
+
+        continue
+      }
+
+      // 2 leads in a row
+      if (codePoint < 0xDC00) {
+        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+        leadSurrogate = codePoint
+        continue
+      }
+
+      // valid surrogate pair
+      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
+    } else if (leadSurrogate) {
+      // valid bmp char, but last char was a lead
+      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
+    }
+
+    leadSurrogate = null
+
+    // encode utf8
+    if (codePoint < 0x80) {
+      if ((units -= 1) < 0) break
+      bytes.push(codePoint)
+    } else if (codePoint < 0x800) {
+      if ((units -= 2) < 0) break
+      bytes.push(
+        codePoint >> 0x6 | 0xC0,
+        codePoint & 0x3F | 0x80
+      )
+    } else if (codePoint < 0x10000) {
+      if ((units -= 3) < 0) break
+      bytes.push(
+        codePoint >> 0xC | 0xE0,
+        codePoint >> 0x6 & 0x3F | 0x80,
+        codePoint & 0x3F | 0x80
+      )
+    } else if (codePoint < 0x110000) {
+      if ((units -= 4) < 0) break
+      bytes.push(
+        codePoint >> 0x12 | 0xF0,
+        codePoint >> 0xC & 0x3F | 0x80,
+        codePoint >> 0x6 & 0x3F | 0x80,
+        codePoint & 0x3F | 0x80
+      )
+    } else {
+      throw new Error('Invalid code point')
+    }
+  }
+
+  return bytes
+}
+
+function byteLength (string) {
+  if (Buffer.isBuffer(string)) {
+    return string.length
+  }
+  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
+      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
+    return string.byteLength
+  }
+  if (typeof string !== 'string') {
+    string = '' + string
+  }
+
+  var len = string.length
+  if (len === 0) return 0
+
+  return utf8ToBytes(string).length
+}
+
+function blitBuffer (src, dst, offset, length) {
+  for (var i = 0; i < length; ++i) {
+    if ((i + offset >= dst.length) || (i >= src.length)) break
+    dst[i + offset] = src[i]
+  }
+  return i
+}
+
+function utf8Write (buf, string, offset, length) {
+  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
+}
+
+function from (value, offset, length) {
+  if (typeof value === 'number') {
+    throw new TypeError('"value" argument must not be a number')
+  }
+
+  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
+    return fromArrayBuffer(value, offset, length)
+  }
+
+  if (typeof value === 'string') {
+    return fromString(value, offset)
+  }
+
+  return fromObject(value)
+}
+
+Buffer.prototype.write = function write (string, offset, length) {
+  // Buffer#write(string)
+  if (offset === undefined) {
+    length = this.length
+    offset = 0
+  // Buffer#write(string, encoding)
+  } else if (length === undefined && typeof offset === 'string') {
+    length = this.length
+    offset = 0
+  // Buffer#write(string, offset[, length])
+  } else if (isFinite(offset)) {
+    offset = offset | 0
+    if (isFinite(length)) {
+      length = length | 0
+    } else {
+      length = undefined
+    }
+  }
+
+  var remaining = this.length - offset
+  if (length === undefined || length > remaining) length = remaining
+
+  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
+    throw new RangeError('Attempt to write outside buffer bounds')
+  }
+
+  return utf8Write(this, string, offset, length)
+}
+
+Buffer.prototype.slice = function slice (start, end) {
+  var len = this.length
+  start = ~~start
+  end = end === undefined ? len : ~~end
+
+  if (start < 0) {
+    start += len
+    if (start < 0) start = 0
+  } else if (start > len) {
+    start = len
+  }
+
+  if (end < 0) {
+    end += len
+    if (end < 0) end = 0
+  } else if (end > len) {
+    end = len
+  }
+
+  if (end < start) end = start
+
+  var newBuf = this.subarray(start, end)
+  // Return an augmented `Uint8Array` instance
+  newBuf.__proto__ = Buffer.prototype
+  return newBuf
+}
+
+Buffer.prototype.copy = function copy (target, targetStart, start, end) {
+  if (!start) start = 0
+  if (!end && end !== 0) end = this.length
+  if (targetStart >= target.length) targetStart = target.length
+  if (!targetStart) targetStart = 0
+  if (end > 0 && end < start) end = start
+
+  // Copy 0 bytes; we're done
+  if (end === start) return 0
+  if (target.length === 0 || this.length === 0) return 0
+
+  // Fatal error conditions
+  if (targetStart < 0) {
+    throw new RangeError('targetStart out of bounds')
+  }
+  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
+  if (end < 0) throw new RangeError('sourceEnd out of bounds')
+
+  // Are we oob?
+  if (end > this.length) end = this.length
+  if (target.length - targetStart < end - start) {
+    end = target.length - targetStart + start
+  }
+
+  var len = end - start
+  var i
+
+  if (this === target && start < targetStart && targetStart < end) {
+    // descending copy from end
+    for (i = len - 1; i >= 0; --i) {
+      target[i + targetStart] = this[i + start]
+    }
+  } else if (len < 1000) {
+    // ascending copy from start
+    for (i = 0; i < len; ++i) {
+      target[i + targetStart] = this[i + start]
+    }
+  } else {
+    Uint8Array.prototype.set.call(
+      target,
+      this.subarray(start, start + len),
+      targetStart
+    )
+  }
+
+  return len
+}
+
+Buffer.prototype.fill = function fill (val, start, end) {
+  // Handle string cases:
+  if (typeof val === 'string') {
+    if (typeof start === 'string') {
+      start = 0
+      end = this.length
+    } else if (typeof end === 'string') {
+      end = this.length
+    }
+    if (val.length === 1) {
+      var code = val.charCodeAt(0)
+      if (code < 256) {
+        val = code
+      }
+    }
+  } else if (typeof val === 'number') {
+    val = val & 255
+  }
+
+  // Invalid ranges are not set to a default, so can range check early.
+  if (start < 0 || this.length < start || this.length < end) {
+    throw new RangeError('Out of range index')
+  }
+
+  if (end <= start) {
+    return this
+  }
+
+  start = start >>> 0
+  end = end === undefined ? this.length : end >>> 0
+
+  if (!val) val = 0
+
+  var i
+  if (typeof val === 'number') {
+    for (i = start; i < end; ++i) {
+      this[i] = val
+    }
+  } else {
+    var bytes = Buffer.isBuffer(val)
+      ? val
+      : new Buffer(val)
+    var len = bytes.length
+    for (i = 0; i < end - start; ++i) {
+      this[i + start] = bytes[i % len]
+    }
+  }
+
+  return this
+}
+
+Buffer.concat = function concat (list, length) {
+  if (!isArray(list)) {
+    throw new TypeError('"list" argument must be an Array of Buffers')
+  }
+
+  if (list.length === 0) {
+    return createBuffer(null, 0)
+  }
+
+  var i
+  if (length === undefined) {
+    length = 0
+    for (i = 0; i < list.length; ++i) {
+      length += list[i].length
+    }
+  }
+
+  var buffer = allocUnsafe(length)
+  var pos = 0
+  for (i = 0; i < list.length; ++i) {
+    var buf = list[i]
+    if (!Buffer.isBuffer(buf)) {
+      throw new TypeError('"list" argument must be an Array of Buffers')
+    }
+    buf.copy(buffer, pos)
+    pos += buf.length
+  }
+  return buffer
+}
+
+Buffer.byteLength = byteLength
+
+Buffer.prototype._isBuffer = true
+Buffer.isBuffer = function isBuffer (b) {
+  return !!(b != null && b._isBuffer)
+}
+
+module.exports = Buffer
+
+
+/***/ }),
+
+/***/ 1146:
+/***/ (function(module, exports) {
+
+exports.L = { bit: 1 }
+exports.M = { bit: 0 }
+exports.Q = { bit: 3 }
+exports.H = { bit: 2 }
+
+function fromString (string) {
+  if (typeof string !== 'string') {
+    throw new Error('Param is not a string')
+  }
+
+  var lcStr = string.toLowerCase()
+
+  switch (lcStr) {
+    case 'l':
+    case 'low':
+      return exports.L
+
+    case 'm':
+    case 'medium':
+      return exports.M
+
+    case 'q':
+    case 'quartile':
+      return exports.Q
+
+    case 'h':
+    case 'high':
+      return exports.H
+
+    default:
+      throw new Error('Unknown EC Level: ' + string)
+  }
+}
+
+exports.isValid = function isValid (level) {
+  return level && typeof level.bit !== 'undefined' &&
+    level.bit >= 0 && level.bit < 4
+}
+
+exports.from = function from (value, defaultValue) {
+  if (exports.isValid(value)) {
+    return value
+  }
+
+  try {
+    return fromString(value)
+  } catch (e) {
+    return defaultValue
+  }
+}
+
+
+/***/ }),
+
+/***/ 1246:
+/***/ (function(module, exports, __webpack_require__) {
+
+var ECLevel = __webpack_require__(1146)
+
+var EC_BLOCKS_TABLE = [
+// L  M  Q  H
+  1, 1, 1, 1,
+  1, 1, 1, 1,
+  1, 1, 2, 2,
+  1, 2, 2, 4,
+  1, 2, 4, 4,
+  2, 4, 4, 4,
+  2, 4, 6, 5,
+  2, 4, 6, 6,
+  2, 5, 8, 8,
+  4, 5, 8, 8,
+  4, 5, 8, 11,
+  4, 8, 10, 11,
+  4, 9, 12, 16,
+  4, 9, 16, 16,
+  6, 10, 12, 18,
+  6, 10, 17, 16,
+  6, 11, 16, 19,
+  6, 13, 18, 21,
+  7, 14, 21, 25,
+  8, 16, 20, 25,
+  8, 17, 23, 25,
+  9, 17, 23, 34,
+  9, 18, 25, 30,
+  10, 20, 27, 32,
+  12, 21, 29, 35,
+  12, 23, 34, 37,
+  12, 25, 34, 40,
+  13, 26, 35, 42,
+  14, 28, 38, 45,
+  15, 29, 40, 48,
+  16, 31, 43, 51,
+  17, 33, 45, 54,
+  18, 35, 48, 57,
+  19, 37, 51, 60,
+  19, 38, 53, 63,
+  20, 40, 56, 66,
+  21, 43, 59, 70,
+  22, 45, 62, 74,
+  24, 47, 65, 77,
+  25, 49, 68, 81
+]
+
+var EC_CODEWORDS_TABLE = [
+// L  M  Q  H
+  7, 10, 13, 17,
+  10, 16, 22, 28,
+  15, 26, 36, 44,
+  20, 36, 52, 64,
+  26, 48, 72, 88,
+  36, 64, 96, 112,
+  40, 72, 108, 130,
+  48, 88, 132, 156,
+  60, 110, 160, 192,
+  72, 130, 192, 224,
+  80, 150, 224, 264,
+  96, 176, 260, 308,
+  104, 198, 288, 352,
+  120, 216, 320, 384,
+  132, 240, 360, 432,
+  144, 280, 408, 480,
+  168, 308, 448, 532,
+  180, 338, 504, 588,
+  196, 364, 546, 650,
+  224, 416, 600, 700,
+  224, 442, 644, 750,
+  252, 476, 690, 816,
+  270, 504, 750, 900,
+  300, 560, 810, 960,
+  312, 588, 870, 1050,
+  336, 644, 952, 1110,
+  360, 700, 1020, 1200,
+  390, 728, 1050, 1260,
+  420, 784, 1140, 1350,
+  450, 812, 1200, 1440,
+  480, 868, 1290, 1530,
+  510, 924, 1350, 1620,
+  540, 980, 1440, 1710,
+  570, 1036, 1530, 1800,
+  570, 1064, 1590, 1890,
+  600, 1120, 1680, 1980,
+  630, 1204, 1770, 2100,
+  660, 1260, 1860, 2220,
+  720, 1316, 1950, 2310,
+  750, 1372, 2040, 2430
+]
+
+/**
+ * Returns the number of error correction block that the QR Code should contain
+ * for the specified version and error correction level.
+ *
+ * @param  {Number} version              QR Code version
+ * @param  {Number} errorCorrectionLevel Error correction level
+ * @return {Number}                      Number of error correction blocks
+ */
+exports.getBlocksCount = function getBlocksCount (version, errorCorrectionLevel) {
+  switch (errorCorrectionLevel) {
+    case ECLevel.L:
+      return EC_BLOCKS_TABLE[(version - 1) * 4 + 0]
+    case ECLevel.M:
+      return EC_BLOCKS_TABLE[(version - 1) * 4 + 1]
+    case ECLevel.Q:
+      return EC_BLOCKS_TABLE[(version - 1) * 4 + 2]
+    case ECLevel.H:
+      return EC_BLOCKS_TABLE[(version - 1) * 4 + 3]
+    default:
+      return undefined
+  }
+}
+
+/**
+ * Returns the number of error correction codewords to use for the specified
+ * version and error correction level.
+ *
+ * @param  {Number} version              QR Code version
+ * @param  {Number} errorCorrectionLevel Error correction level
+ * @return {Number}                      Number of error correction codewords
+ */
+exports.getTotalCodewordsCount = function getTotalCodewordsCount (version, errorCorrectionLevel) {
+  switch (errorCorrectionLevel) {
+    case ECLevel.L:
+      return EC_CODEWORDS_TABLE[(version - 1) * 4 + 0]
+    case ECLevel.M:
+      return EC_CODEWORDS_TABLE[(version - 1) * 4 + 1]
+    case ECLevel.Q:
+      return EC_CODEWORDS_TABLE[(version - 1) * 4 + 2]
+    case ECLevel.H:
+      return EC_CODEWORDS_TABLE[(version - 1) * 4 + 3]
+    default:
+      return undefined
+  }
+}
+
+
+/***/ }),
+
+/***/ 1247:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(1053)
+var ECCode = __webpack_require__(1246)
+var ECLevel = __webpack_require__(1146)
+var Mode = __webpack_require__(1054)
+var isArray = __webpack_require__(570)
+
+// Generator polynomial used to encode version information
+var G18 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0)
+var G18_BCH = Utils.getBCHDigit(G18)
+
+function getBestVersionForDataLength (mode, length, errorCorrectionLevel) {
+  for (var currentVersion = 1; currentVersion <= 40; currentVersion++) {
+    if (length <= exports.getCapacity(currentVersion, errorCorrectionLevel, mode)) {
+      return currentVersion
+    }
+  }
+
+  return undefined
+}
+
+function getReservedBitsCount (mode, version) {
+  // Character count indicator + mode indicator bits
+  return Mode.getCharCountIndicator(mode, version) + 4
+}
+
+function getTotalBitsFromDataArray (segments, version) {
+  var totalBits = 0
+
+  segments.forEach(function (data) {
+    var reservedBits = getReservedBitsCount(data.mode, version)
+    totalBits += reservedBits + data.getBitsLength()
+  })
+
+  return totalBits
+}
+
+function getBestVersionForMixedData (segments, errorCorrectionLevel) {
+  for (var currentVersion = 1; currentVersion <= 40; currentVersion++) {
+    var length = getTotalBitsFromDataArray(segments, currentVersion)
+    if (length <= exports.getCapacity(currentVersion, errorCorrectionLevel, Mode.MIXED)) {
+      return currentVersion
+    }
+  }
+
+  return undefined
+}
+
+/**
+ * Check if QR Code version is valid
+ *
+ * @param  {Number}  version QR Code version
+ * @return {Boolean}         true if valid version, false otherwise
+ */
+exports.isValid = function isValid (version) {
+  return !isNaN(version) && version >= 1 && version <= 40
+}
+
+/**
+ * Returns version number from a value.
+ * If value is not a valid version, returns defaultValue
+ *
+ * @param  {Number|String} value        QR Code version
+ * @param  {Number}        defaultValue Fallback value
+ * @return {Number}                     QR Code version number
+ */
+exports.from = function from (value, defaultValue) {
+  if (exports.isValid(value)) {
+    return parseInt(value, 10)
+  }
+
+  return defaultValue
+}
+
+/**
+ * Returns how much data can be stored with the specified QR code version
+ * and error correction level
+ *
+ * @param  {Number} version              QR Code version (1-40)
+ * @param  {Number} errorCorrectionLevel Error correction level
+ * @param  {Mode}   mode                 Data mode
+ * @return {Number}                      Quantity of storable data
+ */
+exports.getCapacity = function getCapacity (version, errorCorrectionLevel, mode) {
+  if (!exports.isValid(version)) {
+    throw new Error('Invalid QR Code version')
+  }
+
+  // Use Byte mode as default
+  if (typeof mode === 'undefined') mode = Mode.BYTE
+
+  // Total codewords for this QR code version (Data + Error correction)
+  var totalCodewords = Utils.getSymbolTotalCodewords(version)
+
+  // Total number of error correction codewords
+  var ecTotalCodewords = ECCode.getTotalCodewordsCount(version, errorCorrectionLevel)
+
+  // Total number of data codewords
+  var dataTotalCodewordsBits = (totalCodewords - ecTotalCodewords) * 8
+
+  if (mode === Mode.MIXED) return dataTotalCodewordsBits
+
+  var usableBits = dataTotalCodewordsBits - getReservedBitsCount(mode, version)
+
+  // Return max number of storable codewords
+  switch (mode) {
+    case Mode.NUMERIC:
+      return Math.floor((usableBits / 10) * 3)
+
+    case Mode.ALPHANUMERIC:
+      return Math.floor((usableBits / 11) * 2)
+
+    case Mode.KANJI:
+      return Math.floor(usableBits / 13)
+
+    case Mode.BYTE:
+    default:
+      return Math.floor(usableBits / 8)
+  }
+}
+
+/**
+ * Returns the minimum version needed to contain the amount of data
+ *
+ * @param  {Segment} data                    Segment of data
+ * @param  {Number} [errorCorrectionLevel=H] Error correction level
+ * @param  {Mode} mode                       Data mode
+ * @return {Number}                          QR Code version
+ */
+exports.getBestVersionForData = function getBestVersionForData (data, errorCorrectionLevel) {
+  var seg
+
+  var ecl = ECLevel.from(errorCorrectionLevel, ECLevel.M)
+
+  if (isArray(data)) {
+    if (data.length > 1) {
+      return getBestVersionForMixedData(data, ecl)
+    }
+
+    if (data.length === 0) {
+      return 1
+    }
+
+    seg = data[0]
+  } else {
+    seg = data
+  }
+
+  return getBestVersionForDataLength(seg.mode, seg.getLength(), ecl)
+}
+
+/**
+ * Returns version information with relative error correction bits
+ *
+ * The version information is included in QR Code symbols of version 7 or larger.
+ * It consists of an 18-bit sequence containing 6 data bits,
+ * with 12 error correction bits calculated using the (18, 6) Golay code.
+ *
+ * @param  {Number} version QR Code version
+ * @return {Number}         Encoded version info bits
+ */
+exports.getEncodedBits = function getEncodedBits (version) {
+  if (!exports.isValid(version) || version < 7) {
+    throw new Error('Invalid QR Code version')
+  }
+
+  var d = version << 12
+
+  while (Utils.getBCHDigit(d) - G18_BCH >= 0) {
+    d ^= (G18 << (Utils.getBCHDigit(d) - G18_BCH))
+  }
+
+  return (version << 12) | d
+}
+
+
+/***/ }),
+
+/***/ 1248:
+/***/ (function(module, exports) {
+
+var numeric = '[0-9]+'
+var alphanumeric = '[A-Z $%*+-./:]+'
+var kanji = '(?:[\u3000-\u303F]|[\u3040-\u309F]|[\u30A0-\u30FF]|' +
+  '[\uFF00-\uFFEF]|[\u4E00-\u9FAF]|[\u2605-\u2606]|[\u2190-\u2195]|\u203B|' +
+  '[\u2010\u2015\u2018\u2019\u2025\u2026\u201C\u201D\u2225\u2260]|' +
+  '[\u0391-\u0451]|[\u00A7\u00A8\u00B1\u00B4\u00D7\u00F7])+'
+var byte = '(?:(?![A-Z0-9 $%*+-./:]|' + kanji + ').)+'
+
+exports.KANJI = new RegExp(kanji, 'g')
+exports.BYTE_KANJI = new RegExp('[^A-Z0-9 $%*+-./:]+', 'g')
+exports.BYTE = new RegExp(byte, 'g')
+exports.NUMERIC = new RegExp(numeric, 'g')
+exports.ALPHANUMERIC = new RegExp(alphanumeric, 'g')
+
+var TEST_KANJI = new RegExp('^' + kanji + '$')
+var TEST_NUMERIC = new RegExp('^' + numeric + '$')
+var TEST_ALPHANUMERIC = new RegExp('^[A-Z0-9 $%*+-./:]+$')
+
+exports.testKanji = function testKanji (str) {
+  return TEST_KANJI.test(str)
+}
+
+exports.testNumeric = function testNumeric (str) {
+  return TEST_NUMERIC.test(str)
+}
+
+exports.testAlphanumeric = function testAlphanumeric (str) {
+  return TEST_ALPHANUMERIC.test(str)
+}
+
+
+/***/ }),
+
+/***/ 1249:
+/***/ (function(module, exports) {
+
+function hex2rgba (hex) {
+  if (typeof hex !== 'string') {
+    throw new Error('Color should be defined as hex string')
+  }
+
+  var hexCode = hex.slice().replace('#', '').split('')
+  if (hexCode.length < 3 || hexCode.length === 5 || hexCode.length > 8) {
+    throw new Error('Invalid hex color: ' + hex)
+  }
+
+  // Convert from short to long form (fff -> ffffff)
+  if (hexCode.length === 3 || hexCode.length === 4) {
+    hexCode = Array.prototype.concat.apply([], hexCode.map(function (c) {
+      return [c, c]
+    }))
+  }
+
+  // Add default alpha value
+  if (hexCode.length === 6) hexCode.push('F', 'F')
+
+  var hexValue = parseInt(hexCode.join(''), 16)
+
+  return {
+    r: (hexValue >> 24) & 255,
+    g: (hexValue >> 16) & 255,
+    b: (hexValue >> 8) & 255,
+    a: hexValue & 255
+  }
+}
+
+exports.getOptions = function getOptions (options) {
+  if (!options) options = {}
+  if (!options.color) options.color = {}
+
+  var margin = typeof options.margin === 'undefined' ||
+    options.margin === null ||
+    options.margin < 0 ? 4 : options.margin
+
+  return {
+    scale: options.scale || 4,
+    margin: margin,
+    color: {
+      dark: hex2rgba(options.color.dark || '#000000ff'),
+      light: hex2rgba(options.color.light || '#ffffffff')
+    },
+    type: options.type,
+    rendererOpts: options.rendererOpts || {}
+  }
+}
+
+exports.qrToImageData = function qrToImageData (imgData, qr, margin, scale, color) {
+  var size = qr.modules.size
+  var data = qr.modules.data
+  var scaledMargin = margin * scale
+  var symbolSize = size * scale + scaledMargin * 2
+  var palette = [color.light, color.dark]
+
+  for (var i = 0; i < symbolSize; i++) {
+    for (var j = 0; j < symbolSize; j++) {
+      var posDst = (i * symbolSize + j) * 4
+      var pxColor = color.light
+
+      if (i >= scaledMargin && j >= scaledMargin &&
+        i < symbolSize - scaledMargin && j < symbolSize - scaledMargin) {
+        var iSrc = Math.floor((i - scaledMargin) / scale)
+        var jSrc = Math.floor((j - scaledMargin) / scale)
+        pxColor = palette[data[iSrc * size + jSrc]]
+      }
+
+      imgData[posDst++] = pxColor.r
+      imgData[posDst++] = pxColor.g
+      imgData[posDst++] = pxColor.b
+      imgData[posDst] = pxColor.a
+    }
+  }
+}
+
+
+/***/ }),
+
+/***/ 1594:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentQRCodePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_clipboard__ = __webpack_require__(569);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_social_sharing__ = __webpack_require__(574);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_notification_provider__ = __webpack_require__(243);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var PaymentQRCodePage = /** @class */ (function () {
+    function PaymentQRCodePage(navParams, clipboard, socialSharing, np, platform) {
+        this.clipboard = clipboard;
+        this.socialSharing = socialSharing;
+        this.np = np;
+        this.platform = platform;
+        this.address = navParams.get('address');
+    }
+    PaymentQRCodePage.prototype.copy = function () {
+        var _this = this;
+        if (this.platform.is('mobileweb')) {
+            try {
+                var successful = document.execCommand('copy');
+                var msg = successful ? 'successful' : 'fail';
+                return this.np.emit({ message: "copy " + msg });
+            }
+            catch (err) {
+                console.log('unable to copy', err);
+            }
+        }
+        this.clipboard.copy(this.address).then(function () { return _this.np.emit({ message: 'copy success' }); });
+    };
+    PaymentQRCodePage.prototype.share = function () {
+        this.socialSharing.share(this.address);
+    };
+    PaymentQRCodePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-payment-qrcode',
+            template: "\n\t  <ion-header class=\"otcgo-header\">\n\t\t  <ion-navbar></ion-navbar>\n\t  </ion-header>\n\t  <ion-content>\n\t\t  <div class=\"qrcode__content\">\n\t\t\t  <ngx-qrcode [qrc-value]=\"address\"></ngx-qrcode>\n\n\t\t\t  <div class=\"title\">{{ 'POSSESSIONS.QR_CODE.address' | translate }}</div>\n\t\t\t  <div class=\"address\">{{ address }}</div>\n\n\t\t\t  <button ion-button\n\t\t\t          class=\"otcgo-button--colour\"\n\t\t\t          round\n\t\t\t          full\n\t\t\t          (click)=\"copy()\">{{ 'POSSESSIONS.QR_CODE.copy' | translate }}\n\t\t\t  </button>\n\t\t\t  <button ion-button\n\t\t\t          class=\"otcgo-button--edge\"\n\t\t\t          round\n\t\t\t          clear\n\t\t\t          full\n\t\t\t          (click)=\"share()\">{{ 'POSSESSIONS.QR_CODE.share' | translate }}\n\t\t\t  </button>\n\t\t  </div>\n\t  </ion-content>\n\t"
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_clipboard__["a" /* Clipboard */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_social_sharing__["a" /* SocialSharing */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_notification_provider__["a" /* NotificationProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]])
+    ], PaymentQRCodePage);
+    return PaymentQRCodePage;
+}());
+
+//# sourceMappingURL=payment-qrcode.js.map
+
+/***/ }),
+
+/***/ 1595:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgxQRCodeModule; });
+/* unused harmony export NgxQRCodeComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(83);
+
+
+
+var QRCode = __webpack_require__(1596);
+var NgxQRCodeComponent = (function () {
+    /**
+     * @param {?} renderer
+     */
+    function NgxQRCodeComponent(renderer) {
+        this.renderer = renderer;
+        this.elementType = 'url';
+        this.cssClass = 'qrcode';
+        this.value = 'https://www.techiediaries.com';
+        this.version = '';
+        this.errorCorrectionLevel = 'M';
+    }
+    /**
+     * @return {?}
+     */
+    NgxQRCodeComponent.prototype.ngOnChanges = function () {
+        this.createQRCode();
+    };
+    /**
+     * @return {?}
+     */
+    NgxQRCodeComponent.prototype.toDataURL = function () {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            QRCode.toDataURL(_this.value, { version: _this.version, errorCorrectionLevel: _this.errorCorrectionLevel }, function (err, url) {
+                if (err) {
+                    console.error(err);
+                    reject(err);
+                }
+                else {
+                    //console.log(url);
+                    resolve(url);
+                }
+            });
+        });
+    };
+    /**
+     * @param {?} canvas
+     * @return {?}
+     */
+    NgxQRCodeComponent.prototype.toCanvas = function (canvas) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            QRCode.toCanvas(canvas, _this.value, { version: _this.version, errorCorrectionLevel: _this.errorCorrectionLevel }, function (error) {
+                if (error) {
+                    //console.error(error);
+                    reject(error);
+                }
+                else {
+                    //console.log('success!');
+                    resolve("success");
+                }
+            });
+        });
+    };
+    /**
+     * @param {?} element
+     * @return {?}
+     */
+    NgxQRCodeComponent.prototype.renderElement = function (element) {
+        for (var _i = 0, _a = this.qrcElement.nativeElement.childNodes; _i < _a.length; _i++) {
+            var node = _a[_i];
+            this.renderer.removeChild(this.qrcElement.nativeElement, node);
+        }
+        this.renderer.appendChild(this.qrcElement.nativeElement, element);
+    };
+    /**
+     * @return {?}
+     */
+    NgxQRCodeComponent.prototype.createQRCode = function () {
+        var _this = this;
+        if (!this.value) {
+            return;
+        }
+        
+        var /** @type {?} */ element;
+        //console.log("QR Encoding " + this.value);
+        switch (this.elementType) {
+            case 'canvas':
+                element = this.renderer.createElement('canvas');
+                this.toCanvas(element).then(function (v) {
+                    //console.log(v);
+                    _this.renderElement(element);
+                }).catch(function (e) {
+                    console.error(e);
+                });
+                break;
+            case 'url':
+            case 'img':
+            default:
+                element = this.renderer.createElement('img');
+                this.toDataURL().then(function (v) {
+                    //console.log(v);
+                    element.setAttribute("src", v);
+                    _this.renderElement(element);
+                }).catch(function (e) {
+                    console.error(e);
+                });
+        }
+    };
+    return NgxQRCodeComponent;
+}());
+NgxQRCodeComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */], args: [{
+                selector: 'ngx-qrcode',
+                template: "<div #qrcElement [class]=\"cssClass\"></div>",
+                styles: []
+            },] },
+];
+/**
+ * @nocollapse
+ */
+NgxQRCodeComponent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Renderer2 */], },
+]; };
+NgxQRCodeComponent.propDecorators = {
+    'elementType': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */], args: ['qrc-element-type',] },],
+    'cssClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */], args: ['qrc-class',] },],
+    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */], args: ['qrc-value',] },],
+    'version': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */], args: ['qrc-version',] },],
+    'errorCorrectionLevel': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */], args: ['qrc-errorCorrectionLevel',] },],
+    'qrcElement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */], args: ['qrcElement',] },],
+};
+
+var NgxQRCodeModule = (function () {
+    function NgxQRCodeModule() {
+    }
+    /**
+     * @return {?}
+     */
+    NgxQRCodeModule.forRoot = function () {
+        return {
+            ngModule: NgxQRCodeModule,
+            providers: []
+        };
+    };
+    return NgxQRCodeModule;
+}());
+NgxQRCodeModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */], args: [{
+                imports: [
+                    __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */]
+                ],
+                declarations: [
+                    NgxQRCodeComponent,
+                ],
+                exports: [
+                    NgxQRCodeComponent,
+                ]
+            },] },
+];
+/**
+ * @nocollapse
+ */
+NgxQRCodeModule.ctorParameters = function () { return []; };
+
+
+
+
+/***/ }),
+
+/***/ 1596:
+/***/ (function(module, exports, __webpack_require__) {
+
+var QRCode = __webpack_require__(1597)
+var CanvasRenderer = __webpack_require__(1613)
+var SvgRenderer = __webpack_require__(1614)
+
+function renderCanvas (renderFunc, canvas, text, opts, cb) {
+  var argsNum = arguments.length - 1
+  if (argsNum < 2) {
+    throw new Error('Too few arguments provided')
+  }
+
+  if (argsNum === 2) {
+    cb = text
+    text = canvas
+    canvas = opts = undefined
+  } else if (argsNum === 3) {
+    if (canvas.getContext && typeof cb === 'undefined') {
+      cb = opts
+      opts = undefined
+    } else {
+      cb = opts
+      opts = text
+      text = canvas
+      canvas = undefined
+    }
+  }
+
+  if (typeof cb !== 'function') {
+    throw new Error('Callback required as last argument')
+  }
+
+  try {
+    var data = QRCode.create(text, opts)
+    cb(null, renderFunc(data, canvas, opts))
+  } catch (e) {
+    cb(e)
+  }
+}
+
+exports.create = QRCode.create
+exports.toCanvas = renderCanvas.bind(null, CanvasRenderer.render)
+exports.toDataURL = renderCanvas.bind(null, CanvasRenderer.renderToDataURL)
+
+// only svg for now.
+exports.toString = renderCanvas.bind(null, function (data, _, opts) {
+  return SvgRenderer.render(data, opts)
+})
+
+/**
+ * Legacy API
+ */
+exports.qrcodedraw = function () {
+  return {
+    draw: exports.toCanvas
+  }
+}
+
+
+/***/ }),
+
+/***/ 1597:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Buffer = __webpack_require__(1062)
+var Utils = __webpack_require__(1053)
+var ECLevel = __webpack_require__(1146)
+var BitBuffer = __webpack_require__(1598)
+var BitMatrix = __webpack_require__(1599)
+var AlignmentPattern = __webpack_require__(1600)
+var FinderPattern = __webpack_require__(1601)
+var MaskPattern = __webpack_require__(1602)
+var ECCode = __webpack_require__(1246)
+var ReedSolomonEncoder = __webpack_require__(1603)
+var Version = __webpack_require__(1247)
+var FormatInfo = __webpack_require__(1606)
+var Mode = __webpack_require__(1054)
+var Segments = __webpack_require__(1607)
+var isArray = __webpack_require__(570)
+
+/**
+ * QRCode for JavaScript
+ *
+ * modified by Ryan Day for nodejs support
+ * Copyright (c) 2011 Ryan Day
+ *
+ * Licensed under the MIT license:
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+//---------------------------------------------------------------------
+// QRCode for JavaScript
+//
+// Copyright (c) 2009 Kazuhiko Arase
+//
+// URL: http://www.d-project.com/
+//
+// Licensed under the MIT license:
+//   http://www.opensource.org/licenses/mit-license.php
+//
+// The word "QR Code" is registered trademark of
+// DENSO WAVE INCORPORATED
+//   http://www.denso-wave.com/qrcode/faqpatent-e.html
+//
+//---------------------------------------------------------------------
+*/
+
+/**
+ * Add finder patterns bits to matrix
+ *
+ * @param  {BitMatrix} matrix  Modules matrix
+ * @param  {Number}    version QR Code version
+ */
+function setupFinderPattern (matrix, version) {
+  var size = matrix.size
+  var pos = FinderPattern.getPositions(version)
+
+  for (var i = 0; i < pos.length; i++) {
+    var row = pos[i][0]
+    var col = pos[i][1]
+
+    for (var r = -1; r <= 7; r++) {
+      if (row + r <= -1 || size <= row + r) continue
+
+      for (var c = -1; c <= 7; c++) {
+        if (col + c <= -1 || size <= col + c) continue
+
+        if ((r >= 0 && r <= 6 && (c === 0 || c === 6)) ||
+          (c >= 0 && c <= 6 && (r === 0 || r === 6)) ||
+          (r >= 2 && r <= 4 && c >= 2 && c <= 4)) {
+          matrix.set(row + r, col + c, true, true)
+        } else {
+          matrix.set(row + r, col + c, false, true)
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Add timing pattern bits to matrix
+ *
+ * Note: this function must be called before {@link setupAlignmentPattern}
+ *
+ * @param  {BitMatrix} matrix Modules matrix
+ */
+function setupTimingPattern (matrix) {
+  var size = matrix.size
+
+  for (var r = 8; r < size - 8; r++) {
+    var value = r % 2 === 0
+    matrix.set(r, 6, value, true)
+    matrix.set(6, r, value, true)
+  }
+}
+
+/**
+ * Add alignment patterns bits to matrix
+ *
+ * Note: this function must be called after {@link setupTimingPattern}
+ *
+ * @param  {BitMatrix} matrix  Modules matrix
+ * @param  {Number}    version QR Code version
+ */
+function setupAlignmentPattern (matrix, version) {
+  var pos = AlignmentPattern.getPositions(version)
+
+  for (var i = 0; i < pos.length; i++) {
+    var row = pos[i][0]
+    var col = pos[i][1]
+
+    for (var r = -2; r <= 2; r++) {
+      for (var c = -2; c <= 2; c++) {
+        if (r === -2 || r === 2 || c === -2 || c === 2 ||
+          (r === 0 && c === 0)) {
+          matrix.set(row + r, col + c, true, true)
+        } else {
+          matrix.set(row + r, col + c, false, true)
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Add version info bits to matrix
+ *
+ * @param  {BitMatrix} matrix  Modules matrix
+ * @param  {Number}    version QR Code version
+ */
+function setupVersionInfo (matrix, version) {
+  var size = matrix.size
+  var bits = Version.getEncodedBits(version)
+  var row, col, mod
+
+  for (var i = 0; i < 18; i++) {
+    row = Math.floor(i / 3)
+    col = i % 3 + size - 8 - 3
+    mod = ((bits >> i) & 1) === 1
+
+    matrix.set(row, col, mod, true)
+    matrix.set(col, row, mod, true)
+  }
+}
+
+/**
+ * Add format info bits to matrix
+ *
+ * @param  {BitMatrix} matrix               Modules matrix
+ * @param  {ErrorCorrectionLevel}    errorCorrectionLevel Error correction level
+ * @param  {Number}    maskPattern          Mask pattern reference value
+ */
+function setupFormatInfo (matrix, errorCorrectionLevel, maskPattern) {
+  var size = matrix.size
+  var bits = FormatInfo.getEncodedBits(errorCorrectionLevel, maskPattern)
+  var i, mod
+
+  for (i = 0; i < 15; i++) {
+    mod = ((bits >> i) & 1) === 1
+
+    // vertical
+    if (i < 6) {
+      matrix.set(i, 8, mod, true)
+    } else if (i < 8) {
+      matrix.set(i + 1, 8, mod, true)
+    } else {
+      matrix.set(size - 15 + i, 8, mod, true)
+    }
+
+    // horizontal
+    if (i < 8) {
+      matrix.set(8, size - i - 1, mod, true)
+    } else if (i < 9) {
+      matrix.set(8, 15 - i - 1 + 1, mod, true)
+    } else {
+      matrix.set(8, 15 - i - 1, mod, true)
+    }
+  }
+
+  // fixed module
+  matrix.set(size - 8, 8, 1, true)
+}
+
+/**
+ * Add encoded data bits to matrix
+ *
+ * @param  {BitMatrix} matrix Modules matrix
+ * @param  {Buffer}    data   Data codewords
+ */
+function setupData (matrix, data) {
+  var size = matrix.size
+  var inc = -1
+  var row = size - 1
+  var bitIndex = 7
+  var byteIndex = 0
+
+  for (var col = size - 1; col > 0; col -= 2) {
+    if (col === 6) col--
+
+    while (true) {
+      for (var c = 0; c < 2; c++) {
+        if (!matrix.isReserved(row, col - c)) {
+          var dark = false
+
+          if (byteIndex < data.length) {
+            dark = (((data[byteIndex] >>> bitIndex) & 1) === 1)
+          }
+
+          matrix.set(row, col - c, dark)
+          bitIndex--
+
+          if (bitIndex === -1) {
+            byteIndex++
+            bitIndex = 7
+          }
+        }
+      }
+
+      row += inc
+
+      if (row < 0 || size <= row) {
+        row -= inc
+        inc = -inc
+        break
+      }
+    }
+  }
+}
+
+/**
+ * Create encoded codewords from data input
+ *
+ * @param  {Number}   version              QR Code version
+ * @param  {ErrorCorrectionLevel}   errorCorrectionLevel Error correction level
+ * @param  {ByteData} data                 Data input
+ * @return {Buffer}                        Buffer containing encoded codewords
+ */
+function createData (version, errorCorrectionLevel, segments) {
+  // Prepare data buffer
+  var buffer = new BitBuffer()
+
+  segments.forEach(function (data) {
+    // prefix data with mode indicator (4 bits)
+    buffer.put(data.mode.bit, 4)
+
+    // Prefix data with character count indicator.
+    // The character count indicator is a string of bits that represents the
+    // number of characters that are being encoded.
+    // The character count indicator must be placed after the mode indicator
+    // and must be a certain number of bits long, depending on the QR version
+    // and data mode
+    // @see {@link Mode.getCharCountIndicator}.
+    buffer.put(data.getLength(), Mode.getCharCountIndicator(data.mode, version))
+
+    // add binary data sequence to buffer
+    data.write(buffer)
+  })
+
+  // Calculate required number of bits
+  var totalCodewords = Utils.getSymbolTotalCodewords(version)
+  var ecTotalCodewords = ECCode.getTotalCodewordsCount(version, errorCorrectionLevel)
+  var dataTotalCodewordsBits = (totalCodewords - ecTotalCodewords) * 8
+
+  // Add a terminator.
+  // If the bit string is shorter than the total number of required bits,
+  // a terminator of up to four 0s must be added to the right side of the string.
+  // If the bit string is more than four bits shorter than the required number of bits,
+  // add four 0s to the end.
+  if (buffer.getLengthInBits() + 4 <= dataTotalCodewordsBits) {
+    buffer.put(0, 4)
+  }
+
+  // If the bit string is fewer than four bits shorter, add only the number of 0s that
+  // are needed to reach the required number of bits.
+
+  // After adding the terminator, if the number of bits in the string is not a multiple of 8,
+  // pad the string on the right with 0s to make the string's length a multiple of 8.
+  while (buffer.getLengthInBits() % 8 !== 0) {
+    buffer.putBit(0)
+  }
+
+  // Add pad bytes if the string is still shorter than the total number of required bits.
+  // Extend the buffer to fill the data capacity of the symbol corresponding to
+  // the Version and Error Correction Level by adding the Pad Codewords 11101100 (0xEC)
+  // and 00010001 (0x11) alternately.
+  var remainingByte = (dataTotalCodewordsBits - buffer.getLengthInBits()) / 8
+  for (var i = 0; i < remainingByte; i++) {
+    buffer.put(i % 2 ? 0x11 : 0xEC, 8)
+  }
+
+  return createCodewords(buffer, version, errorCorrectionLevel)
+}
+
+/**
+ * Encode input data with Reed-Solomon and return codewords with
+ * relative error correction bits
+ *
+ * @param  {BitBuffer} bitBuffer            Data to encode
+ * @param  {Number}    version              QR Code version
+ * @param  {ErrorCorrectionLevel} errorCorrectionLevel Error correction level
+ * @return {Buffer}                         Buffer containing encoded codewords
+ */
+function createCodewords (bitBuffer, version, errorCorrectionLevel) {
+  // Total codewords for this QR code version (Data + Error correction)
+  var totalCodewords = Utils.getSymbolTotalCodewords(version)
+
+  // Total number of error correction codewords
+  var ecTotalCodewords = ECCode.getTotalCodewordsCount(version, errorCorrectionLevel)
+
+  // Total number of data codewords
+  var dataTotalCodewords = totalCodewords - ecTotalCodewords
+
+  // Total number of blocks
+  var ecTotalBlocks = ECCode.getBlocksCount(version, errorCorrectionLevel)
+
+  // Calculate how many blocks each group should contain
+  var blocksInGroup2 = totalCodewords % ecTotalBlocks
+  var blocksInGroup1 = ecTotalBlocks - blocksInGroup2
+
+  var totalCodewordsInGroup1 = Math.floor(totalCodewords / ecTotalBlocks)
+
+  var dataCodewordsInGroup1 = Math.floor(dataTotalCodewords / ecTotalBlocks)
+  var dataCodewordsInGroup2 = dataCodewordsInGroup1 + 1
+
+  // Number of EC codewords is the same for both groups
+  var ecCount = totalCodewordsInGroup1 - dataCodewordsInGroup1
+
+  // Initialize a Reed-Solomon encoder with a generator polynomial of degree ecCount
+  var rs = new ReedSolomonEncoder(ecCount)
+
+  var offset = 0
+  var dcData = new Array(ecTotalBlocks)
+  var ecData = new Array(ecTotalBlocks)
+  var maxDataSize = 0
+  var buffer = new Buffer(bitBuffer.buffer)
+
+  // Divide the buffer into the required number of blocks
+  for (var b = 0; b < ecTotalBlocks; b++) {
+    var dataSize = b < blocksInGroup1 ? dataCodewordsInGroup1 : dataCodewordsInGroup2
+
+    // extract a block of data from buffer
+    dcData[b] = buffer.slice(offset, offset + dataSize)
+
+    // Calculate EC codewords for this data block
+    ecData[b] = rs.encode(dcData[b])
+
+    offset += dataSize
+    maxDataSize = Math.max(maxDataSize, dataSize)
+  }
+
+  // Create final data
+  // Interleave the data and error correction codewords from each block
+  var data = new Buffer(totalCodewords)
+  var index = 0
+  var i, r
+
+  // Add data codewords
+  for (i = 0; i < maxDataSize; i++) {
+    for (r = 0; r < ecTotalBlocks; r++) {
+      if (i < dcData[r].length) {
+        data[index++] = dcData[r][i]
+      }
+    }
+  }
+
+  // Apped EC codewords
+  for (i = 0; i < ecCount; i++) {
+    for (r = 0; r < ecTotalBlocks; r++) {
+      data[index++] = ecData[r][i]
+    }
+  }
+
+  return data
+}
+
+/**
+ * Build QR Code symbol
+ *
+ * @param  {String} data                 Input string
+ * @param  {Number} version              QR Code version
+ * @param  {ErrorCorretionLevel} errorCorrectionLevel Error level
+ * @return {Object}                      Object containing symbol data
+ */
+function createSymbol (data, version, errorCorrectionLevel) {
+  var segments
+
+  if (isArray(data)) {
+    segments = Segments.fromArray(data)
+  } else if (typeof data === 'string') {
+    var estimatedVersion = version
+
+    if (!estimatedVersion) {
+      var rawSegments = Segments.rawSplit(data)
+
+      // Estimate best version that can contain raw splitted segments
+      estimatedVersion = Version.getBestVersionForData(rawSegments,
+        errorCorrectionLevel)
+    }
+
+    // Build optimized segments
+    // If estimated version is undefined, try with the highest version
+    segments = Segments.fromString(data, estimatedVersion)
+  } else {
+    throw new Error('Invalid data')
+  }
+
+  // Get the min version that can contain data
+  var bestVersion = Version.getBestVersionForData(segments,
+      errorCorrectionLevel)
+
+  // If no version is found, data cannot be stored
+  if (!bestVersion) {
+    throw new Error('The amount of data is too big to be stored in a QR Code')
+  }
+
+  // If not specified, use min version as default
+  if (!version) {
+    version = bestVersion
+
+  // Check if the specified version can contain the data
+  } else if (version < bestVersion) {
+    throw new Error('\n' +
+      'The chosen QR Code version cannot contain this amount of data.\n' +
+      'Minimum version required to store current data is: ' + bestVersion + '.\n'
+    )
+  }
+
+  var dataBits = createData(version, errorCorrectionLevel, segments)
+
+  // Allocate matrix buffer
+  var moduleCount = Utils.getSymbolSize(version)
+  var modules = new BitMatrix(moduleCount)
+
+  // Add function modules
+  setupFinderPattern(modules, version)
+  setupTimingPattern(modules)
+  setupAlignmentPattern(modules, version)
+
+  // Add temporary dummy bits for format info just to set them as reserved.
+  // This is needed to prevent these bits from being masked by {@link MaskPattern.applyMask}
+  // since the masking operation must be performed only on the encoding region.
+  // These blocks will be replaced with correct values later in code.
+  setupFormatInfo(modules, errorCorrectionLevel, 0)
+
+  if (version >= 7) {
+    setupVersionInfo(modules, version)
+  }
+
+  // Add data codewords
+  setupData(modules, dataBits)
+
+  // Find best mask pattern
+  var maskPattern = MaskPattern.getBestMask(modules,
+    setupFormatInfo.bind(null, modules, errorCorrectionLevel))
+
+  // Apply mask pattern
+  MaskPattern.applyMask(maskPattern, modules)
+
+  // Replace format info bits with correct values
+  setupFormatInfo(modules, errorCorrectionLevel, maskPattern)
+
+  return {
+    modules: modules,
+    version: version,
+    errorCorrectionLevel: errorCorrectionLevel,
+    maskPattern: maskPattern,
+    segments: segments
+  }
+}
+
+/**
+ * QR Code
+ *
+ * @param {String | Array} data                 Input data
+ * @param {Object} options                      Optional configurations
+ * @param {Number} options.version              QR Code version
+ * @param {String} options.errorCorrectionLevel Error correction level
+ * @param {Function} options.toSJISFunc         Helper func to convert utf8 to sjis
+ */
+exports.create = function create (data, options) {
+  if (typeof data === 'undefined' || data === '') {
+    throw new Error('No input text')
+  }
+
+  var errorCorrectionLevel = ECLevel.M
+  var version
+
+  if (typeof options !== 'undefined') {
+    // Use higher error correction level as default
+    errorCorrectionLevel = ECLevel.from(options.errorCorrectionLevel, ECLevel.M)
+    version = Version.from(options.version)
+
+    if (options.toSJISFunc) {
+      Utils.setToSJISFunction(options.toSJISFunc)
+    }
+  }
+
+  return createSymbol(data, version, errorCorrectionLevel)
+}
+
+
+/***/ }),
+
+/***/ 1598:
+/***/ (function(module, exports) {
+
+function BitBuffer () {
+  this.buffer = []
+  this.length = 0
+}
+
+BitBuffer.prototype = {
+
+  get: function (index) {
+    var bufIndex = Math.floor(index / 8)
+    return ((this.buffer[bufIndex] >>> (7 - index % 8)) & 1) === 1
+  },
+
+  put: function (num, length) {
+    for (var i = 0; i < length; i++) {
+      this.putBit(((num >>> (length - i - 1)) & 1) === 1)
+    }
+  },
+
+  getLengthInBits: function () {
+    return this.length
+  },
+
+  putBit: function (bit) {
+    var bufIndex = Math.floor(this.length / 8)
+    if (this.buffer.length <= bufIndex) {
+      this.buffer.push(0)
+    }
+
+    if (bit) {
+      this.buffer[bufIndex] |= (0x80 >>> (this.length % 8))
+    }
+
+    this.length++
+  }
+}
+
+module.exports = BitBuffer
+
+
+/***/ }),
+
+/***/ 1599:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Buffer = __webpack_require__(1062)
+
+/**
+ * Helper class to handle QR Code symbol modules
+ *
+ * @param {Number} size Symbol size
+ */
+function BitMatrix (size) {
+  if (!size || size < 1) {
+    throw new Error('BitMatrix size must be defined and greater than 0')
+  }
+
+  this.size = size
+  this.data = new Buffer(size * size)
+  this.data.fill(0)
+  this.reservedBit = new Buffer(size * size)
+  this.reservedBit.fill(0)
+}
+
+/**
+ * Set bit value at specified location
+ * If reserved flag is set, this bit will be ignored during masking process
+ *
+ * @param {Number}  row
+ * @param {Number}  col
+ * @param {Boolean} value
+ * @param {Boolean} reserved
+ */
+BitMatrix.prototype.set = function (row, col, value, reserved) {
+  var index = row * this.size + col
+  this.data[index] = value
+  if (reserved) this.reservedBit[index] = true
+}
+
+/**
+ * Returns bit value at specified location
+ *
+ * @param  {Number}  row
+ * @param  {Number}  col
+ * @return {Boolean}
+ */
+BitMatrix.prototype.get = function (row, col) {
+  return this.data[row * this.size + col]
+}
+
+/**
+ * Applies xor operator at specified location
+ * (used during masking process)
+ *
+ * @param {Number}  row
+ * @param {Number}  col
+ * @param {Boolean} value
+ */
+BitMatrix.prototype.xor = function (row, col, value) {
+  this.data[row * this.size + col] ^= value
+}
+
+/**
+ * Check if bit at specified location is reserved
+ *
+ * @param {Number}   row
+ * @param {Number}   col
+ * @return {Boolean}
+ */
+BitMatrix.prototype.isReserved = function (row, col) {
+  return this.reservedBit[row * this.size + col]
+}
+
+module.exports = BitMatrix
+
+
+/***/ }),
+
+/***/ 1600:
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Alignment pattern are fixed reference pattern in defined positions
+ * in a matrix symbology, which enables the decode software to re-synchronise
+ * the coordinate mapping of the image modules in the event of moderate amounts
+ * of distortion of the image.
+ *
+ * Alignment patterns are present only in QR Code symbols of version 2 or larger
+ * and their number depends on the symbol version.
+ */
+
+var getSymbolSize = __webpack_require__(1053).getSymbolSize
+
+/**
+ * Calculate the row/column coordinates of the center module of each alignment pattern
+ * for the specified QR Code version.
+ *
+ * The alignment patterns are positioned symmetrically on either side of the diagonal
+ * running from the top left corner of the symbol to the bottom right corner.
+ *
+ * Since positions are simmetrical only half of the coordinates are returned.
+ * Each item of the array will represent in turn the x and y coordinate.
+ * @see {@link getPositions}
+ *
+ * @param  {Number} version QR Code version
+ * @return {Array}          Array of coordinate
+ */
+exports.getRowColCoords = function getRowColCoords (version) {
+  if (version === 1) return []
+
+  var posCount = Math.floor(version / 7) + 2
+  var size = getSymbolSize(version)
+  var intervals = size === 145 ? 26 : Math.ceil((size - 13) / (2 * posCount - 2)) * 2
+  var positions = [size - 7] // Last coord is always (size - 7)
+
+  for (var i = 1; i < posCount - 1; i++) {
+    positions[i] = positions[i - 1] - intervals
+  }
+
+  positions.push(6) // First coord is always 6
+
+  return positions.reverse()
+}
+
+/**
+ * Returns an array containing the positions of each alignment pattern.
+ * Each array's element represent the center point of the pattern as (x, y) coordinates
+ *
+ * Coordinates are calculated expanding the row/column coordinates returned by {@link getRowColCoords}
+ * and filtering out the items that overlaps with finder pattern
+ *
+ * @example
+ * For a Version 7 symbol {@link getRowColCoords} returns values 6, 22 and 38.
+ * The alignment patterns, therefore, are to be centered on (row, column)
+ * positions (6,22), (22,6), (22,22), (22,38), (38,22), (38,38).
+ * Note that the coordinates (6,6), (6,38), (38,6) are occupied by finder patterns
+ * and are not therefore used for alignment patterns.
+ *
+ * var pos = getPositions(7)
+ * // [[6,22], [22,6], [22,22], [22,38], [38,22], [38,38]]
+ *
+ * @param  {Number} version QR Code version
+ * @return {Array}          Array of coordinates
+ */
+exports.getPositions = function getPositions (version) {
+  var coords = []
+  var pos = exports.getRowColCoords(version)
+  var posLength = pos.length
+
+  for (var i = 0; i < posLength; i++) {
+    for (var j = 0; j < posLength; j++) {
+      // Skip if position is occupied by finder patterns
+      if ((i === 0 && j === 0) ||             // top-left
+          (i === 0 && j === posLength - 1) || // bottom-left
+          (i === posLength - 1 && j === 0)) { // top-right
+        continue
+      }
+
+      coords.push([pos[i], pos[j]])
+    }
+  }
+
+  return coords
+}
+
+
+/***/ }),
+
+/***/ 1601:
+/***/ (function(module, exports, __webpack_require__) {
+
+var getSymbolSize = __webpack_require__(1053).getSymbolSize
+var FINDER_PATTERN_SIZE = 7
+
+/**
+ * Returns an array containing the positions of each finder pattern.
+ * Each array's element represent the top-left point of the pattern as (x, y) coordinates
+ *
+ * @param  {Number} version QR Code version
+ * @return {Array}          Array of coordinates
+ */
+exports.getPositions = function getPositions (version) {
+  var size = getSymbolSize(version)
+
+  return [
+    // top-left
+    [0, 0],
+    // top-right
+    [size - FINDER_PATTERN_SIZE, 0],
+    // bottom-left
+    [0, size - FINDER_PATTERN_SIZE]
+  ]
+}
+
+
+/***/ }),
+
+/***/ 1602:
+/***/ (function(module, exports) {
+
+/**
+ * Data mask pattern reference
+ * @type {Object}
+ */
+exports.Patterns = {
+  PATTERN000: 0,
+  PATTERN001: 1,
+  PATTERN010: 2,
+  PATTERN011: 3,
+  PATTERN100: 4,
+  PATTERN101: 5,
+  PATTERN110: 6,
+  PATTERN111: 7
+}
+
+/**
+ * Weighted penalty scores for the undesirable features
+ * @type {Object}
+ */
+var PenaltyScores = {
+  N1: 3,
+  N2: 3,
+  N3: 40,
+  N4: 10
+}
+
+/**
+* Find adjacent modules in row/column with the same color
+* and assign a penalty value.
+*
+* Points: N1 + i
+* i is the amount by which the number of adjacent modules of the same color exceeds 5
+*/
+exports.getPenaltyN1 = function getPenaltyN1 (data) {
+  var size = data.size
+  var points = 0
+  var sameCountCol = 0
+  var sameCountRow = 0
+  var lastCol = null
+  var lastRow = null
+
+  for (var row = 0; row < size; row++) {
+    sameCountCol = sameCountRow = 0
+    lastCol = lastRow = null
+
+    for (var col = 0; col < size; col++) {
+      var module = data.get(row, col)
+      if (module === lastCol) {
+        sameCountCol++
+      } else {
+        if (sameCountCol >= 5) points += PenaltyScores.N1 + (sameCountCol - 5)
+        lastCol = module
+        sameCountCol = 1
+      }
+
+      module = data.get(col, row)
+      if (module === lastRow) {
+        sameCountRow++
+      } else {
+        if (sameCountRow >= 5) points += PenaltyScores.N1 + (sameCountRow - 5)
+        lastRow = module
+        sameCountRow = 1
+      }
+    }
+
+    if (sameCountCol >= 5) points += PenaltyScores.N1 + (sameCountCol - 5)
+    if (sameCountRow >= 5) points += PenaltyScores.N1 + (sameCountRow - 5)
+  }
+
+  return points
+}
+
+/**
+ * Find 2x2 blocks with the same color and assign a penalty value
+ *
+ * Points: N2 * (m - 1) * (n - 1)
+ */
+exports.getPenaltyN2 = function getPenaltyN2 (data) {
+  var size = data.size
+  var points = 0
+
+  for (var row = 0; row < size - 1; row++) {
+    for (var col = 0; col < size - 1; col++) {
+      var last = data.get(row, col) +
+        data.get(row, col + 1) +
+        data.get(row + 1, col) +
+        data.get(row + 1, col + 1)
+
+      if (last === 4 || last === 0) points++
+    }
+  }
+
+  return points * PenaltyScores.N2
+}
+
+/**
+ * Find 1:1:3:1:1 ratio (dark:light:dark:light:dark) pattern in row/column,
+ * preceded or followed by light area 4 modules wide
+ *
+ * Points: N3 * number of pattern found
+ */
+exports.getPenaltyN3 = function getPenaltyN3 (data) {
+  var size = data.size
+  var points = 0
+  var bitsCol = 0
+  var bitsRow = 0
+
+  for (var row = 0; row < size; row++) {
+    bitsCol = bitsRow = 0
+    for (var col = 0; col < size; col++) {
+      bitsCol = ((bitsCol << 1) & 0x7FF) | data.get(row, col)
+      if (col >= 10 && (bitsCol === 0x5D0 || bitsCol === 0x05D)) points++
+
+      bitsRow = ((bitsRow << 1) & 0x7FF) | data.get(col, row)
+      if (col >= 10 && (bitsRow === 0x5D0 || bitsRow === 0x05D)) points++
+    }
+  }
+
+  return points * PenaltyScores.N3
+}
+
+/**
+ * Calculate proportion of dark modules in entire symbol
+ *
+ * Points: N4 * k
+ *
+ * k is the rating of the deviation of the proportion of dark modules
+ * in the symbol from 50% in steps of 5%
+ */
+exports.getPenaltyN4 = function getPenaltyN4 (data) {
+  var darkCount = 0
+  var modulesCount = data.data.length
+
+  for (var i = 0; i < modulesCount; i++) darkCount += data.data[i]
+
+  var k = Math.abs(Math.ceil((darkCount * 100 / modulesCount) / 5) - 10)
+
+  return k * PenaltyScores.N4
+}
+
+/**
+ * Return mask value at given position
+ *
+ * @param  {Number} maskPattern Pattern reference value
+ * @param  {Number} i           Row
+ * @param  {Number} j           Column
+ * @return {Boolean}            Mask value
+ */
+function getMaskAt (maskPattern, i, j) {
+  switch (maskPattern) {
+    case exports.Patterns.PATTERN000: return (i + j) % 2 === 0
+    case exports.Patterns.PATTERN001: return i % 2 === 0
+    case exports.Patterns.PATTERN010: return j % 3 === 0
+    case exports.Patterns.PATTERN011: return (i + j) % 3 === 0
+    case exports.Patterns.PATTERN100: return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 === 0
+    case exports.Patterns.PATTERN101: return (i * j) % 2 + (i * j) % 3 === 0
+    case exports.Patterns.PATTERN110: return ((i * j) % 2 + (i * j) % 3) % 2 === 0
+    case exports.Patterns.PATTERN111: return ((i * j) % 3 + (i + j) % 2) % 2 === 0
+
+    default: throw new Error('bad maskPattern:' + maskPattern)
+  }
+}
+
+/**
+ * Apply a mask pattern to a BitMatrix
+ *
+ * @param  {Number}    pattern Pattern reference number
+ * @param  {BitMatrix} data    BitMatrix data
+ */
+exports.applyMask = function applyMask (pattern, data) {
+  var size = data.size
+
+  for (var col = 0; col < size; col++) {
+    for (var row = 0; row < size; row++) {
+      if (data.isReserved(row, col)) continue
+      data.xor(row, col, getMaskAt(pattern, row, col))
+    }
+  }
+}
+
+/**
+ * Returns the best mask pattern for data
+ *
+ * @param  {BitMatrix} data
+ * @return {Number} Mask pattern reference number
+ */
+exports.getBestMask = function getBestMask (data, setupFormatFunc) {
+  var numPatterns = Object.keys(exports.Patterns).length
+  var bestPattern = 0
+  var lowerPenalty = Infinity
+
+  for (var p = 0; p < numPatterns; p++) {
+    setupFormatFunc(p)
+    exports.applyMask(p, data)
+
+    // Calculate penalty
+    var penalty =
+      exports.getPenaltyN1(data) +
+      exports.getPenaltyN2(data) +
+      exports.getPenaltyN3(data) +
+      exports.getPenaltyN4(data)
+
+    // Undo previously applied mask
+    exports.applyMask(p, data)
+
+    if (penalty < lowerPenalty) {
+      lowerPenalty = penalty
+      bestPattern = p
+    }
+  }
+
+  return bestPattern
+}
+
+
+/***/ }),
+
+/***/ 1603:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Buffer = __webpack_require__(1062)
+var Polynomial = __webpack_require__(1604)
+
+function ReedSolomonEncoder (degree) {
+  this.genPoly = undefined
+  this.degree = degree
+
+  if (this.degree) this.initialize(this.degree)
+}
+
+/**
+ * Initialize the encoder.
+ * The input param should correspond to the number of error correction codewords.
+ *
+ * @param  {Number} degree
+ */
+ReedSolomonEncoder.prototype.initialize = function initialize (degree) {
+  // create an irreducible generator polynomial
+  this.degree = degree
+  this.genPoly = Polynomial.generateECPolynomial(this.degree)
+}
+
+/**
+ * Encodes a chunk of data
+ *
+ * @param  {Buffer} data Buffer containing input data
+ * @return {Buffer}      Buffer containing encoded data
+ */
+ReedSolomonEncoder.prototype.encode = function encode (data) {
+  if (!this.genPoly) {
+    throw new Error('Encoder not initialized')
+  }
+
+  // Calculate EC for this data block
+  // extends data size to data+genPoly size
+  var pad = new Buffer(this.degree)
+  pad.fill(0)
+  var paddedData = Buffer.concat([data, pad], data.length + this.degree)
+
+  // The error correction codewords are the remainder after dividing the data codewords
+  // by a generator polynomial
+  var remainder = Polynomial.mod(paddedData, this.genPoly)
+
+  // return EC data blocks (last n byte, where n is the degree of genPoly)
+  // If coefficients number in remainder are less than genPoly degree,
+  // pad with 0s to the left to reach the needed number of coefficients
+  var start = this.degree - remainder.length
+  if (start > 0) {
+    var buff = new Buffer(this.degree)
+    buff.fill(0)
+    remainder.copy(buff, start)
+
+    return buff
+  }
+
+  return remainder
+}
+
+module.exports = ReedSolomonEncoder
+
+
+/***/ }),
+
+/***/ 1604:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Buffer = __webpack_require__(1062)
+var GF = __webpack_require__(1605)
+
+/**
+ * Multiplies two polynomials inside Galois Field
+ *
+ * @param  {Buffer} p1 Polynomial
+ * @param  {Buffer} p2 Polynomial
+ * @return {Buffer}    Product of p1 and p2
+ */
+exports.mul = function mul (p1, p2) {
+  var coeff = new Buffer(p1.length + p2.length - 1)
+  coeff.fill(0)
+
+  for (var i = 0; i < p1.length; i++) {
+    for (var j = 0; j < p2.length; j++) {
+      coeff[i + j] ^= GF.mul(p1[i], p2[j])
+    }
+  }
+
+  return coeff
+}
+
+/**
+ * Calculate the remainder of polynomials division
+ *
+ * @param  {Buffer} divident Polynomial
+ * @param  {Buffer} divisor  Polynomial
+ * @return {Buffer}          Remainder
+ */
+exports.mod = function mod (divident, divisor) {
+  var result = new Buffer(divident)
+
+  while ((result.length - divisor.length) >= 0) {
+    var coeff = result[0]
+
+    for (var i = 0; i < divisor.length; i++) {
+      result[i] ^= GF.mul(divisor[i], coeff)
+    }
+
+    // remove all zeros from buffer head
+    var offset = 0
+    while (offset < result.length && result[offset] === 0) offset++
+    result = result.slice(offset)
+  }
+
+  return result
+}
+
+/**
+ * Generate an irreducible generator polynomial of specified degree
+ * (used by Reed-Solomon encoder)
+ *
+ * @param  {Number} degree Degree of the generator polynomial
+ * @return {Buffer}        Buffer containing polynomial coefficients
+ */
+exports.generateECPolynomial = function generateECPolynomial (degree) {
+  var poly = new Buffer([1])
+  for (var i = 0; i < degree; i++) {
+    poly = exports.mul(poly, [1, GF.exp(i)])
+  }
+
+  return poly
+}
+
+
+/***/ }),
+
+/***/ 1605:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Buffer = __webpack_require__(1062)
+
+var EXP_TABLE = new Buffer(512)
+var LOG_TABLE = new Buffer(256)
+
+/**
+ * Precompute the log and anti-log tables for faster computation later
+ *
+ * For each possible value in the galois field 2^8, we will pre-compute
+ * the logarithm and anti-logarithm (exponential) of this value
+ *
+ * ref {@link https://en.wikiversity.org/wiki/Reed%E2%80%93Solomon_codes_for_coders#Introduction_to_mathematical_fields}
+ */
+;(function initTables () {
+  var x = 1
+  for (var i = 0; i < 255; i++) {
+    EXP_TABLE[i] = x
+    LOG_TABLE[x] = i
+
+    x <<= 1 // multiply by 2
+
+    // The QR code specification says to use byte-wise modulo 100011101 arithmetic.
+    // This means that when a number is 256 or larger, it should be XORed with 0x11D.
+    if (x & 0x100) { // similar to x >= 256, but a lot faster (because 0x100 == 256)
+      x ^= 0x11D
+    }
+  }
+
+  // Optimization: double the size of the anti-log table so that we don't need to mod 255 to
+  // stay inside the bounds (because we will mainly use this table for the multiplication of
+  // two GF numbers, no more).
+  // @see {@link mul}
+  for (i = 255; i < 512; i++) {
+    EXP_TABLE[i] = EXP_TABLE[i - 255]
+  }
+}())
+
+/**
+ * Returns log value of n inside Galois Field
+ *
+ * @param  {Number} n
+ * @return {Number}
+ */
+exports.log = function log (n) {
+  if (n < 1) throw new Error('log(' + n + ')')
+  return LOG_TABLE[n]
+}
+
+/**
+ * Returns anti-log value of n inside Galois Field
+ *
+ * @param  {Number} n
+ * @return {Number}
+ */
+exports.exp = function exp (n) {
+  return EXP_TABLE[n]
+}
+
+/**
+ * Multiplies two number inside Galois Field
+ *
+ * @param  {Number} x
+ * @param  {Number} y
+ * @return {Number}
+ */
+exports.mul = function mul (x, y) {
+  if (x === 0 || y === 0) return 0
+
+  // should be EXP_TABLE[(LOG_TABLE[x] + LOG_TABLE[y]) % 255] if EXP_TABLE wasn't oversized
+  // @see {@link initTables}
+  return EXP_TABLE[LOG_TABLE[x] + LOG_TABLE[y]]
+}
+
+
+/***/ }),
+
+/***/ 1606:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(1053)
+
+var G15 = (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0)
+var G15_MASK = (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1)
+var G15_BCH = Utils.getBCHDigit(G15)
+
+/**
+ * Returns format information with relative error correction bits
+ *
+ * The format information is a 15-bit sequence containing 5 data bits,
+ * with 10 error correction bits calculated using the (15, 5) BCH code.
+ *
+ * @param  {Number} errorCorrectionLevel Error correction level
+ * @param  {Number} mask                 Mask pattern
+ * @return {Number}                      Encoded format information bits
+ */
+exports.getEncodedBits = function getEncodedBits (errorCorrectionLevel, mask) {
+  var data = ((errorCorrectionLevel.bit << 3) | mask)
+  var d = data << 10
+
+  while (Utils.getBCHDigit(d) - G15_BCH >= 0) {
+    d ^= (G15 << (Utils.getBCHDigit(d) - G15_BCH))
+  }
+
+  // xor final data with mask pattern in order to ensure that
+  // no combination of Error Correction Level and data mask pattern
+  // will result in an all-zero data string
+  return ((data << 10) | d) ^ G15_MASK
+}
+
+
+/***/ }),
+
+/***/ 1607:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Mode = __webpack_require__(1054)
+var NumericData = __webpack_require__(1608)
+var AlphanumericData = __webpack_require__(1609)
+var ByteData = __webpack_require__(1610)
+var KanjiData = __webpack_require__(1611)
+var Regex = __webpack_require__(1248)
+var Utils = __webpack_require__(1053)
+var dijkstra = __webpack_require__(1612)
+
+/**
+ * Returns UTF8 byte length
+ *
+ * @param  {String} str Input string
+ * @return {Number}     Number of byte
+ */
+function getStringByteLength (str) {
+  return unescape(encodeURIComponent(str)).length
+}
+
+/**
+ * Get a list of segments of the specified mode
+ * from a string
+ *
+ * @param  {Mode}   mode Segment mode
+ * @param  {String} str  String to process
+ * @return {Array}       Array of object with segments data
+ */
+function getSegments (regex, mode, str) {
+  var segments = []
+  var result
+
+  while ((result = regex.exec(str)) !== null) {
+    segments.push({
+      data: result[0],
+      index: result.index,
+      mode: mode,
+      length: result[0].length
+    })
+  }
+
+  return segments
+}
+
+/**
+ * Extracts a series of segments with the appropriate
+ * modes from a string
+ *
+ * @param  {String} dataStr Input string
+ * @return {Array}          Array of object with segments data
+ */
+function getSegmentsFromString (dataStr) {
+  var numSegs = getSegments(Regex.NUMERIC, Mode.NUMERIC, dataStr)
+  var alphaNumSegs = getSegments(Regex.ALPHANUMERIC, Mode.ALPHANUMERIC, dataStr)
+  var byteSegs
+  var kanjiSegs
+
+  if (Utils.isKanjiModeEnabled()) {
+    byteSegs = getSegments(Regex.BYTE, Mode.BYTE, dataStr)
+    kanjiSegs = getSegments(Regex.KANJI, Mode.KANJI, dataStr)
+  } else {
+    byteSegs = getSegments(Regex.BYTE_KANJI, Mode.BYTE, dataStr)
+    kanjiSegs = []
+  }
+
+  var segs = numSegs.concat(alphaNumSegs, byteSegs, kanjiSegs)
+
+  return segs
+    .sort(function (s1, s2) {
+      return s1.index - s2.index
+    })
+    .map(function (obj) {
+      return {
+        data: obj.data,
+        mode: obj.mode,
+        length: obj.length
+      }
+    })
+}
+
+/**
+ * Returns how many bits are needed to encode a string of
+ * specified length with the specified mode
+ *
+ * @param  {Number} length String length
+ * @param  {Mode} mode     Segment mode
+ * @return {Number}        Bit length
+ */
+function getSegmentBitsLength (length, mode) {
+  switch (mode) {
+    case Mode.NUMERIC:
+      return NumericData.getBitsLength(length)
+    case Mode.ALPHANUMERIC:
+      return AlphanumericData.getBitsLength(length)
+    case Mode.KANJI:
+      return KanjiData.getBitsLength(length)
+    case Mode.BYTE:
+      return ByteData.getBitsLength(length)
+  }
+}
+
+/**
+ * Merges adjacent segments which have the same mode
+ *
+ * @param  {Array} segs Array of object with segments data
+ * @return {Array}      Array of object with segments data
+ */
+function mergeSegments (segs) {
+  return segs.reduce(function (acc, curr) {
+    var prevSeg = acc.length - 1 >= 0 ? acc[acc.length - 1] : null
+    if (prevSeg && prevSeg.mode === curr.mode) {
+      acc[acc.length - 1].data += curr.data
+      return acc
+    }
+
+    acc.push(curr)
+    return acc
+  }, [])
+}
+
+/**
+ * Generates a list of all possible nodes combination which
+ * will be used to build a segments graph.
+ *
+ * Nodes are divided by groups. Each group will contain a list of all the modes
+ * in which is possible to encode the given text.
+ *
+ * For example the text '12345' can be encoded as Numeric, Alphanumeric or Byte.
+ * The group for '12345' will contain then 3 objects, one for each
+ * possible encoding mode.
+ *
+ * Each node represents a possible segment.
+ *
+ * @param  {Array} segs Array of object with segments data
+ * @return {Array}      Array of object with segments data
+ */
+function buildNodes (segs) {
+  var nodes = []
+  for (var i = 0; i < segs.length; i++) {
+    var seg = segs[i]
+
+    switch (seg.mode) {
+      case Mode.NUMERIC:
+        nodes.push([seg,
+          { data: seg.data, mode: Mode.ALPHANUMERIC, length: seg.length },
+          { data: seg.data, mode: Mode.BYTE, length: seg.length }
+        ])
+        break
+      case Mode.ALPHANUMERIC:
+        nodes.push([seg,
+          { data: seg.data, mode: Mode.BYTE, length: seg.length }
+        ])
+        break
+      case Mode.KANJI:
+        nodes.push([seg,
+          { data: seg.data, mode: Mode.BYTE, length: getStringByteLength(seg.data) }
+        ])
+        break
+      case Mode.BYTE:
+        nodes.push([
+          { data: seg.data, mode: Mode.BYTE, length: getStringByteLength(seg.data) }
+        ])
+    }
+  }
+
+  return nodes
+}
+
+/**
+ * Builds a graph from a list of nodes.
+ * All segments in each node group will be connected with all the segments of
+ * the next group and so on.
+ *
+ * At each connection will be assigned a weight depending on the
+ * segment's byte length.
+ *
+ * @param  {Array} nodes    Array of object with segments data
+ * @param  {Number} version QR Code version
+ * @return {Object}         Graph of all possible segments
+ */
+function buildGraph (nodes, version) {
+  var table = {}
+  var graph = {'start': {}}
+  var prevNodeIds = ['start']
+
+  for (var i = 0; i < nodes.length; i++) {
+    var nodeGroup = nodes[i]
+    var currentNodeIds = []
+
+    for (var j = 0; j < nodeGroup.length; j++) {
+      var node = nodeGroup[j]
+      var key = '' + i + j
+
+      currentNodeIds.push(key)
+      table[key] = { node: node, lastCount: 0 }
+      graph[key] = {}
+
+      for (var n = 0; n < prevNodeIds.length; n++) {
+        var prevNodeId = prevNodeIds[n]
+
+        if (table[prevNodeId] && table[prevNodeId].node.mode === node.mode) {
+          graph[prevNodeId][key] =
+            getSegmentBitsLength(table[prevNodeId].lastCount + node.length, node.mode) -
+            getSegmentBitsLength(table[prevNodeId].lastCount, node.mode)
+
+          table[prevNodeId].lastCount += node.length
+        } else {
+          if (table[prevNodeId]) table[prevNodeId].lastCount = node.length
+
+          graph[prevNodeId][key] = getSegmentBitsLength(node.length, node.mode) +
+            4 + Mode.getCharCountIndicator(node.mode, version) // switch cost
+        }
+      }
+    }
+
+    prevNodeIds = currentNodeIds
+  }
+
+  for (n = 0; n < prevNodeIds.length; n++) {
+    graph[prevNodeIds[n]]['end'] = 0
+  }
+
+  return { map: graph, table: table }
+}
+
+/**
+ * Builds a segment from a specified data and mode.
+ * If a mode is not specified, the more suitable will be used.
+ *
+ * @param  {String} data             Input data
+ * @param  {Mode | String} modesHint Data mode
+ * @return {Segment}                 Segment
+ */
+function buildSingleSegment (data, modesHint) {
+  var mode
+  var bestMode = Mode.getBestModeForData(data)
+
+  mode = Mode.from(modesHint, bestMode)
+
+  // Make sure data can be encoded
+  if (mode !== Mode.BYTE && mode.bit < bestMode.bit) {
+    throw new Error('"' + data + '"' +
+      ' cannot be encoded with mode ' + Mode.toString(mode) +
+      '.\n Suggested mode is: ' + Mode.toString(bestMode))
+  }
+
+  // Use Mode.BYTE if Kanji support is disabled
+  if (mode === Mode.KANJI && !Utils.isKanjiModeEnabled()) {
+    mode = Mode.BYTE
+  }
+
+  switch (mode) {
+    case Mode.NUMERIC:
+      return new NumericData(data)
+
+    case Mode.ALPHANUMERIC:
+      return new AlphanumericData(data)
+
+    case Mode.KANJI:
+      return new KanjiData(data)
+
+    case Mode.BYTE:
+      return new ByteData(data)
+  }
+}
+
+/**
+ * Builds a list of segments from an array.
+ * Array can contain Strings or Objects with segment's info.
+ *
+ * For each item which is a string, will be generated a segment with the given
+ * string and the more appropriate encoding mode.
+ *
+ * For each item which is an object, will be generated a segment with the given
+ * data and mode.
+ * Objects must contain at least the property "data".
+ * If property "mode" is not present, the more suitable mode will be used.
+ *
+ * @param  {Array} array Array of objects with segments data
+ * @return {Array}       Array of Segments
+ */
+exports.fromArray = function fromArray (array) {
+  return array.reduce(function (acc, seg) {
+    if (typeof seg === 'string') {
+      acc.push(buildSingleSegment(seg, null))
+    } else if (seg.data) {
+      acc.push(buildSingleSegment(seg.data, seg.mode))
+    }
+
+    return acc
+  }, [])
+}
+
+/**
+ * Builds an optimized sequence of segments from a string,
+ * which will produce the shortest possible bitstream.
+ *
+ * @param  {String} data    Input string
+ * @param  {Number} version QR Code version
+ * @return {Array}          Array of segments
+ */
+exports.fromString = function fromString (data, version) {
+  var segs = getSegmentsFromString(data, Utils.isKanjiModeEnabled())
+
+  var nodes = buildNodes(segs)
+  var graph = buildGraph(nodes, version)
+  var path = dijkstra.find_path(graph.map, 'start', 'end')
+
+  var optimizedSegs = []
+  for (var i = 1; i < path.length - 1; i++) {
+    optimizedSegs.push(graph.table[path[i]].node)
+  }
+
+  return exports.fromArray(mergeSegments(optimizedSegs))
+}
+
+/**
+ * Splits a string in various segments with the modes which
+ * best represent their content.
+ * The produced segments are far from being optimized.
+ * The output of this function is only used to estimate a QR Code version
+ * which may contain the data.
+ *
+ * @param  {string} data Input string
+ * @return {Array}       Array of segments
+ */
+exports.rawSplit = function rawSplit (data) {
+  return exports.fromArray(
+    getSegmentsFromString(data, Utils.isKanjiModeEnabled())
+  )
+}
+
+
+/***/ }),
+
+/***/ 1608:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Mode = __webpack_require__(1054)
+
+function NumericData (data) {
+  this.mode = Mode.NUMERIC
+  this.data = data.toString()
+}
+
+NumericData.getBitsLength = function getBitsLength (length) {
+  return 10 * Math.floor(length / 3) + ((length % 3) ? ((length % 3) * 3 + 1) : 0)
+}
+
+NumericData.prototype.getLength = function getLength () {
+  return this.data.length
+}
+
+NumericData.prototype.getBitsLength = function getBitsLength () {
+  return NumericData.getBitsLength(this.data.length)
+}
+
+NumericData.prototype.write = function write (bitBuffer) {
+  var i, group, value
+
+  // The input data string is divided into groups of three digits,
+  // and each group is converted to its 10-bit binary equivalent.
+  for (i = 0; i + 3 <= this.data.length; i += 3) {
+    group = this.data.substr(i, 3)
+    value = parseInt(group, 10)
+
+    bitBuffer.put(value, 10)
+  }
+
+  // If the number of input digits is not an exact multiple of three,
+  // the final one or two digits are converted to 4 or 7 bits respectively.
+  var remainingNum = this.data.length - i
+  if (remainingNum > 0) {
+    group = this.data.substr(i)
+    value = parseInt(group, 10)
+
+    bitBuffer.put(value, remainingNum * 3 + 1)
+  }
+}
+
+module.exports = NumericData
+
+
+/***/ }),
+
+/***/ 1609:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Mode = __webpack_require__(1054)
+
+/**
+ * Array of characters available in alphanumeric mode
+ *
+ * As per QR Code specification, to each character
+ * is assigned a value from 0 to 44 which in this case coincides
+ * with the array index
+ *
+ * @type {Array}
+ */
+var ALPHA_NUM_CHARS = [
+  '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+  'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+  ' ', '$', '%', '*', '+', '-', '.', '/', ':'
+]
+
+function AlphanumericData (data) {
+  this.mode = Mode.ALPHANUMERIC
+  this.data = data
+}
+
+AlphanumericData.getBitsLength = function getBitsLength (length) {
+  return 11 * Math.floor(length / 2) + 6 * (length % 2)
+}
+
+AlphanumericData.prototype.getLength = function getLength () {
+  return this.data.length
+}
+
+AlphanumericData.prototype.getBitsLength = function getBitsLength () {
+  return AlphanumericData.getBitsLength(this.data.length)
+}
+
+AlphanumericData.prototype.write = function write (bitBuffer) {
+  var i
+
+  // Input data characters are divided into groups of two characters
+  // and encoded as 11-bit binary codes.
+  for (i = 0; i + 2 <= this.data.length; i += 2) {
+    // The character value of the first character is multiplied by 45
+    var value = ALPHA_NUM_CHARS.indexOf(this.data[i]) * 45
+
+    // The character value of the second digit is added to the product
+    value += ALPHA_NUM_CHARS.indexOf(this.data[i + 1])
+
+    // The sum is then stored as 11-bit binary number
+    bitBuffer.put(value, 11)
+  }
+
+  // If the number of input data characters is not a multiple of two,
+  // the character value of the final character is encoded as a 6-bit binary number.
+  if (this.data.length % 2) {
+    bitBuffer.put(ALPHA_NUM_CHARS.indexOf(this.data[i]), 6)
+  }
+}
+
+module.exports = AlphanumericData
+
+
+/***/ }),
+
+/***/ 1610:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Buffer = __webpack_require__(1062)
+var Mode = __webpack_require__(1054)
+
+function ByteData (data) {
+  this.mode = Mode.BYTE
+  this.data = new Buffer(data)
+}
+
+ByteData.getBitsLength = function getBitsLength (length) {
+  return length * 8
+}
+
+ByteData.prototype.getLength = function getLength () {
+  return this.data.length
+}
+
+ByteData.prototype.getBitsLength = function getBitsLength () {
+  return ByteData.getBitsLength(this.data.length)
+}
+
+ByteData.prototype.write = function (bitBuffer) {
+  for (var i = 0, l = this.data.length; i < l; i++) {
+    bitBuffer.put(this.data[i], 8)
+  }
+}
+
+module.exports = ByteData
+
+
+/***/ }),
+
+/***/ 1611:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Mode = __webpack_require__(1054)
+var Utils = __webpack_require__(1053)
+
+function KanjiData (data) {
+  this.mode = Mode.KANJI
+  this.data = data
+}
+
+KanjiData.getBitsLength = function getBitsLength (length) {
+  return length * 13
+}
+
+KanjiData.prototype.getLength = function getLength () {
+  return this.data.length
+}
+
+KanjiData.prototype.getBitsLength = function getBitsLength () {
+  return KanjiData.getBitsLength(this.data.length)
+}
+
+KanjiData.prototype.write = function (bitBuffer) {
+  var i
+
+  // In the Shift JIS system, Kanji characters are represented by a two byte combination.
+  // These byte values are shifted from the JIS X 0208 values.
+  // JIS X 0208 gives details of the shift coded representation.
+  for (i = 0; i < this.data.length; i++) {
+    var value = Utils.toSJIS(this.data[i])
+
+    // For characters with Shift JIS values from 0x8140 to 0x9FFC:
+    if (value >= 0x8140 && value <= 0x9FFC) {
+      // Subtract 0x8140 from Shift JIS value
+      value -= 0x8140
+
+    // For characters with Shift JIS values from 0xE040 to 0xEBBF
+    } else if (value >= 0xE040 && value <= 0xEBBF) {
+      // Subtract 0xC140 from Shift JIS value
+      value -= 0xC140
+    } else {
+      throw new Error(
+        'Invalid SJIS character: ' + this.data[i] + '\n' +
+        'Make sure your charset is UTF-8')
+    }
+
+    // Multiply most significant byte of result by 0xC0
+    // and add least significant byte to product
+    value = (((value >>> 8) & 0xff) * 0xC0) + (value & 0xff)
+
+    // Convert result to a 13-bit binary string
+    bitBuffer.put(value, 13)
+  }
+}
+
+module.exports = KanjiData
+
+
+/***/ }),
+
+/***/ 1612:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/******************************************************************************
+ * Created 2008-08-19.
+ *
+ * Dijkstra path-finding functions. Adapted from the Dijkstar Python project.
+ *
+ * Copyright (C) 2008
+ *   Wyatt Baldwin <self@wyattbaldwin.com>
+ *   All rights reserved
+ *
+ * Licensed under the MIT license.
+ *
+ *   http://www.opensource.org/licenses/mit-license.php
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *****************************************************************************/
+var dijkstra = {
+  single_source_shortest_paths: function(graph, s, d) {
+    // Predecessor map for each node that has been encountered.
+    // node ID => predecessor node ID
+    var predecessors = {};
+
+    // Costs of shortest paths from s to all nodes encountered.
+    // node ID => cost
+    var costs = {};
+    costs[s] = 0;
+
+    // Costs of shortest paths from s to all nodes encountered; differs from
+    // `costs` in that it provides easy access to the node that currently has
+    // the known shortest path from s.
+    // XXX: Do we actually need both `costs` and `open`?
+    var open = dijkstra.PriorityQueue.make();
+    open.push(s, 0);
+
+    var closest,
+        u, v,
+        cost_of_s_to_u,
+        adjacent_nodes,
+        cost_of_e,
+        cost_of_s_to_u_plus_cost_of_e,
+        cost_of_s_to_v,
+        first_visit;
+    while (!open.empty()) {
+      // In the nodes remaining in graph that have a known cost from s,
+      // find the node, u, that currently has the shortest path from s.
+      closest = open.pop();
+      u = closest.value;
+      cost_of_s_to_u = closest.cost;
+
+      // Get nodes adjacent to u...
+      adjacent_nodes = graph[u] || {};
+
+      // ...and explore the edges that connect u to those nodes, updating
+      // the cost of the shortest paths to any or all of those nodes as
+      // necessary. v is the node across the current edge from u.
+      for (v in adjacent_nodes) {
+        if (adjacent_nodes.hasOwnProperty(v)) {
+          // Get the cost of the edge running from u to v.
+          cost_of_e = adjacent_nodes[v];
+
+          // Cost of s to u plus the cost of u to v across e--this is *a*
+          // cost from s to v that may or may not be less than the current
+          // known cost to v.
+          cost_of_s_to_u_plus_cost_of_e = cost_of_s_to_u + cost_of_e;
+
+          // If we haven't visited v yet OR if the current known cost from s to
+          // v is greater than the new cost we just found (cost of s to u plus
+          // cost of u to v across e), update v's cost in the cost list and
+          // update v's predecessor in the predecessor list (it's now u).
+          cost_of_s_to_v = costs[v];
+          first_visit = (typeof costs[v] === 'undefined');
+          if (first_visit || cost_of_s_to_v > cost_of_s_to_u_plus_cost_of_e) {
+            costs[v] = cost_of_s_to_u_plus_cost_of_e;
+            open.push(v, cost_of_s_to_u_plus_cost_of_e);
+            predecessors[v] = u;
+          }
+        }
+      }
+    }
+
+    if (typeof d !== 'undefined' && typeof costs[d] === 'undefined') {
+      var msg = ['Could not find a path from ', s, ' to ', d, '.'].join('');
+      throw new Error(msg);
+    }
+
+    return predecessors;
+  },
+
+  extract_shortest_path_from_predecessor_list: function(predecessors, d) {
+    var nodes = [];
+    var u = d;
+    var predecessor;
+    while (u) {
+      nodes.push(u);
+      predecessor = predecessors[u];
+      u = predecessors[u];
+    }
+    nodes.reverse();
+    return nodes;
+  },
+
+  find_path: function(graph, s, d) {
+    var predecessors = dijkstra.single_source_shortest_paths(graph, s, d);
+    return dijkstra.extract_shortest_path_from_predecessor_list(
+      predecessors, d);
+  },
+
+  /**
+   * A very naive priority queue implementation.
+   */
+  PriorityQueue: {
+    make: function (opts) {
+      var T = dijkstra.PriorityQueue,
+          t = {},
+          key;
+      opts = opts || {};
+      for (key in T) {
+        if (T.hasOwnProperty(key)) {
+          t[key] = T[key];
+        }
+      }
+      t.queue = [];
+      t.sorter = opts.sorter || T.default_sorter;
+      return t;
+    },
+
+    default_sorter: function (a, b) {
+      return a.cost - b.cost;
+    },
+
+    /**
+     * Add a new item to the queue and ensure the highest priority element
+     * is at the front of the queue.
+     */
+    push: function (value, cost) {
+      var item = {value: value, cost: cost};
+      this.queue.push(item);
+      this.queue.sort(this.sorter);
+    },
+
+    /**
+     * Return the highest priority element in the queue.
+     */
+    pop: function () {
+      return this.queue.shift();
+    },
+
+    empty: function () {
+      return this.queue.length === 0;
+    }
+  }
+};
+
+
+// node.js module exports
+if (true) {
+  module.exports = dijkstra;
+}
+
+
+/***/ }),
+
+/***/ 1613:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(1249)
+
+function clearCanvas (ctx, canvas, size) {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+  if (!canvas.style) canvas.style = {}
+  canvas.height = size
+  canvas.width = size
+  canvas.style.height = size + 'px'
+  canvas.style.width = size + 'px'
+}
+
+function getCanvasElement () {
+  try {
+    return document.createElement('canvas')
+  } catch (e) {
+    throw new Error('You need to specify a canvas element')
+  }
+}
+
+exports.render = function render (qrData, canvas, options) {
+  var opts = options
+  var canvasEl = canvas
+
+  if (typeof opts === 'undefined' && (!canvas || !canvas.getContext)) {
+    opts = canvas
+    canvas = undefined
+  }
+
+  if (!canvas) {
+    canvasEl = getCanvasElement()
+  }
+
+  opts = Utils.getOptions(opts)
+  var size = (qrData.modules.size + opts.margin * 2) * opts.scale
+
+  var ctx = canvasEl.getContext('2d')
+  var image = ctx.createImageData(size, size)
+  Utils.qrToImageData(image.data, qrData, opts.margin, opts.scale, opts.color)
+
+  clearCanvas(ctx, canvasEl, size)
+  ctx.putImageData(image, 0, 0)
+
+  return canvasEl
+}
+
+exports.renderToDataURL = function renderToDataURL (qrData, canvas, options) {
+  var opts = options
+
+  if (typeof opts === 'undefined' && (!canvas || !canvas.getContext)) {
+    opts = canvas
+    canvas = undefined
+  }
+
+  if (!opts) opts = {}
+
+  var canvasEl = exports.render(qrData, canvas, opts)
+
+  var type = opts.type || 'image/png'
+  var rendererOpts = opts.rendererOpts || {}
+
+  return canvasEl.toDataURL(type, rendererOpts.quality)
+}
+
+
+/***/ }),
+
+/***/ 1614:
+/***/ (function(module, exports, __webpack_require__) {
+
+var Utils = __webpack_require__(1249)
+
+function getColorAttrib (color) {
+  return 'fill="rgb(' + [color.r, color.g, color.b].join(',') + ')" ' +
+    'fill-opacity="' + (color.a / 255).toFixed(2) + '"'
+}
+
+exports.render = function render (qrData, options) {
+  var opts = Utils.getOptions(options)
+  var size = qrData.modules.size
+  var data = qrData.modules.data
+  var qrcodesize = (size + opts.margin * 2) * opts.scale
+
+  var xmlStr = '<?xml version="1.0" encoding="utf-8"?>\n'
+  xmlStr += '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n'
+
+  xmlStr += '<svg version="1.1" baseProfile="full"'
+  xmlStr += ' width="' + qrcodesize + '" height="' + qrcodesize + '"'
+  xmlStr += ' viewBox="0 0 ' + qrcodesize + ' ' + qrcodesize + '"'
+  xmlStr += ' xmlns="http://www.w3.org/2000/svg"'
+  xmlStr += ' xmlns:xlink="http://www.w3.org/1999/xlink"'
+  xmlStr += ' xmlns:ev="http://www.w3.org/2001/xml-events">\n'
+
+  xmlStr += '<rect x="0" y="0" width="' + qrcodesize + '" height="' + qrcodesize + '" ' + getColorAttrib(opts.color.light) + ' />\n'
+  xmlStr += '<defs><rect id="p" width="' + opts.scale + '" height="' + opts.scale + '" /></defs>\n'
+  xmlStr += '<g ' + getColorAttrib(opts.color.dark) + '>\n'
+
+  for (var i = 0; i < size; i++) {
+    for (var j = 0; j < size; j++) {
+      if (!data[i * size + j]) continue
+
+      var x = (opts.margin + j) * opts.scale
+      var y = (opts.margin + i) * opts.scale
+      xmlStr += '<use x="' + x + '" y="' + y + '" xlink:href="#p" />\n'
+    }
+  }
+
+  xmlStr += '</g>\n'
+  xmlStr += '</svg>'
+
+  return xmlStr
+}
+
+
+/***/ })
+
+});
+//# sourceMappingURL=2.js.map

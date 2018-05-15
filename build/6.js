@@ -1,1 +1,333 @@
-webpackJsonp([6],{1023:function(t,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0}),n.d(e,"ManageWalletPageModule",function(){return l});var o=n(0),i=n(55),a=n(100),r=n(1096),c=n(1148),s=this&&this.__decorate||function(t,e,n,o){var i,a=arguments.length,r=a<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var c=t.length-1;c>=0;c--)(i=t[c])&&(r=(a<3?i(r):a>3?i(e,n,r):i(e,n))||r);return a>3&&r&&Object.defineProperty(e,n,r),r},l=function(){function t(){}return t=s([Object(o.I)({imports:[a.b.forChild(),i.f.forChild(c.a)],exports:[c.a],declarations:[c.a,r.b,r.a]})],t)}()},1076:function(t,e){},1096:function(t,e,n){"use strict";var o=n(1149);n.d(e,"b",function(){return o.a});var i=n(1150);n.d(e,"a",function(){return i.a})},1148:function(t,e,n){"use strict";n.d(e,"a",function(){return f});var o=n(0),i=n(567),a=n(15),r=n(55),c=n(1096),s=n(42),l=n(141),u=n(101),p=this&&this.__decorate||function(t,e,n,o){var i,a=arguments.length,r=a<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var c=t.length-1;c>=0;c--)(i=t[c])&&(r=(a<3?i(r):a>3?i(e,n,r):i(e,n))||r);return a>3&&r&&Object.defineProperty(e,n,r),r},d=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},f=function(){function t(t,e,n,o,i,a,r,c){this.alertCtrl=t,this.walletProvider=e,this.clipBoard=n,this.loadingCtrl=o,this.modalCtrl=i,this.elementRef=a,this.np=r,this.store=c,this.translationPrefix="PROFILE.MANAGE_WALLET.",this.accounts=this.store.select(u.j.getAccounts),this.currency=this.store.select(u.g.getCurrency),this.amounts=this.store.select(u.f.getAmounts),this.gasAmounts=this.store.select(u.f.getGASAmounts)}return Object.defineProperty(t.prototype,"marginTop",{get:function(){return parseInt(this.elementRef.nativeElement.querySelector(".scroll-content").style.marginTop)/2+"px"},enumerable:!0,configurable:!0}),t.prototype.handleSetDefaultAccount=function(t){this.store.dispatch(new l.i.SetDefaultAccount(t))},t.prototype.handleSaveAccount=function(t){this.store.dispatch(new l.i.ChangeAccountLabel(t)),this.np.notifyTranslation(this.translationPrefix+"save_success")},t.prototype.handleRemoveAccount=function(t){var e=this.cards.slides.container.querySelector(".card");this.openModal({account:t,offsetHeight:e.offsetHeight,offsetWidth:e.offsetWidth,marginTop:this.marginTop})},t.prototype.openModal=function(t){this.modalCtrl.create("RemoveAccountModal",t,{cssClass:"sea-card"}).present()},p([Object(o._8)("cards"),d("design:type",c.b)],t.prototype,"cards",void 0),t=p([Object(o.m)({selector:"page-manage-wallet",template:'<ion-header class="otcgo-header manage-wallet">\n\n    <ion-navbar>\n\n        <ion-title>{{ \'PROFILE.MANAGE_WALLET.title\' | translate }}</ion-title>\n\n        <ion-buttons end>\n\n            <button ion-button icon-only clear navPush="AddWallet">\n\n                <ion-icon name="add"></ion-icon>\n\n            </button>\n\n        </ion-buttons>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="mw">\n\n    <manage-wallet-cards\n\n        #cards\n\n        [accounts]="accounts | async"\n\n        [currency]="currency | async"\n\n        [amounts]="amounts | async"\n\n        [gasAmounts]="gasAmounts | async"\n\n        (onSaveAccount)="handleSaveAccount($event)"\n\n        (onRemoveAccount)="handleRemoveAccount($event)"\n\n        (onSetDefaultAccount)="handleSetDefaultAccount($event)"\n\n    ></manage-wallet-cards>\n\n</ion-content>'}),d("design:paramtypes",[r.a,s.i,i.a,r.g,r.h,o.t,s.f,a.h])],t)}()},1149:function(t,e,n){"use strict";n.d(e,"a",function(){return c});var o=n(0),i=n(55),a=this&&this.__decorate||function(t,e,n,o){var i,a=arguments.length,r=a<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var c=t.length-1;c>=0;c--)(i=t[c])&&(r=(a<3?i(r):a>3?i(e,n,r):i(e,n))||r);return a>3&&r&&Object.defineProperty(e,n,r),r},r=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},c=function(){function t(){this.firstIn=!0,this.gasAmounts=[],this.amounts=[],this.onSaveAccount=new o.v,this.onSetDefaultAccount=new o.v,this.onRemoveAccount=new o.v}return Object.defineProperty(t.prototype,"showRemoveIcon",{get:function(){return this.accounts.length>1},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"accounts",{get:function(){return this._accounts},set:function(t){!this.firstIn&&this.isDeletionOrAddition(t)&&this.slides.slideTo(t&&t.length-1||0,250),this._accounts=t,this.firstIn=!1},enumerable:!0,configurable:!0}),t.prototype.isDeletionOrAddition=function(t){return t.length!==this._accounts.length},a([Object(o.D)(),r("design:type",String)],t.prototype,"currency",void 0),a([Object(o.D)(),r("design:type",Array)],t.prototype,"gasAmounts",void 0),a([Object(o.D)(),r("design:type",Array)],t.prototype,"amounts",void 0),a([Object(o.O)(),r("design:type",Object)],t.prototype,"onSaveAccount",void 0),a([Object(o.O)(),r("design:type",Object)],t.prototype,"onSetDefaultAccount",void 0),a([Object(o.O)(),r("design:type",Object)],t.prototype,"onRemoveAccount",void 0),a([Object(o._8)(i.l),r("design:type",i.l)],t.prototype,"slides",void 0),a([Object(o.D)(),r("design:type",Object),r("design:paramtypes",[Object])],t.prototype,"accounts",null),t=a([Object(o.m)({selector:"manage-wallet-cards",template:'<ion-slides [pager]="true" class="sea-card">\n\n\t<manage-wallet-card\n\n\t\t*ngFor="let account of accounts; index as i"\n\n\t\t[showClose]="showRemoveIcon"\n\n\t    [account]="account"\n\n\t\t[oCurrency]="currency"\n\n\t\t[gas]="gasAmounts[i] || 1"\n\n\t\t[amount]="amounts[i] || 0"\n\n\t\t(onSave)="onSaveAccount.emit($event)"\n\n\t\t(onRemove)="onRemoveAccount.emit($event)"\n\n\t\t(onSetDefault)="onSetDefaultAccount.emit($event)">\n\n\t</manage-wallet-card>\n\n</ion-slides>\n\n'})],t)}()},1150:function(t,e,n){"use strict";n.d(e,"a",function(){return f});var o=n(0),i=n(567),a=n(55),r=n(42),c=n(43),s=(n.n(c),n(1076)),l=(n.n(s),this&&this.__decorate||function(t,e,n,o){var i,a=arguments.length,r=a<3?e:null===o?o=Object.getOwnPropertyDescriptor(e,n):o;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,e,n,o);else for(var c=t.length-1;c>=0;c--)(i=t[c])&&(r=(a<3?i(r):a>3?i(e,n,r):i(e,n))||r);return a>3&&r&&Object.defineProperty(e,n,r),r}),u=this&&this.__metadata||function(t,e){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,e)},p=this&&this.__awaiter||function(t,e,n,o){return new(n||(n=Promise))(function(i,a){function r(t){try{s(o.next(t))}catch(t){a(t)}}function c(t){try{s(o.throw(t))}catch(t){a(t)}}function s(t){t.done?i(t.value):new n(function(e){e(t.value)}).then(r,c)}s((o=o.apply(t,e||[])).next())})},d=this&&this.__generator||function(t,e){function n(n){return function(r){return function(n){if(o)throw new TypeError("Generator is already executing.");for(;c;)try{if(o=1,i&&(a=i[2&n[0]?"return":n[0]?"throw":"next"])&&!(a=a.call(i,n[1])).done)return a;switch(i=0,a&&(n=[0,a.value]),n[0]){case 0:case 1:a=n;break;case 4:return c.label++,{value:n[1],done:!1};case 5:c.label++,i=n[1],n=[0];continue;case 7:n=c.ops.pop(),c.trys.pop();continue;default:if(a=c.trys,!(a=a.length>0&&a[a.length-1])&&(6===n[0]||2===n[0])){c=0;continue}if(3===n[0]&&(!a||n[1]>a[0]&&n[1]<a[3])){c.label=n[1];break}if(6===n[0]&&c.label<a[1]){c.label=a[1],a=n;break}if(a&&c.label<a[2]){c.label=a[2],c.ops.push(n);break}a[2]&&c.ops.pop(),c.trys.pop();continue}n=e.call(t,c)}catch(t){n=[6,t],i=0}finally{o=a=0}if(5&n[0])throw n[1];return{value:n[0]?n[1]:void 0,done:!0}}([n,r])}}var o,i,a,r,c={label:0,sent:function(){if(1&a[0])throw a[1];return a[1]},trys:[],ops:[]};return r={next:n(0),throw:n(1),return:n(2)},"function"==typeof Symbol&&(r[Symbol.iterator]=function(){return this}),r},f=function(){function t(t,e,n,i){this.alertCtrl=t,this.clipBoard=e,this.loadingCtrl=n,this.np=i,this.tempLabel="",this.baseAlertOptions={cssClass:"mw__exports-actions--box",message:"注意，导出 私钥 或 WIF 并使用是一件非常危险的事情，建议使用加密私钥（EncryptedKey）代替",inputs:[{name:"passphrase",placeholder:"钱包密码",type:"password"}],buttons:[{text:"取消"}]},this.translationPrefix="PROFILE.MANAGE_WALLET.",this.onSave=new o.v,this.onRemove=new o.v,this.onSetDefault=new o.v}return Object.defineProperty(t.prototype,"label",{get:function(){return this.account.label},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"isDefault",{get:function(){return this.account.isDefault},enumerable:!0,configurable:!0}),t.prototype.handleWIFClick=function(t){this.showWIFKeyBox(t)},t.prototype.handleEncryptedClick=function(t){try{this.showKeyBox({title:"EncryptedKey",message:t.encrypted})}catch(t){this.np.emit(t)}},t.prototype.handleSaveClick=function(t){if(this.tempLabel){var e=new c.wallet.Account(t);e.label=this.tempLabel,this.onSave.emit(e),this.tempLabel=""}},t.prototype.showWIFKeyBox=function(t){var e=this;try{if(t.WIF)return this.showKeyBox({title:"WIF",message:t.WIF})}catch(i){var n=this.loadingCtrl.create(),o=Object.assign({},this.baseAlertOptions,{title:"导出WIF",buttons:this.baseAlertOptions.buttons.concat([{text:"确认",handler:function(o){var i=o.passphrase;return i&&i.length>=4&&e.parsePassphrase(t.encrypted,i,n,"wif")}}])});this.alertCtrl.create(o).present()}},t.prototype.showKeyBox=function(t){var e=this,n=t.message;this.alertCtrl.create({title:t.title,message:n,cssClass:"mw__exports-actions--key",buttons:[{text:"取消"},{text:"复制",handler:function(){return e.clipBoard.copy(n)}}]}).present()},t.prototype.parsePassphrase=function(t,e,n,o){return p(this,void 0,void 0,function(){var i,a;return d(this,function(r){switch(r.label){case 0:return[4,n.present()];case 1:r.sent(),r.label=2;case 2:return r.trys.push([2,4,,6]),i=c.wallet.decrypt(t,e),a=new c.wallet.Account(i),[4,n.dismiss()];case 3:return r.sent(),"privateKey"===o?[2,this.showKeyBox({title:"私钥",message:a.privateKey})]:[2,this.showKeyBox({title:"WIF",message:a.WIF})];case 4:return r.sent(),[4,this.handleError(n)];case 5:return r.sent(),[3,6];case 6:return[2]}})})},t.prototype.handleError=function(t){return p(this,void 0,void 0,function(){return d(this,function(e){switch(e.label){case 0:return[4,t.dismiss()];case 1:return e.sent(),[4,this.alertCtrl.create({title:"提示",message:"密码错误",buttons:["OK"]}).present()];case 2:return e.sent(),[2]}})})},t.prototype.handleOpenLocationClick=function(){},t.prototype.handlePrivateKeyClick=function(t){this.showPrivateKeyBox(t)},t.prototype.showPrivateKeyBox=function(t){var e=this,n=this.loadingCtrl.create(),o=Object.assign({},this.baseAlertOptions,{title:"导出私钥",buttons:this.baseAlertOptions.buttons.concat([{text:"确认",handler:function(o){var i=o.passphrase;if(!i||i.length<4)return!1;e.parsePassphrase(t.encrypted,i,n,"privateKey")}}])});this.alertCtrl.create(o).present()},l([Object(o.D)(),u("design:type",s.Account)],t.prototype,"account",void 0),l([Object(o.D)(),u("design:type",String)],t.prototype,"oCurrency",void 0),l([Object(o.D)(),u("design:type",Number)],t.prototype,"amount",void 0),l([Object(o.D)(),u("design:type",Number)],t.prototype,"gas",void 0),l([Object(o.D)(),u("design:type",Boolean)],t.prototype,"showClose",void 0),l([Object(o.O)(),u("design:type",Object)],t.prototype,"onSave",void 0),l([Object(o.O)(),u("design:type",Object)],t.prototype,"onRemove",void 0),l([Object(o.O)(),u("design:type",Object)],t.prototype,"onSetDefault",void 0),t=l([Object(o.m)({selector:"manage-wallet-card",template:'<ion-slide>\n\n\t<div class="card">\n\n\t\t<div class="mw__label">\n\n\t\t\t{{ label }}\n\n\t\t</div>\n\n\n\n\t\t<div class="close" (click)="onRemove.emit(account)" *ngIf="showClose">\n\n\t\t\t<div class="icon"><ion-icon name="close"></ion-icon></div>\n\n\t\t</div>\n\n\n\n\t\t<div class="mw__header" ion-row>\n\n\t\t\t<ion-col class="mw__header__left">\n\n\t\t\t\t<div class="mw__title">{{ gas | number:\'1.1-2\' }} <span>GAS</span></div>\n\n\t\t\t</ion-col>\n\n\t\t</div>\n\n\n\n\t\t<div class="mw__header-price" ion-row>\n\n\t\t\t<ion-col class="mw__subtitle">\n\n\t\t\t\t≈ {{ amount | currency:oCurrency.toUpperCase():\'symbol-narrow\':\'1.1-4\' }}\n\n\t\t\t</ion-col>\n\n\t\t</div>\n\n\n\n\t\t<div class="mw__changes-feature">\n\n\t\t\t<ion-input class="mw__changes__input"\n\n\t\t\t           placeholder="{{ \'PROFILE.MANAGE_WALLET.change_name\' | translate }}"\n\n\t\t\t           [(ngModel)]="tempLabel"></ion-input>\n\n\t\t</div>\n\n\n\n\t\t<div class="mw__exports-feature">\n\n\t\t\t<h5 text-left>{{ \'PROFILE.MANAGE_WALLET.export\' | translate }}</h5>\n\n\t\t\t\x3c!--<button ion-button class="otcgo-button&#45;&#45;edge-gray mw__exports" clear block icon-right (click)="handlePrivateKeyClick(account)">\n\n\t\t\t\t导出 私钥\n\n\t\t\t\t<ion-icon md="ios-arrow-forward-outline" ios="none" item-end></ion-icon>\n\n\t\t\t</button>--\x3e\n\n\n\n\t\t\t<button ion-button\n\n\t\t\t        class="otcgo-button--edge-gray mw__exports"\n\n\t\t\t        clear\n\n\t\t\t        block\n\n\t\t\t        icon-right\n\n\t\t\t        (click)="handleWIFClick(account)">\n\n\t\t\t\t{{ \'PROFILE.MANAGE_WALLET.export_wif\' | translate }}\n\n\t\t\t\t<ion-icon md="ios-arrow-forward-outline" ios="none" item-end></ion-icon>\n\n\t\t\t</button>\n\n\n\n\t\t\t<button ion-button\n\n\t\t\t        class="otcgo-button--edge-gray mw__exports"\n\n\t\t\t        clear\n\n\t\t\t        block\n\n\t\t\t        icon-right\n\n\t\t\t        (click)="handleEncryptedClick(account)">\n\n\t\t\t\t{{ \'PROFILE.MANAGE_WALLET.export_key\' | translate }}\n\n\t\t\t\t<ion-icon md="ios-arrow-forward-outline" ios="none" item-end></ion-icon>\n\n\t\t\t</button>\n\n\n\n\t\t\t\x3c!--<button ion-button\n\n\t\t\t        class="otcgo-button&#45;&#45;edge-gray mw__exports"\n\n\t\t\t        clear\n\n\t\t\t        block\n\n\t\t\t        icon-right\n\n\t\t\t        (click)="handleOpenLocationClick()">\n\n\t\t\t\t打开钱包文件所在位置\n\n\t\t\t</button>--\x3e\n\n\t\t</div>\n\n\n\n\t\t<div class="mw__exports-action">\n\n\t\t\t<button ion-button class="otcgo-button--colour" block round\n\n\t\t\t        (click)="handleSaveClick(account)">{{ \'PROFILE.MANAGE_WALLET.save\' | translate }}</button>\n\n\t\t\t<a [class.is-default]="isDefault"\n\n\t\t\t   (click)="!isDefault && onSetDefault.emit(account)">\n\n\t\t\t\t{{ translationPrefix + (isDefault ? \'default\' : \'default_action\') | translate }}</a>\n\n\t\t</div>\n\n\t</div>\n\n</ion-slide>\n\n'}),u("design:paramtypes",[a.a,i.a,a.g,r.f])],t)}()}});
+webpackJsonp([6],{
+
+/***/ 1015:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PossessionsPageModule", function() { return PossessionsPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__possessions__ = __webpack_require__(1145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(1638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_possessions_possessions_info__ = __webpack_require__(1640);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_possessions_possessions_list__ = __webpack_require__(1641);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+var COMPONENTS = [
+    __WEBPACK_IMPORTED_MODULE_1__possessions__["a" /* PossessionsPage */],
+    __WEBPACK_IMPORTED_MODULE_5__components_possessions_possessions_info__["a" /* PossessionsInfoComponent */],
+    __WEBPACK_IMPORTED_MODULE_6__components_possessions_possessions_list__["a" /* PossessionsListComponent */]
+];
+var PossessionsPageModule = /** @class */ (function () {
+    function PossessionsPageModule() {
+    }
+    PossessionsPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_1__possessions__["a" /* PossessionsPage */]),
+                __WEBPACK_IMPORTED_MODULE_4__ngx_translate_core__["b" /* TranslateModule */].forChild(),
+                __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */]
+            ],
+            declarations: COMPONENTS
+        })
+    ], PossessionsPageModule);
+    return PossessionsPageModule;
+}());
+
+//# sourceMappingURL=possessions.module.js.map
+
+/***/ }),
+
+/***/ 1081:
+/***/ (function(module, exports) {
+
+//# sourceMappingURL=typings.js.map
+
+/***/ }),
+
+/***/ 1145:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PossessionsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngrx_store__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_take__ = __webpack_require__(571);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_take__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__store_actions__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__store_selectors__ = __webpack_require__(101);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+var PossessionsPage = /** @class */ (function () {
+    function PossessionsPage(navCtrl, notificationProvider, lp, store) {
+        var _this = this;
+        this.navCtrl = navCtrl;
+        this.notificationProvider = notificationProvider;
+        this.lp = lp;
+        this.store = store;
+        this.account = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["j" /* WalletSelectors */].getAccount);
+        this.amount = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["f" /* PricesSelectors */].getDefaultAccountAmount);
+        this.baseCurrency = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["g" /* SettingsSelectors */].getCurrency);
+        this._displayZero = true;
+        this.ionViewCanEnter = function () { return _this.exits; };
+    }
+    Object.defineProperty(PossessionsPage.prototype, "displayZero", {
+        get: function () { return this._displayZero; },
+        set: function (val) {
+            this.updateBalances(val);
+            this._displayZero = val;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    PossessionsPage.prototype.ngOnInit = function () {
+        var _this = this;
+        this.updateBalances();
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["e" /* MarketsActions */].Load());
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["b" /* BalancesActions */].Load());
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getLoading).subscribe(function (loading) { return _this.lp.emit(loading); });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getError).subscribe(function (error) { return error && _this.notificationProvider.emit({ message: error }); });
+        this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["j" /* WalletSelectors */].getExits).subscribe(function (exits) { return _this.exits = exits; });
+    };
+    PossessionsPage.prototype.updateBalances = function (displayZero) {
+        if (displayZero === void 0) { displayZero = true; }
+        this.balances = displayZero
+            ? this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getDefaultEntities)
+            : this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getDefaultNonZeroEntities);
+    };
+    PossessionsPage.prototype.doRefresh = function (refresher) {
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["b" /* BalancesActions */].Load());
+        this.store
+            .select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getLoading)
+            .subscribe(function (loading) { return !loading && refresher.complete(); });
+    };
+    PossessionsPage.prototype.handleBalanceSelect = function (symbol) {
+        var _this = this;
+        this.store.dispatch(new __WEBPACK_IMPORTED_MODULE_5__store_actions__["b" /* BalancesActions */].Select(symbol));
+        this.selectedBalanceSubscriber = this.store.select(__WEBPACK_IMPORTED_MODULE_6__store_selectors__["b" /* BalancesSelectors */].getSelectedBalance)
+            .take(1)
+            .subscribe(function (selectedBalance) {
+            selectedBalance && _this.navCtrl.push('PossessionDetail');
+        });
+    };
+    PossessionsPage.prototype.handleDisplayZeroClick = function (bool) {
+        this.displayZero = bool;
+    };
+    PossessionsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-possessions',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\possessions\possessions.html"*/'<ion-content class="possessions-content">\n\n\n\n	<ion-refresher (ionRefresh)="doRefresh($event)">\n\n		<ion-refresher-content></ion-refresher-content>\n\n	</ion-refresher>\n\n\n\n	<possessions-info [account]="account | async"></possessions-info>\n\n\n\n	<possessions-list [balances]="balances | async"\n\n	                  [amount]="amount | async"\n\n	                  [baseCurrency]="baseCurrency | async"\n\n	                  [displayZero]="displayZero"\n\n	                  (select)="handleBalanceSelect($event)"\n\n	                  (displayZeroClick)="handleDisplayZeroClick($event)">\n\n	</possessions-list>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\possessions\possessions.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["f" /* NotificationProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers__["e" /* LoadingProvider */],
+            __WEBPACK_IMPORTED_MODULE_2__ngrx_store__["h" /* Store */]])
+    ], PossessionsPage);
+    return PossessionsPage;
+}());
+
+//# sourceMappingURL=possessions.js.map
+
+/***/ }),
+
+/***/ 1638:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__address_collapse_address_collapse_pipe__ = __webpack_require__(1639);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var PIPES = [
+    __WEBPACK_IMPORTED_MODULE_1__address_collapse_address_collapse_pipe__["a" /* AddressCollapsePipe */]
+];
+var PipesModule = /** @class */ (function () {
+    function PipesModule() {
+    }
+    PipesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: PIPES,
+            exports: PIPES
+        })
+    ], PipesModule);
+    return PipesModule;
+}());
+
+//# sourceMappingURL=pipes.module.js.map
+
+/***/ }),
+
+/***/ 1639:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddressCollapsePipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var AddressCollapsePipe = /** @class */ (function () {
+    function AddressCollapsePipe() {
+    }
+    AddressCollapsePipe.prototype.transform = function (value) {
+        var third = value.length / 3;
+        var twoThirds = third * 2;
+        return value.substr(0, third) + '...' + value.substr(twoThirds, third + 1);
+    };
+    AddressCollapsePipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({ name: 'addressCollapse' })
+    ], AddressCollapsePipe);
+    return AddressCollapsePipe;
+}());
+
+//# sourceMappingURL=address-collapse.pipe.js.map
+
+/***/ }),
+
+/***/ 1640:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PossessionsInfoComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_typings__ = __webpack_require__(1081);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_typings___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__shared_typings__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var PossessionsInfoComponent = /** @class */ (function () {
+    function PossessionsInfoComponent(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    PossessionsInfoComponent.prototype.openQRCode = function () {
+        this.navCtrl.push('payment-qrcode', { address: this.account && this.account.address });
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__shared_typings__["Account"])
+    ], PossessionsInfoComponent.prototype, "account", void 0);
+    PossessionsInfoComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'possessions-info',
+            template: "\n\t  <ion-card class=\"card-info\">\n\t\t  <div class=\"card-avatar\" (click)=\"openQRCode()\">\n\t\t\t  <img src=\"assets/imgs/icon-qrcode-avatar.svg\" alt=\"\">\n\t\t  </div>\n\t\t  <div class=\"card-title\">{{ account?.address | addressCollapse }}</div>\n\t\t\t<div class=\"bg\"></div>\n\t  </ion-card>\n\t\t<div class=\"card-round\"></div>\n\t"
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
+    ], PossessionsInfoComponent);
+    return PossessionsInfoComponent;
+}());
+
+//# sourceMappingURL=possessions-info.js.map
+
+/***/ }),
+
+/***/ 1641:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PossessionsListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var PossessionsListComponent = /** @class */ (function () {
+    function PossessionsListComponent() {
+        this.amount = 0.00;
+        this.baseCurrency = 'cny';
+        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.displayZeroClick = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+    }
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Array)
+    ], PossessionsListComponent.prototype, "balances", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Boolean)
+    ], PossessionsListComponent.prototype, "displayZero", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", Object)
+    ], PossessionsListComponent.prototype, "amount", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], PossessionsListComponent.prototype, "baseCurrency", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], PossessionsListComponent.prototype, "select", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], PossessionsListComponent.prototype, "displayZeroClick", void 0);
+    PossessionsListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'possessions-list',
+            template: "\n\t  <ion-grid class=\"possessions__base-accumulator\">\n\t\t  <ion-row class=\"card-base\">\n\t\t\t  <ion-col col-9>\n\t\t\t\t  <ion-card class=\"possessions__total-balances\">\n\t\t\t\t\t  <ion-row>{{ 'POSSESSIONS.totalBalances' | translate }} {{ baseCurrency.toUpperCase() }}</ion-row>\n\t\t\t\t\t  <ion-row class=\"possessions__volume\">{{ amount | number:'1.1-4' }}</ion-row>\n\t\t\t\t  </ion-card>\n\t\t\t  </ion-col>\n\t\t\t  <ion-col col-3 class=\"possessions__hide-zero\" align-self-end>\n\t\t\t\t  <ion-card (click)=\"displayZeroClick.emit(!displayZero)\">\n\t\t\t\t\t  <img *ngIf=\"displayZero\" src=\"assets/imgs/icon-possessions_hide-zero.svg\" alt=\"\">\n\t\t\t\t\t\t<img *ngIf=\"!displayZero\" src=\"assets/imgs/icon-possessions_hide-zero-on.svg\" alt=\"\">\n\t\t\t\t\t\t<h5>{{ 'POSSESSIONS.displayZero' | translate }}</h5>\n\t\t\t\t  </ion-card>\n\t\t\t  </ion-col>\n\t\t  </ion-row>\n\t  </ion-grid>\n\t  \n\t  <ion-card class=\"card-list\"\n\t            *ngFor=\"let balance of balances\">\n\n\t\t  <ion-item (click)=\"select.emit(balance.symbol)\">\n\t\t\t  <div class=\"possessions__icon\"\n\t\t\t       item-start>\n\t\t\t\t  <img src=\"{{ 'assets/icon/' + balance?.symbol +'.png' }}\"\n\t\t\t\t       onerror=\"this.src='assets/icon/\u7533\u4E00\u5E01.png'\" />\n\t\t\t  </div>\n\n\t\t\t  <p class=\"possessions__symbol\">{{ balance?.symbol }}</p>\n\n\t\t\t  <ion-note item-end>\n\t\t\t\t  {{ balance?.amount | number:'1.1-2' }}\n\t\t\t  </ion-note>\n\t\t  </ion-item>\n\n\t  </ion-card>\n\t"
+        })
+    ], PossessionsListComponent);
+    return PossessionsListComponent;
+}());
+
+//# sourceMappingURL=possessions-list.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=6.js.map

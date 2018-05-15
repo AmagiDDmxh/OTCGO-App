@@ -1,1 +1,358 @@
-webpackJsonp([8],{1005:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0}),e.d(n,"LoginPageModule",function(){return c});var i=e(0),o=e(1247),s=e(55),r=e(100),a=this&&this.__decorate||function(t,n,e,i){var o,s=arguments.length,r=s<3?n:null===i?i=Object.getOwnPropertyDescriptor(n,e):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,n,e,i);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(r=(s<3?o(r):s>3?o(n,e,r):o(n,e))||r);return s>3&&r&&Object.defineProperty(n,e,r),r},l=[o.a],c=function(){function t(){}return t=a([Object(i.I)({declarations:l,imports:[r.b.forChild(),s.f.forChild(o.a)]})],t)}()},1247:function(t,n,e){"use strict";e.d(n,"a",function(){return b});var i=e(0),o=e(36),s=e(15),r=e(100),a=e(55),l=e(16),c=(e.n(l),e(42)),p=e(1248),f=e(102),u=e(141),h=e(101),d=e(1249),g=this&&this.__decorate||function(t,n,e,i){var o,s=arguments.length,r=s<3?n:null===i?i=Object.getOwnPropertyDescriptor(n,e):i;if("object"==typeof Reflect&&"function"==typeof Reflect.decorate)r=Reflect.decorate(t,n,e,i);else for(var a=t.length-1;a>=0;a--)(o=t[a])&&(r=(s<3?o(r):s>3?o(n,e,r):o(n,e))||r);return s>3&&r&&Object.defineProperty(n,e,r),r},m=this&&this.__metadata||function(t,n){if("object"==typeof Reflect&&"function"==typeof Reflect.metadata)return Reflect.metadata(t,n)},b=function(){function t(t,n,e,i,o,s,r,a){this.navCtrl=t,this.navParams=n,this.alertCtrl=e,this.fb=i,this.np=o,this.lp=s,this.ts=r,this.store=a,this.isWIFKey=!0,this.isOldWallet=!1,this.translationPrefix="LOGIN.",this.onDestroy=new l.Subject}return Object.defineProperty(t.prototype,"wif",{get:function(){return this.loginForm.get("wif")},enumerable:!0,configurable:!0}),Object.defineProperty(t.prototype,"passphrase",{get:function(){return this.loginForm.get("passphrase")},enumerable:!0,configurable:!0}),t.prototype.ngOnInit=function(){this.buildForm(),this.subscribe(),this.getTranslations()},t.prototype.ngOnDestroy=function(){this.onDestroy.next()},t.prototype.getTranslations=function(){var t=this,n=["import_long","import_short"].map(function(n){return t.translationPrefix+n});this.ts.get(n).subscribe(function(e){t.importTextLong=e[n[0]],t.importTextShort=e[n[1]]}),this.importText=this.importTextShort},t.prototype.buildForm=function(){this.loginForm=this.fb.group({wif:["",[o.f.required],[d.a]],passphrase:["",[o.f.required,o.f.minLength(4)]]})},t.prototype.subscribe=function(){var t=this;this.store.select(h.a.getError).subscribe(function(n){return n&&t.np.emit({message:n})}),this.store.select(h.a.getLoading).subscribe(function(n){return n&&t.lp.emit(n)})},t.prototype.switchImportBox=function(t){this.isWIFKey=!1,this.importText=this.importTextLong,window.navigator&&!this.wif.value&&t.click()},t.prototype.switchWIFKeyBox=function(){this.isWIFKey=!0,this.importText=this.importTextShort},t.prototype.fileChange=function(t){if(/.json$/.test(t.name)){this.importText=t.name.slice();var n=new FileReader,e=this;n.onload=function(){try{var t=JSON.parse(this.result);if(Object(f.g)(t))return e.file=t,void(e.isOldWallet=!0);if(Object(f.i)(t))return e.file=t,void(e.isOldWallet=!1)}catch(t){console.log("file change error",t),e.showPrompt(t)}},n.readAsText(t)}},t.prototype.showPrompt=function(t){this.alertCtrl.create({title:t}).present()},t.prototype.login=function(t){var n=t.controls,e=t.value,i=n.wif,o=n.passphrase,s=e.wif,r=e.passphrase;if(this.file&&!this.isOldWallet&&(i.setValue(""),o.setValue("")),"test"===s)this.store.dispatch(new u.a.Login(p.a));else{if(s&&this.isWIFKey&&!r){if(i.invalid)return;return this.store.dispatch(new u.a.LoginWif(s))}if(this.file&&!this.isWIFKey&&!s){if(Object(f.g)(this.file)){if(!o.valid)return;return this.store.dispatch(new u.a.LoginOldWallet({oldWallet:this.file,passphrase:r}))}if(Object(f.i)(this.file))return this.store.dispatch(new u.a.Login(this.file))}}},t=g([Object(i.m)({selector:"page-login",template:'<ion-content class="login">\n\n\n\n\t<div class="login__container">\n\n\t\t<ion-label class="login__title">\n\n\t\t\t<h2>{{ \'LOGIN.title\' | translate }}</h2>\n\n\t\t</ion-label>\n\n\n\n\t\t<form [formGroup]="loginForm" (submit)="login(loginForm)">\n\n\t\t\t<ion-label class="login__error">\n\n\t\t\t\t<h5 *ngIf="wif.invalid && (wif.dirty || wif.touched) && wif.errors.invalidWIF">Invalid WIF format</h5>\n\n\t\t\t</ion-label>\n\n\n\n\t\t\t<ion-row class="login__wif-section">\n\n\t\t\t\t<ion-col>\n\n\t\t\t\t\t<ion-item class="login__wif-input rounded">\n\n\t\t\t\t\t\t<ion-input type="text" placeholder="{{ \'LOGIN.wif_placeholder\' | translate }}" formControlName="wif"></ion-input>\n\n\t\t\t\t\t</ion-item>\n\n\n\n\t\t\t\t\t<button\n\n\t\t\t\t\t  class="login__import-button"\n\n\t\t\t\t\t  type="button"\n\n\t\t\t\t\t  [class.is-active]="!isWIFKey"\n\n\t\t\t\t\t  (click)="switchImportBox(fileInput)">\n\n\t\t\t\t\t\t<span *ngIf="!isWIFKey">{{ importText }}</span>\n\n\t\t\t\t\t\t<img src="assets/imgs/icon-login_file.svg" alt="" class="icon">\n\n\t\t\t\t\t</button>\n\n\n\n\t\t\t\t\t<input accept="application/json, text/plain, .json" type="file" id="fileInput" hidden #fileInput (change)="fileChange(fileInput.files[0])">\n\n\n\n\t\t\t\t\t<button\n\n\t\t\t\t\t\tclass="login__wif-switcher"\n\n\t\t\t\t\t\ttype="button"\n\n\t\t\t\t\t\t*ngIf="!isWIFKey"\n\n\t\t\t\t\t\t(click)="switchWIFKeyBox()">\n\n\t\t\t\t\t\t<img src="assets/imgs/icon-login_WIF.svg" alt="" class="icon">\n\n\t\t\t\t\t</button>\n\n\t\t\t\t</ion-col>\n\n\t\t\t</ion-row>\n\n\n\n\t\t\t<ion-row class="login__password-section" *ngIf="isOldWallet">\n\n\t\t\t\t<ion-col>\n\n\t\t\t\t\t<ion-item class="login__password-input">\n\n\t\t\t\t\t\t<ion-input type="password" placeholder="{{ \'LOGIN.password\' | translate }}" formControlName="passphrase" required></ion-input>\n\n\t\t\t\t\t</ion-item>\n\n\t\t\t\t</ion-col>\n\n\t\t\t</ion-row>\n\n\n\n\t\t\t<ion-row>\n\n\t\t\t\t<ion-col>\n\n\t\t\t\t\t<button\n\n\t\t\t\t\t  ion-button round block outline\n\n\t\t\t\t\t  [disabled]="loginForm.valid"\n\n\t\t\t\t\t  class="login__button"\n\n\t\t\t\t\t  type="submit">{{ \'LOGIN.login_wallet\' | translate }}</button>\n\n\t\t\t\t</ion-col>\n\n\t\t\t</ion-row>\n\n\t\t</form>\n\n\n\n\t\t<div class="login__tip">\n\n\t\t\t<a (click)="navCtrl.setRoot(\'CreateWallet\')">{{ \'LOGIN.tip\' | translate }}</a>\n\n\t\t</div>\n\n\t</div>\n\n\n\n</ion-content>\n\n'}),m("design:paramtypes",[a.i,a.j,a.a,o.a,c.f,c.e,r.c,s.h])],t)}()},1248:function(t,n,e){"use strict";e.d(n,"a",function(){return i});var i={name:"userWallet",version:"1.0",scrypt:{cost:16384,blockSize:8,parallel:8,size:64},accounts:[{address:"AWqp5iP81A8boBcheWFQgLqnks4wkPkmRg",label:"1",isDefault:!1,lock:!1,key:"6PYLnNeafXYEt3jnv9Z7oLa3obcTM3BLqt13MBBzk25yo613WQ3pnBD93B",contract:{},extra:null},{address:"AXoibWhJXYRxckemGa8ZydGpQdBP7GX7st",label:"1234",isDefault:!0,lock:!1,key:"6PYU48pchs8osmxzHoKFX4Ka16SyutmvzkdH1ptjhJymPxJ39nx6qfBs8x",contract:{},extra:null}],extra:{contacts:[{name:"John",address:"AHZDq78w1ERcDYVBWjU5owWcbFZKLvhg7X",description:"Work friend"},{name:"Joe",address:"AXoibWhJXYRxckemGa8ZydGpQdBP7GX7st",description:"Special friend"},{name:"Tom",address:"AJnNUn6HynVcco1p8LER72s4zXtNFYDnys"},{name:"张三",address:"ANsvyS9q1n6SBDVSdB6uFwVeqT512YSAoW",description:"我的中国朋友"}]}}},1249:function(t,n,e){"use strict";n.a=function(t){return i.Observable.create(function(n){return t.valueChanges.pipe(Object(o.debounceTime)(400),Object(o.map)(function(t){return t.trim()}),Object(o.map)(function(t){if(t&&Object(s.h)(t))return null;throw new Error("invalidWIF")})).subscribe(function(t){return n.next(null)},function(t){n.next((e={},e[t.message]=!0,e)),n.complete();var e})})};var i=e(8),o=(e.n(i),e(37)),s=(e.n(o),e(102))}});
+webpackJsonp([8],{
+
+/***/ 1022:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImportWalletModule", function() { return ImportWalletModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__import_wallet__ = __webpack_require__(1652);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_login__ = __webpack_require__(1103);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+var ImportWalletModule = /** @class */ (function () {
+    function ImportWalletModule() {
+    }
+    ImportWalletModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_3__import_wallet__["a" /* ImportWallet */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_4__components_login__["a" /* LoginFormModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__import_wallet__["a" /* ImportWallet */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+            ]
+        })
+    ], ImportWalletModule);
+    return ImportWalletModule;
+}());
+
+//# sourceMappingURL=import-wallet.module.js.map
+
+/***/ }),
+
+/***/ 1067:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginForm; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_validator__ = __webpack_require__(1104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_utils__ = __webpack_require__(102);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var LoginForm = /** @class */ (function () {
+    function LoginForm(fb, ts, alertCtrl) {
+        var _this = this;
+        this.fb = fb;
+        this.ts = ts;
+        this.alertCtrl = alertCtrl;
+        this.onPrivateKey = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.onOldWallet = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.onNEP5 = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.onWIF = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
+        this.isWIFKey = true;
+        this.isOldWallet = false;
+        this.translationPrefix = 'LOGIN.';
+        this.showPrompt = function (msg) { return _this.alertCtrl.create({ title: msg }).present(); };
+    }
+    Object.defineProperty(LoginForm.prototype, "wif", {
+        get: function () { return this.loginForm.get('wif'); },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(LoginForm.prototype, "passphrase", {
+        get: function () { return this.loginForm.get('passphrase'); },
+        enumerable: true,
+        configurable: true
+    });
+    LoginForm.prototype.ngOnInit = function () {
+        this.loginForm = this.fb.group({
+            wif: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_4__login_validator__["a" /* WIFValidator */]], __WEBPACK_IMPORTED_MODULE_4__login_validator__["b" /* asyncWIFValidator */]],
+            passphrase: ['', [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].minLength(4)]]
+        });
+        this.getTranslations();
+    };
+    LoginForm.prototype.getTranslations = function () {
+        var _this = this;
+        var texts = ['import_long', 'import_short'];
+        var translations = texts.map(function (text) { return _this.translationPrefix + text; });
+        this.ts.get(translations).subscribe(function (trs) {
+            _this.importTextLong = trs[translations[0]];
+            _this.importTextShort = trs[translations[1]];
+        });
+        this.importText = this.importTextShort;
+    };
+    LoginForm.prototype.switchImportBox = function (fileInput) {
+        this.isWIFKey = false;
+        this.importText = this.importTextLong;
+        if (window.navigator && !this.wif.value)
+            fileInput.click();
+    };
+    LoginForm.prototype.switchWIFKeyBox = function () {
+        this.isWIFKey = true;
+        this.importText = this.importTextShort;
+    };
+    LoginForm.prototype.fileChange = function (file) {
+        if (/.json$/.test(file.name)) {
+            var reader = new FileReader();
+            var ng_1 = this;
+            // In the onload function `this` is reference to reader itself
+            reader.onload = function () {
+                try {
+                    var JSONFile = JSON.parse(this.result);
+                    if (Object(__WEBPACK_IMPORTED_MODULE_5__shared_utils__["g" /* isOldWallet */])(JSONFile)) {
+                        ng_1.file = JSONFile;
+                        ng_1.isOldWallet = true;
+                        ng_1.importText = file.name;
+                        return;
+                    }
+                    else if (Object(__WEBPACK_IMPORTED_MODULE_5__shared_utils__["i" /* isWallet */])(JSONFile)) {
+                        ng_1.file = JSONFile;
+                        ng_1.isOldWallet = false;
+                        ng_1.importText = file.name;
+                        return;
+                    }
+                    throw new Error();
+                }
+                catch (e) {
+                    console.log('file change error', e);
+                    ng_1.showPrompt('Invalid wallet file');
+                }
+            };
+            reader.readAsText(file);
+            return;
+        }
+        console.log('invalid file', file);
+        return this.showPrompt('Invalid wallet file');
+    };
+    LoginForm.prototype.login = function (_a) {
+        var controls = _a.controls, value = _a.value;
+        var _b = this, file = _b.file, isWIFKey = _b.isWIFKey;
+        var wifControl = controls.wif, passphraseControl = controls.passphrase;
+        var wifValue = value.wif, passphraseValue = value.passphrase;
+        if (file && !this.isOldWallet) {
+            wifControl.setValue('');
+            passphraseControl.setValue('');
+        }
+        if (wifValue && isWIFKey && !passphraseValue) {
+            if (wifControl.invalid && wifValue !== 'test')
+                return;
+            return this.onWIF.emit(wifValue);
+        }
+        else if (file && !isWIFKey && !wifValue) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_5__shared_utils__["g" /* isOldWallet */])(file)) {
+                if (!passphraseControl.valid)
+                    return;
+                return this.onOldWallet.emit({ oldWallet: file, passphrase: passphraseValue });
+            }
+            else if (Object(__WEBPACK_IMPORTED_MODULE_5__shared_utils__["i" /* isWallet */])(file)) {
+                return this.onNEP5.emit(file);
+            }
+        }
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", String)
+    ], LoginForm.prototype, "tip", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], LoginForm.prototype, "onPrivateKey", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], LoginForm.prototype, "onOldWallet", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], LoginForm.prototype, "onNEP5", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["O" /* Output */])(),
+        __metadata("design:type", Object)
+    ], LoginForm.prototype, "onWIF", void 0);
+    LoginForm = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'login-form',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\components\login\login-form.html"*/'<form [formGroup]="loginForm" (submit)="login(loginForm)">\n\n	<ion-label class="login__error">\n\n		<h5 *ngIf="wif.invalid && (wif.dirty || wif.touched) && wif.errors.invalidWIF">\n\n			{{ \'LOGIN.wif_error\' | translate }}\n\n		</h5>\n\n	</ion-label>\n\n\n\n	<ion-row class="login__wif-section">\n\n		<ion-col>\n\n			<ion-item class="login__wif-input rounded">\n\n				<ion-input type="text" placeholder="{{ \'LOGIN.wif_placeholder\' | translate }}" formControlName="wif"></ion-input>\n\n			</ion-item>\n\n\n\n			<button\n\n				class="login__import-button"\n\n				type="button"\n\n				[class.is-active]="!isWIFKey"\n\n				(click)="switchImportBox(fileInput)">\n\n				<span *ngIf="!isWIFKey">{{ importText }}</span>\n\n				<img src="assets/imgs/icon-login_file.svg" alt="" class="icon">\n\n			</button>\n\n\n\n			<input accept="application/json, text/plain, .json" type="file" id="fileInput" hidden #fileInput (change)="fileChange(fileInput.files[0])">\n\n\n\n			<button\n\n				class="login__wif-switcher"\n\n				type="button"\n\n				*ngIf="!isWIFKey"\n\n				(click)="switchWIFKeyBox()">\n\n				<img src="assets/imgs/icon-login_WIF.svg" alt="" class="icon">\n\n			</button>\n\n		</ion-col>\n\n	</ion-row>\n\n\n\n	<ion-row class="login__password-section" *ngIf="isOldWallet && !isWIFKey">\n\n		<ion-col>\n\n			<ion-item class="login__password-input">\n\n				<ion-input type="password" placeholder="{{ \'LOGIN.password\' | translate }}" formControlName="passphrase" required></ion-input>\n\n			</ion-item>\n\n		</ion-col>\n\n	</ion-row>\n\n\n\n	<ion-row>\n\n		<ion-col>\n\n			<button\n\n				ion-button round block outline\n\n				[disabled]="loginForm.valid"\n\n				class="login__button"\n\n				type="submit">{{ \'LOGIN.\' + tip | translate }}</button>\n\n		</ion-col>\n\n	</ion-row>\n\n</form>'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\components\login\login-form.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateService */],
+            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]])
+    ], LoginForm);
+    return LoginForm;
+}());
+
+//# sourceMappingURL=login-form.js.map
+
+/***/ }),
+
+/***/ 1103:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__login_form__ = __webpack_require__(1067);
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_form_module__ = __webpack_require__(1105);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_1__login_form_module__["a"]; });
+
+
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 1104:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["b"] = asyncWIFValidator;
+/* harmony export (immutable) */ __webpack_exports__["a"] = WIFValidator;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operators__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_operators__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_utils__ = __webpack_require__(102);
+
+
+
+function asyncWIFValidator(wifCtrl) {
+    return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].create(function (obs) {
+        return wifCtrl
+            .valueChanges
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_1_rxjs_operators__["debounceTime"])(250), Object(__WEBPACK_IMPORTED_MODULE_1_rxjs_operators__["map"])(function (value) { return value.trim(); }), Object(__WEBPACK_IMPORTED_MODULE_1_rxjs_operators__["map"])(function (value) {
+            if (value && Object(__WEBPACK_IMPORTED_MODULE_2__shared_utils__["h" /* isWIF */])(value)) {
+                return null;
+            }
+            throw new Error('invalidWIF');
+        }))
+            .subscribe(function (_) { return obs.next(null); }, function (error) {
+            obs.next((_a = {}, _a[error.message] = true, _a));
+            obs.complete();
+            var _a;
+        });
+    });
+}
+function WIFValidator(wifCtrl) {
+    return Object(__WEBPACK_IMPORTED_MODULE_2__shared_utils__["h" /* isWIF */])(wifCtrl.value) ? null : { invalidWIF: true };
+}
+//# sourceMappingURL=login.validator.js.map
+
+/***/ }),
+
+/***/ 1105:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginFormModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login_form__ = __webpack_require__(1067);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+var COMPONENTS = [__WEBPACK_IMPORTED_MODULE_3__login_form__["a" /* LoginForm */]];
+// TODO(Amagi): Using IonicModule may be become a huge cost right there, Optimize later
+var LoginFormModule = /** @class */ (function () {
+    function LoginFormModule() {
+    }
+    LoginFormModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: COMPONENTS,
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */],
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+            ],
+            exports: COMPONENTS
+        })
+    ], LoginFormModule);
+    return LoginFormModule;
+}());
+
+//# sourceMappingURL=login-form.module.js.map
+
+/***/ }),
+
+/***/ 1652:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImportWallet; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(51);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ImportWallet = /** @class */ (function () {
+    function ImportWallet(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.prefix = 'PROFILE.MANAGE_WALLET.IMPORT_WALLET.';
+    }
+    ImportWallet.prototype.importWIF = function (wifValue) {
+        console.log('via wif', wifValue);
+    };
+    ImportWallet.prototype.importNEP5 = function (file) {
+        console.log('via file', file);
+    };
+    ImportWallet.prototype.importOldWallet = function (_a) {
+        var oldWallet = _a.oldWallet, passphrase = _a.passphrase;
+        console.log('via old w', oldWallet, passphrase);
+    };
+    ImportWallet = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-import-wallet',template:/*ion-inline-start:"D:\wayDownWeGo\sea-app\src\containers\profile\manage-wallet\add-wallet\import-file\import-wallet.html"*/'<ion-header class="otcgo-header otcgo-header--bl">\n\n    <ion-navbar>\n\n        <ion-title>{{ prefix + \'title\' | translate }}</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content class="login">\n\n\n\n    <div class="login__container">\n\n        <login-form\n\n            tip="import_wallet"\n\n            (onNEP5)="importNEP5($event)"\n\n            (onOldWallet)="importOldWallet($event)"\n\n            (onWIF)="importWIF($event)"></login-form>\n\n    </div>\n\n\n\n</ion-content>'/*ion-inline-end:"D:\wayDownWeGo\sea-app\src\containers\profile\manage-wallet\add-wallet\import-file\import-wallet.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
+    ], ImportWallet);
+    return ImportWallet;
+}());
+
+//# sourceMappingURL=import-wallet.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=8.js.map
